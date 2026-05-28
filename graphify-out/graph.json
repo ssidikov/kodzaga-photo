@@ -1,0 +1,406 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "next-env.d.ts",
+      "file_type": "code",
+      "source_file": "next-env.d.ts",
+      "source_location": "L1",
+      "id": "next_env_d_ts",
+      "community": 7
+    },
+    {
+      "label": "next.config.ts",
+      "file_type": "code",
+      "source_file": "next.config.ts",
+      "source_location": "L1",
+      "id": "next_config_ts",
+      "community": 8
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/layout.tsx",
+      "source_location": "L1",
+      "id": "app_layout_tsx",
+      "community": 9
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L1",
+      "id": "app_page_tsx",
+      "community": 3
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L9",
+      "id": "page_home",
+      "community": 3
+    },
+    {
+      "label": "Hero.tsx",
+      "file_type": "code",
+      "source_file": "components/Hero.tsx",
+      "source_location": "L1",
+      "id": "components_hero_tsx",
+      "community": 10
+    },
+    {
+      "label": "Navbar.tsx",
+      "file_type": "code",
+      "source_file": "components/Navbar.tsx",
+      "source_location": "L1",
+      "id": "components_navbar_tsx",
+      "community": 4
+    },
+    {
+      "label": "handleScroll()",
+      "file_type": "code",
+      "source_file": "components/Navbar.tsx",
+      "source_location": "L18",
+      "id": "navbar_handlescroll",
+      "community": 4
+    },
+    {
+      "label": "Pricing.tsx",
+      "file_type": "code",
+      "source_file": "components/Pricing.tsx",
+      "source_location": "L1",
+      "id": "components_pricing_tsx",
+      "community": 11
+    },
+    {
+      "label": "Contact.tsx",
+      "file_type": "code",
+      "source_file": "components/Contact.tsx",
+      "source_location": "L1",
+      "id": "components_contact_tsx",
+      "community": 5
+    },
+    {
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "components/Contact.tsx",
+      "source_location": "L27",
+      "id": "contact_handlesubmit",
+      "community": 5
+    },
+    {
+      "label": "ScrollReveal.tsx",
+      "file_type": "code",
+      "source_file": "components/ScrollReveal.tsx",
+      "source_location": "L1",
+      "id": "components_scrollreveal_tsx",
+      "community": 6
+    },
+    {
+      "label": "ScrollReveal()",
+      "file_type": "code",
+      "source_file": "components/ScrollReveal.tsx",
+      "source_location": "L11",
+      "id": "scrollreveal_scrollreveal",
+      "community": 6
+    },
+    {
+      "label": "Footer.tsx",
+      "file_type": "code",
+      "source_file": "components/Footer.tsx",
+      "source_location": "L1",
+      "id": "components_footer_tsx",
+      "community": 2
+    },
+    {
+      "label": "InstagramIcon()",
+      "file_type": "code",
+      "source_file": "components/Footer.tsx",
+      "source_location": "L8",
+      "id": "footer_instagramicon",
+      "community": 2
+    },
+    {
+      "label": "TikTokIcon()",
+      "file_type": "code",
+      "source_file": "components/Footer.tsx",
+      "source_location": "L18",
+      "id": "footer_tiktokicon",
+      "community": 2
+    },
+    {
+      "label": "Portfolio.tsx",
+      "file_type": "code",
+      "source_file": "components/Portfolio.tsx",
+      "source_location": "L1",
+      "id": "components_portfolio_tsx",
+      "community": 12
+    },
+    {
+      "label": "About.tsx",
+      "file_type": "code",
+      "source_file": "components/About.tsx",
+      "source_location": "L1",
+      "id": "components_about_tsx",
+      "community": 1
+    },
+    {
+      "label": "InstagramIcon()",
+      "file_type": "code",
+      "source_file": "components/About.tsx",
+      "source_location": "L4",
+      "id": "about_instagramicon",
+      "community": 1
+    },
+    {
+      "label": "TikTokIcon()",
+      "file_type": "code",
+      "source_file": "components/About.tsx",
+      "source_location": "L14",
+      "id": "about_tiktokicon",
+      "community": 1
+    },
+    {
+      "label": "About()",
+      "file_type": "code",
+      "source_file": "components/About.tsx",
+      "source_location": "L22",
+      "id": "about_about",
+      "community": 1
+    },
+    {
+      "label": "Showcase Website Project",
+      "file_type": "document",
+      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Alexis Kodzaga",
+      "contributor": null,
+      "id": "concept_site_vitrine_alexis",
+      "community": 0
+    },
+    {
+      "label": "NovaBridge Studios (NBS)",
+      "file_type": "document",
+      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Alexis Kodzaga",
+      "contributor": null,
+      "id": "concept_novabridge_studios",
+      "community": 0
+    },
+    {
+      "label": "Photography Pricing Packages",
+      "file_type": "document",
+      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Alexis Kodzaga",
+      "contributor": null,
+      "id": "concept_pricing_packages",
+      "community": 0
+    },
+    {
+      "label": "Reservation & Contact Form",
+      "file_type": "document",
+      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Alexis Kodzaga",
+      "contributor": null,
+      "id": "concept_reservation_form",
+      "community": 0
+    },
+    {
+      "label": "Terse Caveman Rules",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "agents_rules_caveman",
+      "community": 13
+    },
+    {
+      "label": "Alexis Kodzaga Portrait",
+      "file_type": "image",
+      "source_file": "public/images/alexis-kodzaga.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "public_alexis_kodzaga",
+      "community": 0
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "app_page_tsx",
+      "_tgt": "page_home",
+      "source": "app_page_tsx",
+      "target": "page_home",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Navbar.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "components_navbar_tsx",
+      "_tgt": "navbar_handlescroll",
+      "source": "components_navbar_tsx",
+      "target": "navbar_handlescroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Contact.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "components_contact_tsx",
+      "_tgt": "contact_handlesubmit",
+      "source": "components_contact_tsx",
+      "target": "contact_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ScrollReveal.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "components_scrollreveal_tsx",
+      "_tgt": "scrollreveal_scrollreveal",
+      "source": "components_scrollreveal_tsx",
+      "target": "scrollreveal_scrollreveal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Footer.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "components_footer_tsx",
+      "_tgt": "footer_instagramicon",
+      "source": "components_footer_tsx",
+      "target": "footer_instagramicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Footer.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "components_footer_tsx",
+      "_tgt": "footer_tiktokicon",
+      "source": "components_footer_tsx",
+      "target": "footer_tiktokicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/About.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "components_about_tsx",
+      "_tgt": "about_instagramicon",
+      "source": "components_about_tsx",
+      "target": "about_instagramicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/About.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "components_about_tsx",
+      "_tgt": "about_tiktokicon",
+      "source": "components_about_tsx",
+      "target": "about_tiktokicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/About.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "components_about_tsx",
+      "_tgt": "about_about",
+      "source": "components_about_tsx",
+      "target": "about_about",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "concept_site_vitrine_alexis",
+      "_tgt": "concept_novabridge_studios",
+      "source": "concept_site_vitrine_alexis",
+      "target": "concept_novabridge_studios"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "concept_site_vitrine_alexis",
+      "_tgt": "concept_pricing_packages",
+      "source": "concept_site_vitrine_alexis",
+      "target": "concept_pricing_packages"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "concept_site_vitrine_alexis",
+      "_tgt": "concept_reservation_form",
+      "source": "concept_site_vitrine_alexis",
+      "target": "concept_reservation_form"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "concept_site_vitrine_alexis",
+      "_tgt": "public_alexis_kodzaga",
+      "source": "concept_site_vitrine_alexis",
+      "target": "public_alexis_kodzaga"
+    }
+  ],
+  "hyperedges": []
+}
