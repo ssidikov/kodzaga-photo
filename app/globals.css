@@ -1,0 +1,303 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════
+   DESIGN TOKENS — Alex Photos
+   Navy-black + Gold + Blue | Bodoni Moda + Jost
+   ═══════════════════════════════════════════════ */
+
+@theme inline {
+  /* Colors */
+  --color-bg: #06080F;
+  --color-surface: #0D1117;
+  --color-surface-light: #161B22;
+  --color-gold: #C9A84C;
+  --color-gold-dark: #A88734;
+  --color-gold-light: #E8D48B;
+  --color-blue: #2E5C9A;
+  --color-blue-light: #4A8FE7;
+  --color-cream: #F0ECE3;
+  --color-noir: #06080F;
+
+  /* Typography */
+  --font-heading: var(--font-bodoni-moda), "Bodoni Moda", serif;
+  --font-body: var(--font-jost), "Jost", sans-serif;
+
+  /* Animations */
+  --animate-marquee: marquee 100s linear infinite;
+  --animate-marquee-reverse: marquee 120s linear infinite reverse;
+  --animate-shimmer: shimmer 4s linear infinite;
+  --animate-scroll-line: scroll-line 2s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.8s ease forwards;
+  --animate-slide-up: slide-up 0.8s ease forwards;
+}
+
+/* ═══════════════════════════════════════════════
+   KEYFRAMES
+   ═══════════════════════════════════════════════ */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes scroll-line {
+  0%, 100% { opacity: 0; transform: translateY(-8px); }
+  50% { opacity: 1; transform: translateY(8px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(201, 168, 76, 0.3);
+  color: var(--color-cream);
+}
+
+/* ═══════════════════════════════════════════════
+   CUSTOM UTILITIES
+   ═══════════════════════════════════════════════ */
+
+/* Gold shimmer text */
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #C9A84C 0%,
+    #E8D48B 25%,
+    #C9A84C 50%,
+    #A88734 75%,
+    #C9A84C 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Gold gradient text (no shimmer) */
+.gold-text {
+  background: linear-gradient(135deg, #C9A84C, #E8D48B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold horizontal divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.3), transparent);
+}
+
+/* Glass navbar blur */
+.nav-blur {
+  background: rgba(6, 8, 15, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+}
+
+/* Gold CTA button */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-noir);
+  background: linear-gradient(135deg, #C9A84C, #E8D48B, #C9A84C);
+  background-size: 200% 200%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  background-position: 100% 0;
+  box-shadow: 0 0 30px rgba(201, 168, 76, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Price card */
+.price-card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid rgba(201, 168, 76, 0.08);
+  transition: all 0.4s ease;
+}
+
+.price-card:hover {
+  border-color: rgba(201, 168, 76, 0.25);
+  box-shadow: 0 0 40px rgba(201, 168, 76, 0.06);
+  transform: translateY(-4px);
+}
+
+/* Decorative corner accents */
+.corner-tl,
+.corner-br {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+.corner-tl {
+  top: -1px;
+  left: -1px;
+  border-top: 1px solid rgba(201, 168, 76, 0.35);
+  border-left: 1px solid rgba(201, 168, 76, 0.35);
+}
+
+.corner-br {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+  border-right: 1px solid rgba(201, 168, 76, 0.35);
+}
+
+/* Marquee edge fade */
+.edge-fade-l,
+.edge-fade-r {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.edge-fade-l {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg), transparent);
+}
+
+.edge-fade-r {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg), transparent);
+}
+
+/* Scroll reveal animation */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-element.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Form input styling */
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: var(--color-surface);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.08);
+}
+
+.form-input::placeholder {
+  color: rgba(240, 236, 227, 0.25);
+}
+
+/* ═══════════════════════════════════════════════
+   ACCESSIBILITY — Reduced Motion
+   ═══════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .gold-shimmer {
+    animation: none;
+  }
+
+  .reveal-element {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation-play-state: paused;
+  }
+
+  .btn-gold:hover {
+    transform: none;
+  }
+
+  .price-card:hover {
+    transform: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 168, 76, 0.4);
+}
