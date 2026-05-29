@@ -35,7 +35,7 @@ export default function Navbar() {
       {/* Logo */}
       <a
         href="#"
-        className="font-heading text-xl italic text-cream hover:text-gold transition-colors duration-300 cursor-pointer"
+        className="font-heading text-xl italic text-cream hover:text-gold transition-colors duration-300 cursor-pointer z-50"
       >
         Alexis Kodzaga
       </a>
@@ -62,7 +62,7 @@ export default function Navbar() {
       {/* Mobile hamburger */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden text-cream/60 hover:text-gold transition-colors cursor-pointer"
+        className="md:hidden text-cream/60 hover:text-gold transition-colors cursor-pointer z-50"
         aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
       >
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -70,31 +70,45 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`fixed inset-0 bg-bg/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${
+        className={`fixed inset-0 bg-bg/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 md:hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
         {NAV_LINKS.map((link, i) => (
-          <a
+          <div
             key={link.href}
-            href={link.href}
-            onClick={() => setIsOpen(false)}
-            className="font-heading text-2xl text-cream/60 hover:text-gold transition-colors duration-300 cursor-pointer"
-            style={{ transitionDelay: isOpen ? `${i * 80}ms` : "0ms" }}
+            className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: isOpen ? `${i * 75}ms` : "0ms" }}
           >
-            {link.label}
-          </a>
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="font-heading text-2xl text-cream/60 hover:text-gold transition-colors duration-300 cursor-pointer"
+            >
+              {link.label}
+            </a>
+          </div>
         ))}
-        <a
-          href="#contact"
-          onClick={() => setIsOpen(false)}
-          className="btn-gold mt-4"
+        <div
+          className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: isOpen ? `${NAV_LINKS.length * 75}ms` : "0ms" }}
         >
-          Réserver un shooting
-          <ArrowRight className="w-3.5 h-3.5" />
-        </a>
+          <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="btn-gold mt-4"
+          >
+            Réserver un shooting
+            <ArrowRight className="w-3.5 h-3.5" />
+          </a>
+        </div>
       </div>
     </nav>
   );
