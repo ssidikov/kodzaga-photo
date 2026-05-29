@@ -1,17 +1,19 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import { User, Mail, Phone, MapPin, Calendar, MessageSquare, Send } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const PRESTATIONS = [
-  "Shooting Solo — Extérieur",
-  "Shooting Solo — Intérieur",
-  "Shooting Groupe — Extérieur",
-  "Shooting Groupe — Intérieur",
-  "Pack Événement",
-  "Pack Marque / Corporate",
-  "Autre (préciser dans le message)",
+  "Pack Essentiel",
+  "Pack Premium",
+  "Pack Signature",
+  "Pack DUO",
+  "Pack TRIO",
+  "Pack Famille",
+  "Pack Animaux",
+  "Pack Personnalisable",
+  "Bon Cadeau",
 ];
 
 const OPTIONS = [
@@ -23,6 +25,44 @@ const OPTIONS = [
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [prestation, setPrestation] = useState("");
+
+  useEffect(() => {
+    const handlePrestationChange = (e: Event) => {
+      const customEvent = e as CustomEvent<string>;
+      if (customEvent.detail && PRESTATIONS.includes(customEvent.detail)) {
+        setPrestation(customEvent.detail);
+      }
+    };
+
+    const handleInitialLoadAndChange = () => {
+      const queryParams = new URLSearchParams(window.location.search);
+      const prest = queryParams.get("prestation");
+      if (prest && PRESTATIONS.includes(prest)) {
+        setPrestation(prest);
+      } else {
+        const hash = window.location.hash;
+        if (hash.includes("?prestation=")) {
+          const params = new URLSearchParams(hash.split("?")[1]);
+          const hashPrest = params.get("prestation");
+          if (hashPrest) {
+            const decoded = decodeURIComponent(hashPrest);
+            if (PRESTATIONS.includes(decoded)) {
+              setPrestation(decoded);
+            }
+          }
+        }
+      }
+    };
+
+    handleInitialLoadAndChange();
+    window.addEventListener("hashchange", handleInitialLoadAndChange);
+    window.addEventListener("prestation-change", handlePrestationChange);
+    return () => {
+      window.removeEventListener("hashchange", handleInitialLoadAndChange);
+      window.removeEventListener("prestation-change", handlePrestationChange);
+    };
+  }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -142,7 +182,8 @@ export default function Contact() {
                   name="prestation"
                   required
                   className="form-input cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23C9A84C%22%20stroke-width%3D%222%22%3E%3Cpath%20d%3D%22M6%209l6%206%206-6%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1rem_center]"
-                  defaultValue=""
+                  value={prestation}
+                  onChange={(e) => setPrestation(e.target.value)}
                 >
                   <option value="" disabled>
                     Sélectionner une prestation
