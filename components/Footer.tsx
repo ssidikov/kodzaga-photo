@@ -89,12 +89,25 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="gold-divider mb-8 opacity-10" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-body text-cream/20 text-[11px] font-light">
+          <p className="font-body text-cream text-[11px] font-light">
             © {new Date().getFullYear()} Alex Photos — Tous droits réservés
           </p>
-          <p className="font-body text-cream/15 text-[10px] font-light">
-            Alexis Kodzaga · Directeur Artistique · Photographe · Vidéaste
-          </p>
+          <div className="flex flex-col items-center sm:items-end gap-1">
+            <p className="font-body text-cream text-[10px] font-light">
+              Alexis Kodzaga · Directeur Artistique · Photographe · Vidéaste
+            </p>
+            <p className="font-body text-cream text-[10px] font-light">
+              Site développé par{" "}
+              <a
+                href="https://www.sidikoff.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gold-text hover:underline transition-colors duration-300"
+              >
+                SIDIKOFF DIGITAL
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
