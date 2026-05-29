@@ -268,7 +268,7 @@ function PackGroup({
 
 export default function Pricing() {
   return (
-    <section id="tarifs" className="py-32 px-6 md:px-14 max-w-7xl mx-auto">
+    <section id="tarifs" className="scroll-mt-[68px] py-32 px-6 md:px-14 max-w-7xl mx-auto">
       {/* Section header */}
       <div className="text-center mb-20">
         <ScrollReveal>

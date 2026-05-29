@@ -76,7 +76,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 md:px-14 max-w-4xl mx-auto">
+    <section id="contact" className="scroll-mt-[68px] py-32 px-6 md:px-14 max-w-4xl mx-auto">
       {/* Section header */}
       <div className="text-center mb-16">
         <ScrollReveal>

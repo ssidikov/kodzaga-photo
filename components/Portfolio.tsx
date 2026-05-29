@@ -60,7 +60,7 @@ function PlaceholderImage({
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-32 overflow-hidden">
+    <section id="portfolio" className="scroll-mt-[68px] py-32 overflow-hidden">
       {/* Section header */}
       <div className="px-6 md:px-14 mb-14">
         <ScrollReveal>

@@ -26,7 +26,7 @@ function TikTokIcon({ className = 'w-4 h-4' }: { className?: string }) {
 
 export default function About() {
   return (
-    <section id='about' className='py-32 px-6 md:px-14 max-w-7xl mx-auto'>
+    <section id='about' className='scroll-mt-[68px] py-32 px-6 md:px-14 max-w-7xl mx-auto'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-28 items-center'>
         {/* Portrait photo */}
         <ScrollReveal>
