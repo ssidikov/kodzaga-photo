@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-50 px-6 md:px-14 h-[68px] flex items-center justify-between transition-all duration-500 ${
-        scrolled ? "nav-blur" : "bg-transparent"
+        isOpen ? "bg-transparent" : (scrolled ? "nav-blur" : "bg-transparent")
       }`}
     >
       {/* Logo */}
@@ -70,7 +70,7 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`fixed inset-0 top-[68px] bg-bg/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${
+        className={`fixed inset-0 bg-bg/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
