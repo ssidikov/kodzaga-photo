@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "À propos", href: "#about" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Tarifs", href: "#tarifs" },
-  { label: "Contact", href: "#contact" },
+  { label: "À propos", href: "/#about" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Tarifs", href: "/#tarifs" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -38,7 +38,7 @@ export default function Navbar() {
       <div className="w-full h-[68px] flex items-center justify-between px-6 md:px-14">
         {/* Logo */}
         <a
-          href="#"
+          href="/"
           className="font-heading text-xl italic text-cream hover:text-gold transition-colors duration-300 cursor-pointer z-50"
         >
           Alexis Kodzaga
@@ -58,7 +58,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <a href="#contact" className="hidden md:inline-flex btn-gold py-2.5 px-5 text-[10px]">
+        <a href="/#contact" className="hidden md:inline-flex btn-gold py-2.5 px-5 text-[10px]">
           Réserver
           <ArrowRight className="w-3 h-3" />
         </a>
@@ -106,7 +106,7 @@ export default function Navbar() {
           style={{ transitionDelay: isOpen ? `${NAV_LINKS.length * 75}ms` : "0ms" }}
         >
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setIsOpen(false)}
             className="btn-gold mt-4"
           >

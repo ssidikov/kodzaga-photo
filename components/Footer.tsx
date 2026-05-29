@@ -1,8 +1,8 @@
 const NAV_LINKS = [
-  { label: 'À propos', href: '#about' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Tarifs', href: '#tarifs' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'À propos', href: '/#about' },
+  { label: 'Portfolio', href: '/#portfolio' },
+  { label: 'Tarifs', href: '/#tarifs' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 function InstagramIcon({ className = 'w-4 h-4' }: { className?: string }) {
@@ -89,9 +89,20 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className='gold-divider mb-8 opacity-10' />
         <div className='flex flex-col sm:flex-row items-center justify-between gap-4'>
-          <p className='font-body text-cream text-[11px] font-light'>
-            © {new Date().getFullYear()} Alex Photos — Tous droits réservés
-          </p>
+          <div className='flex flex-col items-center sm:items-start gap-1.5'>
+            <p className='font-body text-cream text-[11px] font-light'>
+              © {new Date().getFullYear()} Alex Photos — Tous droits réservés
+            </p>
+            <div className='flex gap-3 text-cream/35 text-[10px] font-light'>
+              <a href='/mentions-legales' className='hover:text-gold transition-colors duration-300'>
+                Mentions légales
+              </a>
+              <span className='text-cream/15'>·</span>
+              <a href='/politique-de-confidentialite' className='hover:text-gold transition-colors duration-300'>
+                Politique de confidentialité
+              </a>
+            </div>
+          </div>
           <div className='flex flex-col items-center sm:items-end gap-1'>
             <p className='font-body text-cream text-[10px] font-light'>
               Alexis Kodzaga · Directeur Artistique · Photographe · Vidéaste
