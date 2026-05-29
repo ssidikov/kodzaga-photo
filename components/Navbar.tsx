@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const NAV_LINKS = [
   { label: "À propos", href: "/#about" },
@@ -37,31 +38,31 @@ export default function Navbar() {
       {/* Header bar content wrapper */}
       <div className="w-full h-[68px] flex items-center justify-between px-6 md:px-14">
         {/* Logo */}
-        <a
+        <Link
           href="/"
           className="font-heading text-xl italic text-cream hover:text-gold transition-colors duration-300 cursor-pointer z-50"
         >
           Alexis Kodzaga
-        </a>
+        </Link>
 
         {/* Desktop nav links */}
         <div className="hidden md:flex gap-8 font-body text-[11px] tracking-[0.22em] uppercase text-cream/40">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="hover:text-gold transition-colors duration-300 cursor-pointer"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* Desktop CTA */}
-        <a href="/#contact" className="hidden md:inline-flex btn-gold py-2.5 px-5 text-[10px]">
+        <Link href="/#contact" className="hidden md:inline-flex btn-gold py-2.5 px-5 text-[10px]">
           Réserver
           <ArrowRight className="w-3 h-3" />
-        </a>
+        </Link>
 
         {/* Mobile hamburger */}
         <button
@@ -89,14 +90,14 @@ export default function Navbar() {
             }`}
             style={{ transitionDelay: isOpen ? `${i * 75}ms` : "0ms" }}
           >
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
               className="font-heading text-2xl text-cream/60 hover:text-gold transition-colors duration-300 cursor-pointer"
             >
               {link.label}
-            </a>
+            </Link>
           </div>
         ))}
         <div
@@ -105,14 +106,14 @@ export default function Navbar() {
           }`}
           style={{ transitionDelay: isOpen ? `${NAV_LINKS.length * 75}ms` : "0ms" }}
         >
-          <a
+          <Link
             href="/#contact"
             onClick={() => setIsOpen(false)}
             className="btn-gold mt-4"
           >
             Réserver un shooting
             <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

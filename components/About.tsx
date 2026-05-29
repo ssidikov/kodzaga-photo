@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import ScrollReveal from './ScrollReveal'
 
 /* Inline SVGs for brand icons (not available in lucide-react) */
@@ -32,10 +33,12 @@ export default function About() {
         <ScrollReveal>
           <div className='relative'>
             <div className='relative overflow-hidden bg-surface w-full aspect-[3/4]'>
-              <img
+              <Image
                 src='/images/alexis-kodzaga.jpg'
                 alt='Alexis Kodzaga'
-                className='w-full h-full object-cover'
+                fill
+                sizes='(max-width: 768px) 100vw, 50vw'
+                className='object-cover'
               />
             </div>
             <div className='corner-tl' />
