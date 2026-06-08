@@ -131,7 +131,7 @@ export default function Portfolio() {
     <section
       ref={sectionRef}
       id="portfolio"
-      className="scroll-mt-[68px] py-32 overflow-hidden"
+      className="section-bg scroll-mt-[68px] py-32 overflow-hidden"
     >
       <div className="px-6 md:px-14 mb-14">
         <ScrollReveal>

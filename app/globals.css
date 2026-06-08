@@ -88,6 +88,28 @@ body {
   color: var(--color-cream);
 }
 
+/* Shared non-hero section background */
+.section-bg {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-bg::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(6, 8, 15, 0.76), rgba(6, 8, 15, 0.84)),
+    url("/images/bg-image.png");
+  background-position: top center;
+  background-size: max(100vw, 900px) auto;
+  background-repeat: repeat-y;
+}
+
 /* ═══════════════════════════════════════════════
    CUSTOM UTILITIES
    ═══════════════════════════════════════════════ */
