@@ -11,7 +11,6 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <div className="gold-divider mx-12 opacity-15" />
       <About />
       <div className="gold-divider mx-12 opacity-15" />
       <Portfolio />

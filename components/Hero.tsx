@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className='relative isolate min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20'>
-      <picture className='absolute inset-0 -z-20'>
+    <section className='relative isolate min-h-screen overflow-hidden bg-bg flex flex-col items-center justify-center text-center px-6 pt-20'>
+      <picture className='absolute inset-0 -z-20 block'>
         <source media='(max-width: 767px)' srcSet='/images/bg-mobile.jpg' />
         <img
           src='/images/main-bg.jpg'
           alt=''
-          className='h-full w-full object-cover object-left md:object-center'
+          className='block h-full w-full object-cover object-left md:object-center'
         />
       </picture>
 
@@ -34,8 +34,6 @@ export default function Hero() {
         />
         {/* Top line */}
         <div className='absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent' />
-        {/* Bottom line */}
-        <div className='absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/8 to-transparent' />
       </div>
 
       {/* Logo circle */}
@@ -113,7 +111,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className='absolute bottom-10 left-1/2 -translate-x-1/2'>
-        <div className='w-px h-12 bg-gradient-to-b from-transparent via-gold/30 to-transparent mx-auto animate-scroll-line' />
+        <div className='w-px h-12 bg-gradient-to-b from-transparent via-gold/18 to-transparent mx-auto opacity-45' />
       </div>
     </section>
   )

@@ -66,6 +66,58 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes sparkle-twinkle {
+  0%, 100% {
+    opacity: 0.36;
+    transform: translate3d(0, 0, 0) scale(0.96);
+  }
+  45% {
+    opacity: 0.88;
+    transform: translate3d(1px, -1px, 0) scale(1.04);
+  }
+  72% {
+    opacity: 0.52;
+    transform: translate3d(-1px, 1px, 0) scale(0.98);
+  }
+}
+
+@keyframes sparkle-drift {
+  0%, 100% {
+    opacity: 0.24;
+    transform: translate3d(0, 0, 0) rotate(0.001deg);
+  }
+  50% {
+    opacity: 0.66;
+    transform: translate3d(2px, -3px, 0) rotate(0.001deg);
+  }
+}
+
+@keyframes sparkle-text-twinkle {
+  0%, 100% {
+    opacity: 0.16;
+    transform: translate3d(0, 0, 0) scale(0.98);
+  }
+  45% {
+    opacity: 0.44;
+    transform: translate3d(1px, -1px, 0) scale(1.02);
+  }
+  72% {
+    opacity: 0.24;
+    transform: translate3d(-1px, 1px, 0) scale(0.99);
+  }
+}
+
+@keyframes sparkle-text-drift {
+  0%, 100% {
+    opacity: 0.12;
+    transform: translate3d(0, 0, 0) rotate(0.001deg);
+  }
+  50% {
+    opacity: 0.34;
+    transform: translate3d(2px, -2px, 0) rotate(0.001deg);
+  }
+}
+
 /* ═══════════════════════════════════════════════
    BASE STYLES
    ═══════════════════════════════════════════════ */
@@ -116,6 +168,8 @@ body {
 
 /* Gold shimmer text */
 .gold-shimmer {
+  position: relative;
+  isolation: isolate;
   background: linear-gradient(
     90deg,
     #C9A84C 0%,
@@ -133,6 +187,8 @@ body {
 
 /* Gold gradient text (no shimmer) */
 .gold-text {
+  position: relative;
+  isolation: isolate;
   background: linear-gradient(135deg, #C9A84C, #E8D48B);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -150,11 +206,13 @@ body {
   background: rgba(6, 8, 15, 0.75);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+  border-bottom: 0;
 }
 
 /* Gold CTA button */
 .btn-gold {
+  position: relative;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -169,12 +227,94 @@ body {
   background-size: 200% 200%;
   transition: all 0.3s ease;
   cursor: pointer;
+  overflow: visible;
+}
+
+.btn-gold.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .btn-gold.md\:inline-flex {
+    display: inline-flex;
+  }
 }
 
 .btn-gold:hover {
   background-position: 100% 0;
   box-shadow: 0 0 30px rgba(201, 168, 76, 0.25);
   transform: translateY(-1px);
+}
+
+.btn-gold::before,
+.btn-gold::after,
+.price-card a[href="#contact"]::before,
+.price-card a[href="#contact"]::after,
+.gold-shimmer::before,
+.gold-shimmer::after,
+.gold-text::before,
+.gold-text::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 5px rgba(232, 212, 139, 0.34));
+}
+
+.btn-gold::before,
+.price-card a[href="#contact"]::before {
+  inset: -16px -20px;
+  background-image:
+    radial-gradient(circle at 8% 52%, rgba(232, 212, 139, 0.95) 0 1px, transparent 2px),
+    radial-gradient(circle at 18% 18%, rgba(201, 168, 76, 0.7) 0 1.5px, transparent 2.7px),
+    radial-gradient(circle at 82% 8%, rgba(240, 236, 227, 0.8) 0 1px, transparent 2.2px),
+    radial-gradient(circle at 94% 58%, rgba(232, 212, 139, 0.88) 0 1.4px, transparent 2.6px),
+    radial-gradient(circle at 70% 92%, rgba(201, 168, 76, 0.78) 0 1px, transparent 2px);
+  animation: sparkle-twinkle 3.8s ease-in-out infinite;
+}
+
+.btn-gold::after,
+.price-card a[href="#contact"]::after {
+  inset: -12px -18px;
+  background-image:
+    radial-gradient(circle at 5% 88%, rgba(232, 212, 139, 0.7) 0 1px, transparent 2px),
+    radial-gradient(circle at 32% 4%, rgba(240, 236, 227, 0.55) 0 1px, transparent 2px),
+    radial-gradient(circle at 76% 20%, rgba(232, 212, 139, 0.72) 0 1.2px, transparent 2.4px),
+    radial-gradient(circle at 102% 80%, rgba(201, 168, 76, 0.85) 0 1.4px, transparent 2.6px);
+  animation: sparkle-drift 5.2s ease-in-out infinite;
+}
+
+.price-card a[href="#contact"] {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.gold-shimmer::before,
+.gold-text::before {
+  inset: -0.44em -0.58em;
+  background-image:
+    radial-gradient(circle at 0% 42%, rgba(232, 212, 139, 0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 10% 12%, rgba(240, 236, 227, 0.62) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 4%, rgba(232, 212, 139, 0.72) 0 1.2px, transparent 2.4px),
+    radial-gradient(circle at 100% 48%, rgba(201, 168, 76, 0.82) 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 94%, rgba(240, 236, 227, 0.5) 0 1px, transparent 2px);
+  animation: sparkle-text-twinkle 4.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 3px rgba(232, 212, 139, 0.24));
+}
+
+.gold-shimmer::after,
+.gold-text::after {
+  inset: -0.52em -0.7em;
+  background-image:
+    radial-gradient(circle at 4% 84%, rgba(201, 168, 76, 0.68) 0 1px, transparent 2px),
+    radial-gradient(circle at 28% 0%, rgba(232, 212, 139, 0.55) 0 1px, transparent 2px),
+    radial-gradient(circle at 62% 102%, rgba(232, 212, 139, 0.74) 0 1.2px, transparent 2.4px),
+    radial-gradient(circle at 96% 18%, rgba(240, 236, 227, 0.52) 0 1px, transparent 2px);
+  animation: sparkle-text-drift 6.1s ease-in-out infinite reverse;
+  filter: drop-shadow(0 0 3px rgba(232, 212, 139, 0.22));
 }
 
 /* Price card */
@@ -281,6 +421,19 @@ body {
 
   .gold-shimmer {
     animation: none;
+  }
+
+  .btn-gold::before,
+  .btn-gold::after,
+  .price-card a[href="#contact"]::before,
+  .price-card a[href="#contact"]::after,
+  .gold-shimmer::before,
+  .gold-shimmer::after,
+  .gold-text::before,
+  .gold-text::after {
+    animation: none;
+    opacity: 0.34;
+    transform: none;
   }
 
   .reveal-element {
