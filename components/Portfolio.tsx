@@ -1,57 +1,104 @@
+"use client";
+
 import { ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 
-/* Generate placeholder items for the marquee rows */
-const ROW_1_COUNT = 32;
-const ROW_2_COUNT = 32;
-
-const row1Items = Array.from({ length: ROW_1_COUNT }, (_, i) => ({
-  id: i + 1,
-  alt: `Shooting ${i + 1}`,
-}));
-
-const row2Items = Array.from({ length: ROW_2_COUNT }, (_, i) => ({
-  id: i + ROW_1_COUNT + 1,
-  alt: `Shooting ${i + ROW_1_COUNT + 1}`,
-}));
-
-/* Gradient colors for placeholder images */
-const gradients = [
-  "from-blue/30 to-surface",
-  "from-gold/20 to-surface",
-  "from-blue-light/20 to-surface",
-  "from-gold-dark/25 to-surface",
-  "from-blue/20 to-gold/10",
-  "from-surface-light to-surface",
-  "from-blue/15 to-surface-light",
-  "from-gold/15 to-blue/10",
+const images = [
+  "Artistique-2.webp",
+  "Bruna - série finale-26.webp",
+  "Bruna - série finale-29.webp",
+  "Bruna - série finale-5.webp",
+  "Bruna - série finale-7.webp",
+  "Bucky-24.webp",
+  "Bucky-30.webp",
+  "Bucky-6.webp",
+  "Deuxième - Last série-13.webp",
+  "Deuxième série-14.webp",
+  "Deuxième série-24.webp",
+  "Deuxième série-5.webp",
+  "Dolunay-24.webp",
+  "Dolunay-30.webp",
+  "Dolunay-35.webp",
+  "Dolunay-4.webp",
+  "Fond blanc-1.webp",
+  "Fond blanc-17.webp",
+  "Ianaya & Alexandra -série finale-25.webp",
+  "Ianaya & Alexandra -série finale-8.webp",
+  "Ianaya & Alexandra.webp",
+  "Kawthar - 14 - 04-7.webp",
+  "Kawthar 2-8.webp",
+  "Kim - Bas Troca-15.webp",
+  "Kim - Haut Troca-10.webp",
+  "Kim - Haut Troca-5.webp",
+  "Kim - Louvre-10.webp",
+  "Lola Buren-2.webp",
+  "Lola-12.webp",
+  "Lola-14.webp",
+  "Lucie Première série.webp",
+  "Marie - série finale-12.webp",
+  "Marie - série finale-31.webp",
+  "Marie - série finale-32.webp",
+  "Marie - série finale-34.webp",
+  "Marie - série finale-41.webp",
+  "Nicol - Diva-5.webp",
+  "Nicol - Diva-6.webp",
+  "Nicol - Porte rouge-10.webp",
+  "Nicol - Végétation-18.webp",
+  "Première & Deuxième série-22.webp",
+  "Première & Deuxième série-25.webp",
+  "Première série-19.webp",
+  "Première série-21.webp",
+  "Première série-2.webp",
+  "Première série.webp",
+  "Ruelle.webp",
+  "SHO04514-2.webp",
+  "SHO04518.webp",
+  "SHO04694.webp",
+  "SHO06430.webp",
+  "SHO06610.webp",
+  "SHO09624.webp",
+  "Série 2-16.webp",
+  "Série 2-6.webp",
+  "Trio-17.webp",
+  "Trio-22.webp",
+  "Trio.webp",
+  "Troisième série-7.webp",
+  "Troisième série.webp",
+  "Végétal-3.webp",
+  "WORK-2.webp",
 ];
 
-function PlaceholderImage({
-  index,
+const row1 = images.slice(0, 31);
+const row2 = images.slice(31);
+
+function GalleryImage({
+  src,
+  alt,
   size,
+  visible,
 }: {
-  index: number;
+  src: string;
+  alt: string;
   size: "lg" | "sm";
+  visible: boolean;
 }) {
-  const gradient = gradients[index % gradients.length];
   const w = size === "lg" ? "w-56" : "w-44";
   const h = size === "lg" ? "h-[300px]" : "h-56";
 
   return (
-    <div className={`flex-shrink-0 mx-2`}>
-      <div
-        className={`relative overflow-hidden bg-surface ${w} ${h} group cursor-pointer`}
-      >
-        {/* Placeholder gradient — replace with <img> when real photos are ready */}
-        <div
-          className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center transition-transform duration-500 group-hover:scale-105`}
-        >
-          <span className="font-heading text-lg text-cream/10 select-none">
-            {index + 1}
-          </span>
-        </div>
-        {/* Hover overlay */}
+    <div className="flex-shrink-0 mx-2">
+      <div className={`relative overflow-hidden bg-surface ${w} ${h} group cursor-pointer`}>
+        {visible && (
+          <Image
+            src={`/images/${encodeURIComponent(src)}`}
+            alt={alt}
+            fill
+            sizes="(max-width: 768px) 176px, 224px"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
         <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/5 transition-colors duration-300" />
       </div>
     </div>
@@ -59,9 +106,33 @@ function PlaceholderImage({
 }
 
 export default function Portfolio() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(el);
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="portfolio" className="scroll-mt-[68px] py-32 overflow-hidden">
-      {/* Section header */}
+    <section
+      ref={sectionRef}
+      id="portfolio"
+      className="scroll-mt-[68px] py-32 overflow-hidden"
+    >
       <div className="px-6 md:px-14 mb-14">
         <ScrollReveal>
           <p className="font-body text-[10px] tracking-[0.5em] uppercase text-gold/45 mb-4">
@@ -73,39 +144,34 @@ export default function Portfolio() {
         </ScrollReveal>
       </div>
 
-      {/* Marquee row 1 — scrolls left */}
+      {/* Row 1 — scrolls left */}
       <div className="relative mb-5 overflow-hidden">
         <div className="flex animate-marquee">
-          {/* Original set */}
-          {row1Items.map((item, i) => (
-            <PlaceholderImage key={`r1-a-${item.id}`} index={i} size="lg" />
+          {row1.map((src) => (
+            <GalleryImage key={`r1-a-${src}`} src={src} alt={src.replace(".webp", "")} size="lg" visible={visible} />
           ))}
-          {/* Duplicate for seamless loop */}
-          {row1Items.map((item, i) => (
-            <PlaceholderImage key={`r1-b-${item.id}`} index={i} size="lg" />
+          {row1.map((src) => (
+            <GalleryImage key={`r1-b-${src}`} src={src} alt={src.replace(".webp", "")} size="lg" visible={visible} />
           ))}
         </div>
         <div className="edge-fade-l" />
         <div className="edge-fade-r" />
       </div>
 
-      {/* Marquee row 2 — scrolls right (reverse) */}
+      {/* Row 2 — scrolls right */}
       <div className="relative overflow-hidden">
         <div className="flex animate-marquee-reverse">
-          {/* Original set */}
-          {row2Items.map((item, i) => (
-            <PlaceholderImage key={`r2-a-${item.id}`} index={i} size="sm" />
+          {row2.map((src) => (
+            <GalleryImage key={`r2-a-${src}`} src={src} alt={src.replace(".webp", "")} size="sm" visible={visible} />
           ))}
-          {/* Duplicate for seamless loop */}
-          {row2Items.map((item, i) => (
-            <PlaceholderImage key={`r2-b-${item.id}`} index={i} size="sm" />
+          {row2.map((src) => (
+            <GalleryImage key={`r2-b-${src}`} src={src} alt={src.replace(".webp", "")} size="sm" visible={visible} />
           ))}
         </div>
         <div className="edge-fade-l" />
         <div className="edge-fade-r" />
       </div>
 
-      {/* Instagram link */}
       <div className="text-center mt-10">
         <ScrollReveal>
           <a
