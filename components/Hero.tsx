@@ -3,7 +3,19 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className='relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20'>
+    <section className='relative isolate min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20'>
+      <picture className='absolute inset-0 -z-20'>
+        <source media='(max-width: 767px)' srcSet='/images/bg-mobile.jpg' />
+        <img
+          src='/images/main-bg.jpg'
+          alt=''
+          className='h-full w-full object-cover object-left md:object-center'
+        />
+      </picture>
+
+      <div className='absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(6,8,15,0.58)_0%,rgba(6,8,15,0.42)_45%,rgba(6,8,15,0.88)_100%)]' />
+      <div className='absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(6,8,15,0.12)_0%,rgba(6,8,15,0.66)_82%)]' />
+
       {/* Background effects */}
       <div className='absolute inset-0 pointer-events-none overflow-hidden'>
         {/* Radial gold glow */}
