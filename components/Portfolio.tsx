@@ -3,6 +3,7 @@
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { imageUrl } from "./image-url";
 import ScrollReveal from "./ScrollReveal";
 
 const images = [
@@ -92,7 +93,7 @@ function GalleryImage({
       <div className={`relative overflow-hidden bg-surface ${w} ${h} group cursor-pointer`}>
         {visible && (
           <Image
-            src={`/images/${encodeURIComponent(src)}`}
+            src={imageUrl(src)}
             alt={alt}
             fill
             sizes="(max-width: 768px) 176px, 224px"

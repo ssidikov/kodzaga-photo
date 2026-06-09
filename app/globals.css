@@ -182,7 +182,7 @@ body {
   z-index: -1;
   background-image:
     linear-gradient(rgba(6, 8, 15, 0.76), rgba(6, 8, 15, 0.84)),
-    url("/images/bg-image.png");
+    url("https://pub-b0039a11c59a45d1846d6ff5e26b11d0.r2.dev/images/bg-image.png");
   background-position: top center;
   background-size: max(100vw, 900px) auto;
   background-repeat: repeat-y;

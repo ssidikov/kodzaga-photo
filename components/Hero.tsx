@@ -1,13 +1,14 @@
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import { imageUrl } from './image-url'
 
 export default function Hero() {
   return (
     <section className='relative isolate min-h-screen overflow-hidden bg-bg flex flex-col items-center justify-center text-center px-6 pt-20'>
       <picture className='absolute inset-0 -z-20 block'>
-        <source media='(max-width: 767px)' srcSet='/images/bg-mobile.jpg' />
+        <source media='(max-width: 767px)' srcSet={imageUrl('bg-mobile.jpg')} />
         <img
-          src='/images/main-bg.jpg'
+          src={imageUrl('main-bg.jpg')}
           alt=''
           className='block h-full w-full object-cover object-left md:object-center'
         />
@@ -41,7 +42,7 @@ export default function Hero() {
       <div className='mb-10 animate-fade-in'>
         <div className='relative overflow-hidden bg-surface w-28 h-28 rounded-full border border-gold/20 mx-auto shadow-[0_0_40px_rgba(201,168,76,0.1)]'>
           <Image
-            src='/images/alexis-kodzaga.jpg'
+            src={imageUrl('alexis-kodzaga.jpg')}
             alt='Alexis Kodzaga'
             fill
             sizes='112px'
