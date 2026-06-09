@@ -61,12 +61,12 @@ export default function About() {
             <div className='w-8 gold-divider mb-8 opacity-50' />
 
             <p className='font-body text-cream/50 text-[14.5px] leading-[1.9] font-light mb-5'>
-              Passionné par l&apos;image et la direction artistique, je capture l&apos;essence de
-              chaque instant avec un regard cinématographique unique.
+              Passionné par l&apos;image cinématographique, j&apos;utilise le contraste pour capturer ce
+              qui vous rend unique.
             </p>
             <p className='font-body text-cream/50 text-[14.5px] leading-[1.9] font-light mb-10'>
-              Spécialisé en portraits lifestyle et shootings contrastés, je propose une approche
-              créative et sur-mesure pour sublimer chaque projet.
+              Avec 3 ans d&apos;expérience dans l&apos;audiovisuel, la réalisation de courts-métrages et
+              une spécialisation en portraits lifestyle et shootings contrastés.
             </p>
 
             {/* Stats */}
