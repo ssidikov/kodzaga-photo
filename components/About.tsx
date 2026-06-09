@@ -70,17 +70,23 @@ export default function About() {
             </p>
 
             {/* Stats */}
-            <div className='grid grid-cols-2 gap-4 pb-10 border-b border-white/5 mb-10'>
-              <div className='text-center'>
-                <div className='font-heading text-3xl font-semibold gold-text mb-1'>3</div>
-                <div className='font-body text-[10px] tracking-[0.15em] uppercase text-cream/30'>
-                  Ans d&apos;exp.
-                </div>
-              </div>
+            <div className='grid grid-cols-3 gap-4 pb-10 border-b border-white/5 mb-10'>
               <div className='text-center'>
                 <div className='font-heading text-3xl font-semibold gold-text mb-1'>100+</div>
                 <div className='font-body text-[10px] tracking-[0.15em] uppercase text-cream/30'>
                   Clients
+                </div>
+              </div>
+              <div className='text-center'>
+                <div className='font-heading text-3xl font-semibold gold-text mb-1'>+1 M</div>
+                <div className='font-body text-[10px] tracking-[0.15em] uppercase text-cream/30'>
+                  Vues
+                </div>
+              </div>
+              <div className='text-center'>
+                <div className='font-heading text-3xl font-semibold gold-text mb-1'>6k</div>
+                <div className='font-body text-[10px] tracking-[0.15em] uppercase text-cream/30'>
+                  Photos retouchées en 1 an
                 </div>
               </div>
             </div>
