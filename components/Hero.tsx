@@ -82,7 +82,7 @@ export default function Hero() {
         style={{ animationDelay: '0.7s', animationFillMode: 'backwards' }}>
         Portrait Lifestyle et contrasté cinématographique.
         <br />
-        Sublimez votre image avec une direction artistique sur-mesure.
+        Sublimez vos réseaux avec une direction artistique sur-mesure.
       </p>
 
       {/* CTAs */}
