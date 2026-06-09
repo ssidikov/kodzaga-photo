@@ -268,86 +268,88 @@ function PackGroup({
 
 export default function Pricing() {
   return (
-    <section id="tarifs" className="section-bg scroll-mt-[68px] py-32 px-6 md:px-14 max-w-7xl mx-auto">
-      {/* Section header */}
-      <div className="text-center mb-20">
+    <section id="tarifs" className="section-bg scroll-mt-[68px] py-32">
+      <div className="relative z-10 px-6 md:px-14 max-w-7xl mx-auto">
+        {/* Section header */}
+        <div className="text-center mb-20">
+          <ScrollReveal>
+            <p className="font-body text-[10px] tracking-[0.5em] uppercase text-gold/45 mb-4">
+              Investissement
+            </p>
+            <h2 className="font-heading text-4xl md:text-5xl font-light mb-5">
+              Les <em className="gold-text">prestations</em>
+            </h2>
+            <p className="font-body text-cream/30 text-sm font-light">
+              Shootings Photo Pro — Extérieur — Intérieur
+            </p>
+          </ScrollReveal>
+        </div>
+
+        {/* Solo section */}
+        <PackGroup title="Solo" packs={SOLO_PACKS} delayOffset={0} />
+
+        <div className="gold-divider my-16 opacity-15" />
+
+        {/* Groupe section */}
+        <PackGroup title="Groupe" packs={GROUPE_PACKS} delayOffset={100} />
+
+        <div className="gold-divider my-16 opacity-15" />
+
+        {/* Autres packs section */}
+        <PackGroup title="Autres packs" packs={AUTRES_PACKS} delayOffset={200} />
+
+        <div className="gold-divider my-16 opacity-15" />
+
+        {/* Options extras */}
         <ScrollReveal>
-          <p className="font-body text-[10px] tracking-[0.5em] uppercase text-gold/45 mb-4">
-            Investissement
-          </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-light mb-5">
-            Les <em className="gold-text">prestations</em>
-          </h2>
-          <p className="font-body text-cream/30 text-sm font-light">
-            Shootings Photo Pro — Extérieur — Intérieur
-          </p>
+          <div className="max-w-3xl mx-auto">
+            <h3 className="font-heading text-xl font-light text-center mb-8">
+              Options <em className="gold-text">à la carte</em>
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+              {OPTIONS.map((opt) => {
+                const Icon = opt.icon;
+                return (
+                  <div
+                    key={opt.label}
+                    className="bg-surface border border-gold/[0.06] p-5 text-center"
+                  >
+                    <Icon
+                      className="w-5 h-5 text-gold/40 mx-auto mb-3"
+                      strokeWidth={1.5}
+                    />
+                    <p className="font-body text-cream/60 text-[12px] font-medium mb-1">
+                      {opt.label}
+                    </p>
+                    <p className="font-body text-cream/25 text-[11px] font-light mb-3">
+                      {opt.detail}
+                    </p>
+                    <p className="font-heading text-lg gold-text font-semibold">
+                      {opt.price}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Payment info */}
+            <div className="bg-surface/50 border border-gold/[0.08] p-6 text-center">
+              <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold/40 mb-3">
+                Information Paiement
+              </p>
+              <p className="font-body text-cream/50 text-sm font-light">
+                <span className="gold-text font-medium">30%</span> du paiement à
+                la confirmation de la réservation
+              </p>
+              <p className="font-body text-cream/50 text-sm font-light">
+                <span className="gold-text font-medium">70%</span> restant maximum
+                le jour de la prestation
+              </p>
+            </div>
+          </div>
         </ScrollReveal>
       </div>
-
-      {/* Solo section */}
-      <PackGroup title="Solo" packs={SOLO_PACKS} delayOffset={0} />
-
-      <div className="gold-divider my-16 opacity-15" />
-
-      {/* Groupe section */}
-      <PackGroup title="Groupe" packs={GROUPE_PACKS} delayOffset={100} />
-
-      <div className="gold-divider my-16 opacity-15" />
-
-      {/* Autres packs section */}
-      <PackGroup title="Autres packs" packs={AUTRES_PACKS} delayOffset={200} />
-
-      <div className="gold-divider my-16 opacity-15" />
-
-      {/* Options extras */}
-      <ScrollReveal>
-        <div className="max-w-3xl mx-auto">
-          <h3 className="font-heading text-xl font-light text-center mb-8">
-            Options <em className="gold-text">à la carte</em>
-          </h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-            {OPTIONS.map((opt) => {
-              const Icon = opt.icon;
-              return (
-                <div
-                  key={opt.label}
-                  className="bg-surface border border-gold/[0.06] p-5 text-center"
-                >
-                  <Icon
-                    className="w-5 h-5 text-gold/40 mx-auto mb-3"
-                    strokeWidth={1.5}
-                  />
-                  <p className="font-body text-cream/60 text-[12px] font-medium mb-1">
-                    {opt.label}
-                  </p>
-                  <p className="font-body text-cream/25 text-[11px] font-light mb-3">
-                    {opt.detail}
-                  </p>
-                  <p className="font-heading text-lg gold-text font-semibold">
-                    {opt.price}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Payment info */}
-          <div className="bg-surface/50 border border-gold/[0.08] p-6 text-center">
-            <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold/40 mb-3">
-              Information Paiement
-            </p>
-            <p className="font-body text-cream/50 text-sm font-light">
-              <span className="gold-text font-medium">30%</span> du paiement à
-              la confirmation de la réservation
-            </p>
-            <p className="font-body text-cream/50 text-sm font-light">
-              <span className="gold-text font-medium">70%</span> restant maximum
-              le jour de la prestation
-            </p>
-          </div>
-        </div>
-      </ScrollReveal>
     </section>
   );
 }

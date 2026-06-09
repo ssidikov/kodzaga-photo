@@ -4,3 +4,6 @@ export const R2_IMAGE_BASE_URL =
 export function imageUrl(fileName: string) {
   return `${R2_IMAGE_BASE_URL}/${encodeURIComponent(fileName)}`;
 }
+
+export const HERO_BACKGROUND_IMAGE = imageUrl("main-bg.jpg");
+export const HERO_MOBILE_BACKGROUND_IMAGE = imageUrl("bg-mobile.jpg");

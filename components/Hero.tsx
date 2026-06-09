@@ -1,14 +1,14 @@
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import { imageUrl } from './image-url'
+import { HERO_BACKGROUND_IMAGE, HERO_MOBILE_BACKGROUND_IMAGE, imageUrl } from './image-url'
 
 export default function Hero() {
   return (
     <section className='relative isolate min-h-screen overflow-hidden bg-bg flex flex-col items-center justify-center text-center px-6 pt-20'>
       <picture className='absolute inset-0 -z-20 block'>
-        <source media='(max-width: 767px)' srcSet={imageUrl('bg-mobile.jpg')} />
+        <source media='(max-width: 767px)' srcSet={HERO_MOBILE_BACKGROUND_IMAGE} />
         <img
-          src={imageUrl('main-bg.jpg')}
+          src={HERO_BACKGROUND_IMAGE}
           alt=''
           className='block h-full w-full object-cover object-left md:object-center'
         />
