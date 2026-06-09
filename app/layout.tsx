@@ -1,94 +1,91 @@
-import type { Metadata } from "next";
-import { Bodoni_Moda, Jost } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Bodoni_Moda, Jost } from 'next/font/google'
+import './globals.css'
 
 const bodoniModa = Bodoni_Moda({
-  subsets: ["latin"],
-  variable: "--font-bodoni-moda",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
+  subsets: ['latin'],
+  variable: '--font-bodoni-moda',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+})
 
 const jost = Jost({
-  subsets: ["latin"],
-  variable: "--font-jost",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
+  subsets: ['latin'],
+  variable: '--font-jost',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
+})
 
 export const metadata: Metadata = {
-  title: "Alex Photos | Directeur Artistique & Photographe",
+  title: 'Alex Photos | Directeur Artistique & Photographe',
   description:
-    "Alexis Kodzaga — Directeur Artistique, Photographe et Vidéaste. Shootings photo professionnels : portrait, lifestyle, contrasté cinématographique. Réservez votre séance.",
+    'Alexis Kodzaga — Directeur Artistique, Photographe et Vidéaste. Shootings photo professionnels : portrait, lifestyle, contrasté cinématographique. Réservez votre séance.',
   keywords: [
-    "photographe",
-    "directeur artistique",
-    "shooting photo",
-    "portrait",
-    "lifestyle",
-    "cinématographique",
-    "Alexis Kodzaga",
-    "Alex Photos",
+    'photographe',
+    'directeur artistique',
+    'shooting photo',
+    'portrait',
+    'lifestyle',
+    'cinématographique',
+    'Alexis Kodzaga',
+    'Alex Photos',
   ],
-  authors: [{ name: "Alexis Kodzaga" }],
-  creator: "Alexis Kodzaga",
+  authors: [{ name: 'Alexis Kodzaga' }],
+  creator: 'Alexis Kodzaga',
   openGraph: {
-    title: "Alex Photos | Directeur Artistique & Photographe",
+    title: 'Alex Photos | Directeur Artistique & Photographe',
     description:
-      "Shootings photo professionnels : portrait, lifestyle, contrasté cinématographique.",
-    url: "https://alex-photos.fr",
-    siteName: "Alex Photos",
-    locale: "fr_FR",
-    type: "website",
+      'Shootings photo professionnels : portrait, lifestyle, contrasté cinématographique.',
+    url: 'https://al3x-photos.fr',
+    siteName: 'Alex Photos',
+    locale: 'fr_FR',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Alex Photos | Directeur Artistique & Photographe",
+    card: 'summary_large_image',
+    title: 'Alex Photos | Directeur Artistique & Photographe',
     description:
-      "Shootings photo professionnels : portrait, lifestyle, contrasté cinématographique.",
+      'Shootings photo professionnels : portrait, lifestyle, contrasté cinématographique.',
   },
   robots: {
     index: true,
     follow: true,
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${bodoniModa.variable} ${jost.variable}`}>
+    <html lang='fr' className={`${bodoniModa.variable} ${jost.variable}`}>
       <head>
-        <meta name="theme-color" content="#C9A84C" />
+        <meta name='theme-color' content='#C9A84C' />
         <script
-          type="application/ld+json"
+          type='application/ld+json'
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              name: "Alex Photos",
+              '@context': 'https://schema.org',
+              '@type': 'ProfessionalService',
+              name: 'Alex Photos',
               description:
-                "Directeur Artistique, Photographe et Vidéaste — Shootings professionnels",
-              url: "https://alex-photos.fr",
-              priceRange: "€€",
+                'Directeur Artistique, Photographe et Vidéaste — Shootings professionnels',
+              url: 'https://al3x-photos.fr',
+              priceRange: '€€',
               address: {
-                "@type": "PostalAddress",
-                addressCountry: "FR",
+                '@type': 'PostalAddress',
+                addressCountry: 'FR',
               },
-              sameAs: [
-                "https://instagram.com/al3xis.kdz",
-                "https://tiktok.com/@al3xis.kdz",
-              ],
+              sameAs: ['https://instagram.com/al3xis.kdz', 'https://tiktok.com/@al3xis.kdz'],
             }),
           }}
         />
       </head>
-      <body className="bg-bg text-cream font-body antialiased">
-        <main className="relative overflow-x-hidden">{children}</main>
+      <body className='bg-bg text-cream font-body antialiased'>
+        <main className='relative overflow-x-hidden'>{children}</main>
       </body>
     </html>
-  );
+  )
 }
