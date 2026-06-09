@@ -79,8 +79,8 @@ export default function RootLayout({
                 addressCountry: "FR",
               },
               sameAs: [
-                "https://instagram.com/alex.photos",
-                "https://tiktok.com/@alex.photos",
+                "https://instagram.com/al3xis.kdz",
+                "https://tiktok.com/@al3xis.kdz",
               ],
             }),
           }}

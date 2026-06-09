@@ -175,7 +175,7 @@ export default function Portfolio() {
       <div className="text-center mt-10">
         <ScrollReveal>
           <a
-            href="https://instagram.com/alex.photos"
+            href="https://instagram.com/al3xis.kdz"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 font-body text-[11px] tracking-[0.3em] uppercase text-gold/45 hover:text-gold transition-colors duration-300 cursor-pointer"
