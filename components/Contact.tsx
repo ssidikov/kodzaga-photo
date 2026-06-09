@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, type FormEvent } from "react";
+import { useState, useEffect, useRef, type FormEvent } from "react";
 import { User, Mail, Phone, MapPin, Calendar, MessageSquare, Send } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
@@ -23,6 +23,7 @@ const OPTIONS = [
 ];
 
 export default function Contact() {
+  const dateRef = useRef<HTMLInputElement>(null);
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [prestation, setPrestation] = useState("");
@@ -202,16 +203,18 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="contact-date"
-                  className="flex items-center gap-2 font-body text-[11px] tracking-[0.15em] uppercase text-cream/40 mb-3"
+                  className="flex items-center gap-2 font-body text-[11px] tracking-[0.15em] uppercase text-cream/40 mb-3 cursor-pointer"
                 >
                   <Calendar className="w-3.5 h-3.5 text-gold/40" />
                   Date souhaitée
                 </label>
                 <input
+                  ref={dateRef}
                   type="date"
                   id="contact-date"
                   name="date"
-                  className="form-input"
+                  className="form-input date-input"
+                  onClick={() => dateRef.current?.showPicker()}
                 />
               </div>
               <div>
@@ -226,7 +229,7 @@ export default function Contact() {
                   type="text"
                   id="contact-lieu"
                   name="lieu"
-                  placeholder="Paris, Studio, Extérieur..."
+                  placeholder="Paris Bordeaux Toulouse..."
                   className="form-input"
                 />
               </div>

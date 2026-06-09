@@ -27,8 +27,8 @@ const SOLO_PACKS = [
     icon: Camera,
     title: "Pack Premium",
     price: "215 €",
-    features: ["2h de shooting", "30 photos retouchées"],
-    notes: ["Plusieurs tenues", "Plusieurs lieux"],
+    features: ["2h de shooting", "30 photos retouchées", "Plusieurs tenues", "Plusieurs lieux"],
+    notes: ["GO pour un city tour !"],
     highlighted: true,
     badge: "Le plus demandé",
   },
@@ -56,7 +56,7 @@ const GROUPE_PACKS = [
     title: "Pack TRIO",
     price: "295 €",
     features: ["3h de shooting", "Photos / Vidéos"],
-    notes: ["Boys Band !", "Spice Girls !"],
+    notes: ["Boys Band & Spice Girls !"],
     highlighted: true,
     badge: "Le plus demandé",
   },
@@ -92,7 +92,7 @@ const AUTRES_PACKS = [
       "Durée et contenu adaptés",
       "Studio équipé",
     ],
-    notes: ["Boys Band !", "Spice Girls !"],
+    notes: ["Un travail d'équipe !"],
     highlighted: false,
   },
   {
@@ -274,13 +274,13 @@ export default function Pricing() {
         <div className="text-center mb-20">
           <ScrollReveal>
             <p className="font-body text-[10px] tracking-[0.5em] uppercase text-gold/45 mb-4">
-              Investissement
+              Shootings Photos
             </p>
             <h2 className="font-heading text-4xl md:text-5xl font-light mb-5">
               Les <em className="gold-text">prestations</em>
             </h2>
             <p className="font-body text-cream/30 text-sm font-light">
-              Shootings Photo Pro — Extérieur — Intérieur
+              Extérieur - Intérieur - Studio
             </p>
           </ScrollReveal>
         </div>
