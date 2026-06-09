@@ -11,24 +11,24 @@ const transporter = nodemailer.createTransport({
 });
 
 const STYLE = `
-  body { margin:0; padding:0; background-color:#0A0A0A; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#DBD5CD; }
-  .container { max-width:560px; margin:0 auto; background-color:#0F0F0F; }
-  .header { padding:56px 44px 40px; text-align:center; border-bottom:1px solid rgba(201,168,76,0.07); }
-  .logo { font-size:18px; font-weight:300; letter-spacing:0.32em; color:#C9A84C; text-transform:uppercase; }
+  body { margin:0; padding:0; background:radial-gradient(ellipse at 50% 0%,rgba(255,152,108,0.18) 0%,rgba(255,195,155,0.06) 40%,#FCFCFC 70%),#FCFCFC; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#2A2A2A; }
+  .container { max-width:560px; margin:0 auto; background-color:#FFFFFF; }
+  .header { padding:56px 44px 40px; text-align:center; border-bottom:1px solid #ECE5D8; }
+  .logo { font-size:18px; font-weight:400; letter-spacing:0.32em; color:#8B6914; text-transform:uppercase; }
   .content { padding:44px; }
-  .title { font-size:24px; font-weight:300; color:#C9A84C; margin:0 0 10px; line-height:1.25; letter-spacing:-0.01em; }
-  .subtitle { font-size:14px; color:rgba(219,213,205,0.42); line-height:1.65; margin:0 0 36px; }
-  .card { background-color:#141414; border:1px solid rgba(201,168,76,0.07); padding:32px; margin-bottom:36px; }
-  .card-title { font-size:10px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(201,168,76,0.48); margin:0 0 22px; }
+  .title { font-size:24px; font-weight:400; color:#1A1A1A; margin:0 0 10px; line-height:1.25; letter-spacing:-0.01em; }
+  .subtitle { font-size:14px; color:#6B6B6B; line-height:1.65; margin:0 0 36px; }
+  .card { background-color:#F8F7F5; border:1px solid #EBE5D8; padding:32px; margin-bottom:36px; }
+  .card-title { font-size:10px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#8B6914; margin:0 0 22px; }
   .field { margin-bottom:16px; }
   .field:last-child { margin-bottom:0; }
-  .field-label { font-size:9px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:rgba(219,213,205,0.28); margin-bottom:5px; }
-  .field-value { font-size:14px; color:rgba(219,213,205,0.72); line-height:1.6; }
-  .field-value a { color:rgba(201,168,76,0.55); text-decoration:none; }
-  .btn { display:inline-block; padding:15px 40px; background-color:transparent; border:1px solid rgba(201,168,76,0.22); color:#C9A84C; text-decoration:none; font-size:11px; font-weight:400; letter-spacing:0.16em; text-transform:uppercase; text-align:center; }
-  .footer { padding:36px 44px; text-align:center; border-top:1px solid rgba(201,168,76,0.06); }
-  .footer-text { font-size:10px; color:rgba(219,213,205,0.20); letter-spacing:0.08em; line-height:1.9; }
-  .footer-link { color:rgba(201,168,76,0.35); text-decoration:none; }
+  .field-label { font-size:9px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:#8A8A8A; margin-bottom:5px; }
+  .field-value { font-size:14px; color:#2A2A2A; line-height:1.6; }
+  .field-value a { color:#8B6914; text-decoration:none; }
+  .btn { display:inline-block; padding:15px 40px; background-color:#C9A84C; border:1px solid #C9A84C; color:#FFFFFF; text-decoration:none; font-size:11px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; text-align:center; }
+  .footer { padding:36px 44px; text-align:center; border-top:1px solid #ECE5D8; }
+  .footer-text { font-size:10px; color:#9A9A9A; letter-spacing:0.08em; line-height:1.9; }
+  .footer-link { color:#8B6914; text-decoration:none; }
 `;
 
 export interface ContactFormData {
