@@ -27,7 +27,9 @@ function TikTokIcon({ className = 'w-4 h-4' }: { className?: string }) {
 
 export default function About() {
   return (
-    <section id='about' className='section-bg scroll-mt-[68px] py-32 px-6 md:px-14 max-w-7xl mx-auto'>
+    <section
+      id='about'
+      className='section-bg scroll-mt-[68px] py-32 px-6 md:px-14 max-w-7xl mx-auto'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-28 items-center'>
         {/* Portrait photo */}
         <ScrollReveal>
@@ -61,12 +63,12 @@ export default function About() {
             <div className='w-8 gold-divider mb-8 opacity-50' />
 
             <p className='font-body text-cream/50 text-[14.5px] leading-[1.9] font-light mb-5'>
-              Passionné par l&apos;image cinématographique, j&apos;utilise le contraste pour capturer ce
-              qui vous rend unique.
+              Passionné par l&apos;image cinématographique, j&apos;utilise le contraste pour
+              capturer ce qui vous rend unique.
             </p>
             <p className='font-body text-cream/50 text-[14.5px] leading-[1.9] font-light mb-10'>
-              Avec 3 ans d&apos;expérience dans l&apos;audiovisuel, la réalisation de courts-métrages et
-              une spécialisation en portraits lifestyle et shootings contrastés.
+              Avec 3 ans d&apos;expérience dans l&apos;audiovisuel, la réalisation de
+              courts-métrages et une spécialisation en portraits lifestyle et shootings contrastés.
             </p>
 
             {/* Stats */}
