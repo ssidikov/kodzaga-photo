@@ -11,23 +11,24 @@ const transporter = nodemailer.createTransport({
 });
 
 const STYLE = `
-  body { margin:0; padding:0; background-color:#0A0A0A; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; color:#E5E0D8; }
-  .container { max-width:600px; margin:0 auto; background-color:#0F0F0F; }
-  .header { padding:48px 40px 32px; text-align:center; border-bottom:1px solid rgba(201,168,76,0.08); }
-  .logo { font-family:Georgia,'Times New Roman',serif; font-size:20px; letter-spacing:0.3em; color:#C9A84C; text-transform:uppercase; }
-  .content { padding:40px; }
-  .title { font-family:Georgia,'Times New Roman',serif; font-size:22px; font-weight:400; color:#C9A84C; margin:0 0 12px; line-height:1.3; }
-  .subtitle { font-size:13px; color:rgba(229,224,216,0.35); line-height:1.6; margin:0 0 32px; }
-  .card { background-color:#141414; border:1px solid rgba(201,168,76,0.06); padding:28px; margin-bottom:32px; }
-  .card-title { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(201,168,76,0.5); margin:0 0 20px; }
-  .field { margin-bottom:14px; }
+  body { margin:0; padding:0; background-color:#0A0A0A; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#DBD5CD; }
+  .container { max-width:560px; margin:0 auto; background-color:#0F0F0F; }
+  .header { padding:56px 44px 40px; text-align:center; border-bottom:1px solid rgba(201,168,76,0.07); }
+  .logo { font-size:18px; font-weight:300; letter-spacing:0.32em; color:#C9A84C; text-transform:uppercase; }
+  .content { padding:44px; }
+  .title { font-size:24px; font-weight:300; color:#C9A84C; margin:0 0 10px; line-height:1.25; letter-spacing:-0.01em; }
+  .subtitle { font-size:14px; color:rgba(219,213,205,0.42); line-height:1.65; margin:0 0 36px; }
+  .card { background-color:#141414; border:1px solid rgba(201,168,76,0.07); padding:32px; margin-bottom:36px; }
+  .card-title { font-size:10px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(201,168,76,0.48); margin:0 0 22px; }
+  .field { margin-bottom:16px; }
   .field:last-child { margin-bottom:0; }
-  .field-label { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(229,224,216,0.25); margin-bottom:4px; }
-  .field-value { font-size:14px; color:rgba(229,224,216,0.65); line-height:1.5; }
-  .btn { display:inline-block; padding:14px 36px; background-color:transparent; border:1px solid rgba(201,168,76,0.3); color:#C9A84C; text-decoration:none; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; text-align:center; }
-  .footer { padding:32px 40px; text-align:center; border-top:1px solid rgba(201,168,76,0.06); }
-  .footer-text { font-size:10px; color:rgba(229,224,216,0.18); letter-spacing:0.1em; line-height:1.8; }
-  .footer-link { color:rgba(201,168,76,0.4); text-decoration:none; }
+  .field-label { font-size:9px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:rgba(219,213,205,0.28); margin-bottom:5px; }
+  .field-value { font-size:14px; color:rgba(219,213,205,0.72); line-height:1.6; }
+  .field-value a { color:rgba(201,168,76,0.55); text-decoration:none; }
+  .btn { display:inline-block; padding:15px 40px; background-color:transparent; border:1px solid rgba(201,168,76,0.22); color:#C9A84C; text-decoration:none; font-size:11px; font-weight:400; letter-spacing:0.16em; text-transform:uppercase; text-align:center; }
+  .footer { padding:36px 44px; text-align:center; border-top:1px solid rgba(201,168,76,0.06); }
+  .footer-text { font-size:10px; color:rgba(219,213,205,0.20); letter-spacing:0.08em; line-height:1.9; }
+  .footer-link { color:rgba(201,168,76,0.35); text-decoration:none; }
 `;
 
 export interface ContactFormData {
@@ -65,7 +66,7 @@ function clientEmailHtml(data: ContactFormData): string {
   </div>
   <div class="footer">
     <p class="footer-text">
-      AL3X Photos &mdash; Photographe professionnel<br>
+      AL3X Photos &middot; Photographe professionnel<br>
       <a href="https://al3x-photos.fr" class="footer-link">al3x-photos.fr</a>
       &nbsp;&middot;&nbsp;
       <a href="mailto:al3x.photo.site@gmail.com" class="footer-link">al3x.photo.site@gmail.com</a>
@@ -77,6 +78,14 @@ function clientEmailHtml(data: ContactFormData): string {
 }
 
 function adminEmailHtml(data: ContactFormData): string {
+  const now = new Date().toLocaleDateString("fr-FR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   return `<!DOCTYPE html>
 <html lang="fr">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><style>${STYLE}</style></head>
@@ -87,11 +96,11 @@ function adminEmailHtml(data: ContactFormData): string {
   </div>
   <div class="content">
     <h1 class="title">Nouvelle demande de r&eacute;servation</h1>
-    <p class="subtitle">Re&ccedil;ue le ${new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" })}</p>
+    <p class="subtitle">Re&ccedil;ue le ${now}</p>
     <div class="card">
       <p class="card-title">Coordonn&eacute;es</p>
       <div class="field"><p class="field-label">Nom</p><p class="field-value">${data.name}</p></div>
-      <div class="field"><p class="field-label">Email</p><p class="field-value"><a href="mailto:${data.email}" style="color:rgba(201,168,76,0.6);text-decoration:none;">${data.email}</a></p></div>
+      <div class="field"><p class="field-label">Email</p><p class="field-value"><a href="mailto:${data.email}">${data.email}</a></p></div>
       ${data.phone ? `<div class="field"><p class="field-label">T&eacute;l&eacute;phone</p><p class="field-value">${data.phone}</p></div>` : ""}
     </div>
     <div class="card">
@@ -106,7 +115,7 @@ function adminEmailHtml(data: ContactFormData): string {
   </div>
   <div class="footer">
     <p class="footer-text">
-      AL3X Photos &mdash; Notification automatique
+      AL3X Photos &middot; Notification automatique
     </p>
   </div>
 </div>
@@ -116,7 +125,20 @@ function adminEmailHtml(data: ContactFormData): string {
 
 function formatDate(dateStr: string): string {
   const [y, m, d] = dateStr.split("-");
-  const months = ["janvier", "f&eacute;vrier", "mars", "avril", "mai", "juin", "juillet", "ao&ucirc;t", "septembre", "octobre", "novembre", "d&eacute;cembre"];
+  const months = [
+    "janvier",
+    "f&eacute;vrier",
+    "mars",
+    "avril",
+    "mai",
+    "juin",
+    "juillet",
+    "ao&ucirc;t",
+    "septembre",
+    "octobre",
+    "novembre",
+    "d&eacute;cembre",
+  ];
   return `${parseInt(d)} ${months[parseInt(m) - 1]} ${y}`;
 }
 
@@ -124,7 +146,7 @@ export async function sendClientConfirmation(data: ContactFormData) {
   return transporter.sendMail({
     from: `"AL3X Photos" <${process.env.SMTP_USER}>`,
     to: data.email,
-    subject: `Confirmation de votre demande — AL3X Photos`,
+    subject: `Confirmation de votre demande · AL3X Photos`,
     html: clientEmailHtml(data),
   });
 }
@@ -134,7 +156,7 @@ export async function sendAdminNotification(data: ContactFormData) {
     from: `"Formulaire AL3X" <${process.env.SMTP_USER}>`,
     to: process.env.ADMIN_EMAIL!,
     replyTo: data.email,
-    subject: `Nouvelle demande — ${data.name} (${data.prestation})`,
+    subject: `Nouvelle demande · ${data.name} (${data.prestation})`,
     html: adminEmailHtml(data),
   });
 }
