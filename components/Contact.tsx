@@ -69,8 +69,13 @@ export default function Contact() {
     e.preventDefault();
     setSending(true);
 
-    // Simulate form submission — replace with Formspree or actual backend
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const formData = new FormData(e.currentTarget);
+    const res = await fetch("/api/contact", { method: "POST", body: formData });
+
+    if (!res.ok) {
+      setSending(false);
+      return;
+    }
 
     setSending(false);
     setSubmitted(true);
