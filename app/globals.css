@@ -118,6 +118,32 @@
   }
 }
 
+@keyframes hero-spark-drift {
+  0%, 100% {
+    opacity: 0.68;
+    transform: translate3d(0, 0, 0) rotate(0.001deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(3px, -4px, 0) rotate(0.001deg);
+  }
+}
+
+@keyframes hero-spark-twinkle {
+  0%, 100% {
+    opacity: 0.62;
+    transform: translate3d(0, 0, 0) scale(0.98);
+  }
+  45% {
+    opacity: 1;
+    transform: translate3d(1px, -1px, 0) scale(1.04);
+  }
+  72% {
+    opacity: 0.76;
+    transform: translate3d(-1px, 1px, 0) scale(1);
+  }
+}
+
 /* ═══════════════════════════════════════════════
    BASE STYLES
    ═══════════════════════════════════════════════ */
@@ -165,6 +191,97 @@ body {
 /* ═══════════════════════════════════════════════
    CUSTOM UTILITIES
    ═══════════════════════════════════════════════ */
+
+.hero-left-sparks {
+  position: absolute;
+  z-index: 1;
+  top: 8%;
+  left: max(-32px, -2vw);
+  width: clamp(360px, 52vw, 780px);
+  height: min(82vh, 760px);
+  pointer-events: none;
+  opacity: 0.95;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 11px rgba(232, 212, 139, 0.34));
+  background-repeat: no-repeat;
+  background-image:
+    radial-gradient(ellipse at 36% 50%, rgba(201, 168, 76, 0.16) 0%, transparent 56%),
+    radial-gradient(circle at 10% 22%, rgba(232, 212, 139, 0.95) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 16% 48%, rgba(201, 168, 76, 0.78) 0 1.9px, transparent 3.5px),
+    radial-gradient(circle at 22% 71%, rgba(240, 236, 227, 0.66) 0 1.4px, transparent 3px),
+    radial-gradient(circle at 31% 16%, rgba(232, 212, 139, 0.82) 0 1.7px, transparent 3.3px),
+    radial-gradient(circle at 37% 58%, rgba(201, 168, 76, 0.86) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 47% 33%, rgba(232, 212, 139, 0.72) 0 2px, transparent 3.8px),
+    radial-gradient(circle at 57% 82%, rgba(201, 168, 76, 0.66) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 68% 42%, rgba(240, 236, 227, 0.52) 0 1.4px, transparent 3px),
+    radial-gradient(circle at 76% 28%, rgba(232, 212, 139, 0.62) 0 1.2px, transparent 2.8px),
+    radial-gradient(circle at 84% 62%, rgba(201, 168, 76, 0.74) 0 1.8px, transparent 3.5px),
+    radial-gradient(circle at 91% 44%, rgba(232, 212, 139, 0.58) 0 1.3px, transparent 3px);
+  mask-image: radial-gradient(ellipse at 36% 46%, #000 0%, #000 64%, transparent 88%);
+  -webkit-mask-image: radial-gradient(ellipse at 36% 46%, #000 0%, #000 64%, transparent 88%);
+  animation: hero-spark-drift 7.2s ease-in-out infinite;
+}
+
+.hero-left-sparks::before,
+.hero-left-sparks::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+}
+
+.hero-left-sparks::before {
+  opacity: 0.86;
+  background-image:
+    radial-gradient(circle, rgba(232, 212, 139, 0.58) 0 1px, transparent 2.2px),
+    radial-gradient(circle, rgba(201, 168, 76, 0.4) 0 1.4px, transparent 3px),
+    radial-gradient(circle, rgba(240, 236, 227, 0.32) 0 0.8px, transparent 2px),
+    radial-gradient(circle at 7% 58%, rgba(232, 212, 139, 0.98) 0 2px, transparent 3.7px),
+    radial-gradient(circle at 21% 31%, rgba(240, 236, 227, 0.78) 0 1.4px, transparent 3px),
+    radial-gradient(circle at 44% 74%, rgba(232, 212, 139, 0.86) 0 1.7px, transparent 3.4px),
+    radial-gradient(circle at 61% 17%, rgba(201, 168, 76, 0.68) 0 1.4px, transparent 3px),
+    radial-gradient(circle at 79% 52%, rgba(232, 212, 139, 0.58) 0 1.2px, transparent 2.8px);
+  background-size:
+    34px 47px,
+    57px 73px,
+    23px 31px,
+    auto,
+    auto,
+    auto,
+    auto,
+    auto;
+  background-position:
+    6px 12px,
+    19px 3px,
+    2px 8px,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0;
+  animation: hero-spark-twinkle 4.8s ease-in-out infinite;
+}
+
+.hero-left-sparks::after {
+  opacity: 0.54;
+  background-image:
+    radial-gradient(circle at 15% 13%, rgba(201, 168, 76, 0.98) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 29% 86%, rgba(232, 212, 139, 0.76) 0 1.4px, transparent 3px),
+    radial-gradient(circle at 52% 51%, rgba(240, 236, 227, 0.52) 0 1.3px, transparent 2.8px),
+    radial-gradient(circle at 83% 66%, rgba(232, 212, 139, 0.68) 0 1.7px, transparent 3.4px);
+  animation: hero-spark-drift 9.4s ease-in-out infinite reverse;
+}
+
+@media (max-width: 767px) {
+  .hero-left-sparks {
+    top: 18%;
+    left: -10vw;
+    width: 96vw;
+    height: 54vh;
+    opacity: 0.72;
+  }
+}
 
 /* Gold shimmer text */
 .gold-shimmer {
@@ -427,6 +544,9 @@ body {
   .btn-gold::after,
   .price-card a[href="#contact"]::before,
   .price-card a[href="#contact"]::after,
+  .hero-left-sparks,
+  .hero-left-sparks::before,
+  .hero-left-sparks::after,
   .gold-shimmer::before,
   .gold-shimmer::after,
   .gold-text::before,
@@ -434,6 +554,18 @@ body {
     animation: none;
     opacity: 0.34;
     transform: none;
+  }
+
+  .hero-left-sparks {
+    opacity: 0.78;
+  }
+
+  .hero-left-sparks::before {
+    opacity: 0.72;
+  }
+
+  .hero-left-sparks::after {
+    opacity: 0.48;
   }
 
   .reveal-element {

@@ -17,7 +17,7 @@ export default function Hero() {
       <div className='absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(6,8,15,0.12)_0%,rgba(6,8,15,0.66)_82%)]' />
 
       {/* Background effects */}
-      <div className='absolute inset-0 pointer-events-none overflow-hidden'>
+      <div className='absolute inset-0 -z-[5] pointer-events-none overflow-hidden'>
         {/* Radial gold glow */}
         <div
           className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full'
@@ -32,6 +32,7 @@ export default function Hero() {
             background: 'radial-gradient(circle, rgba(46,92,154,0.06) 0%, transparent 70%)',
           }}
         />
+        <div className='hero-left-sparks' aria-hidden='true' />
         {/* Top line */}
         <div className='absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent' />
       </div>
@@ -51,7 +52,7 @@ export default function Hero() {
 
       {/* Eyebrow */}
       <p
-        className='font-body text-[10px] tracking-[0.6em] uppercase text-gold/55 mb-8 animate-slide-up'
+        className='font-body max-w-[min(100%,28rem)] text-[9px] sm:text-[10px] leading-[2.2] tracking-[0.34em] sm:tracking-[0.48em] md:tracking-[0.6em] uppercase text-gold/55 mb-8 animate-slide-up [text-wrap:balance]'
         style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}>
         Directeur Artistique · Photographe · Vidéaste
       </p>
@@ -78,7 +79,7 @@ export default function Hero() {
 
       {/* Subtitle */}
       <p
-        className='font-body text-cream/45 font-light text-[15px] md:text-base leading-[1.9] max-w-lg mb-12 animate-slide-up'
+        className='font-body text-cream/45 font-light text-sm md:text-base leading-[1.9] w-full max-w-[20rem] md:max-w-lg mb-12 animate-slide-up'
         style={{ animationDelay: '0.7s', animationFillMode: 'backwards' }}>
         Portrait Lifestyle et contrasté cinématographique.
         <br />

@@ -36,10 +36,11 @@ export default function About() {
           <div className='relative'>
             <div className='relative overflow-hidden bg-surface w-full aspect-[3/4]'>
               <Image
-                src='/images/alexis-kodzaga.jpg'
+                src='/images/alexis-kodzaga-about.webp'
                 alt='Alexis Kodzaga'
                 fill
-                sizes='(max-width: 768px) 100vw, 50vw'
+                sizes='(max-width: 767px) calc(100vw - 48px), (max-width: 1279px) calc((100vw - 112px) / 2), 560px'
+                quality={100}
                 className='object-cover'
               />
             </div>
