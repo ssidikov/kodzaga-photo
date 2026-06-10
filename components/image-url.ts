@@ -6,4 +6,4 @@ export function imageUrl(fileName: string) {
 }
 
 export const HERO_BACKGROUND_IMAGE = imageUrl("main-bg.jpg");
-export const HERO_MOBILE_BACKGROUND_IMAGE = imageUrl("bg-mobile.jpg");
+export const HERO_MOBILE_BACKGROUND_IMAGE = imageUrl("bg-mobile.webp");
