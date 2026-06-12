@@ -580,6 +580,18 @@ select.form-input:invalid {
 }
 
 /* ═══════════════════════════════════════════════
+   RESPONSIVE SCROLL SPEEDS
+   ═══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 30s;
+  }
+  .animate-marquee-reverse {
+    animation-duration: 35s;
+  }
+}
+
+/* ═══════════════════════════════════════════════
    ACCESSIBILITY — Reduced Motion
    ═══════════════════════════════════════════════ */
 
