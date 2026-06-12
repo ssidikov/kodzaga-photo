@@ -23,8 +23,8 @@
   --font-body: var(--font-jost), 'Jost', sans-serif;
 
   /* Animations */
-  --animate-marquee: marquee 100s linear infinite;
-  --animate-marquee-reverse: marquee 120s linear infinite reverse;
+  --animate-marquee: marquee 60s linear infinite;
+  --animate-marquee-reverse: marquee 70s linear infinite reverse;
   --animate-shimmer: shimmer 4s linear infinite;
   --animate-scroll-line: scroll-line 2s ease-in-out infinite;
   --animate-float: float 6s ease-in-out infinite;
