@@ -106,9 +106,120 @@ function GalleryImage({
   );
 }
 
+function useMobileMarquee(
+  ref: React.RefObject<HTMLDivElement | null>,
+  speed: number,
+  direction: "left" | "right",
+  enabled: boolean
+) {
+  useEffect(() => {
+    if (!enabled) return;
+
+    const container = ref.current;
+    if (!container) return;
+
+    let animationFrameId: number;
+    let isInteracting = false;
+    let lastTime = performance.now();
+    let timeoutId: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      const halfWidth = container.scrollWidth / 2;
+      if (halfWidth <= 0) return;
+
+      if (container.scrollLeft >= halfWidth) {
+        container.scrollLeft -= halfWidth;
+      } else if (container.scrollLeft <= 0) {
+        container.scrollLeft += halfWidth;
+      }
+    };
+
+    const handleTouchStart = () => {
+      isInteracting = true;
+      clearTimeout(timeoutId);
+    };
+
+    const handleTouchEnd = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        isInteracting = false;
+        lastTime = performance.now();
+      }, 1000);
+    };
+
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    container.addEventListener("touchstart", handleTouchStart, { passive: true });
+    container.addEventListener("touchend", handleTouchEnd, { passive: true });
+    container.addEventListener("mousedown", handleTouchStart, { passive: true });
+    container.addEventListener("mouseup", handleTouchEnd, { passive: true });
+
+    // Initial position wrapper
+    const halfWidth = container.scrollWidth / 2;
+    if (direction === "right" && container.scrollLeft === 0 && halfWidth > 0) {
+      container.scrollLeft = halfWidth;
+    }
+
+    const step = (time: number) => {
+      if (!isInteracting) {
+        const delta = (time - lastTime) / 1000;
+        const dirMultiplier = direction === "left" ? 1 : -1;
+        container.scrollLeft += speed * delta * dirMultiplier;
+
+        // Double check wrap inside animation frame
+        const currentHalfWidth = container.scrollWidth / 2;
+        if (currentHalfWidth > 0) {
+          if (container.scrollLeft >= currentHalfWidth) {
+            container.scrollLeft -= currentHalfWidth;
+          } else if (container.scrollLeft <= 0) {
+            container.scrollLeft += currentHalfWidth;
+          }
+        }
+      }
+      lastTime = time;
+      animationFrameId = requestAnimationFrame(step);
+    };
+
+    const startTimeout = setTimeout(() => {
+      const currentHalfWidth = container.scrollWidth / 2;
+      if (direction === "right" && container.scrollLeft === 0 && currentHalfWidth > 0) {
+        container.scrollLeft = currentHalfWidth;
+      }
+      lastTime = performance.now();
+      animationFrameId = requestAnimationFrame(step);
+    }, 100);
+
+    return () => {
+      clearTimeout(startTimeout);
+      clearTimeout(timeoutId);
+      cancelAnimationFrame(animationFrameId);
+      container.removeEventListener("scroll", handleScroll);
+      container.removeEventListener("touchstart", handleTouchStart);
+      container.removeEventListener("touchend", handleTouchEnd);
+      container.removeEventListener("mousedown", handleTouchStart);
+      container.removeEventListener("mouseup", handleTouchEnd);
+    };
+  }, [ref, speed, direction, enabled]);
+}
+
 export default function Portfolio() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const row1Ref = useRef<HTMLDivElement>(null);
+  const row2Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useMobileMarquee(row1Ref, 140, "left", isMobile);
+  useMobileMarquee(row2Ref, 160, "right", isMobile);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -147,7 +258,10 @@ export default function Portfolio() {
 
       {/* Row 1 — scrolls left */}
       <div className="relative mb-5 overflow-hidden">
-        <div className="flex animate-marquee">
+        <div
+          ref={row1Ref}
+          className="flex w-full overflow-x-auto scrollbar-none md:w-max md:overflow-x-visible md:animate-marquee"
+        >
           {row1.map((src) => (
             <GalleryImage key={`r1-a-${src}`} src={src} alt={src.replace(".webp", "")} size="lg" visible={visible} />
           ))}
@@ -161,7 +275,10 @@ export default function Portfolio() {
 
       {/* Row 2 — scrolls right */}
       <div className="relative overflow-hidden">
-        <div className="flex animate-marquee-reverse">
+        <div
+          ref={row2Ref}
+          className="flex w-full overflow-x-auto scrollbar-none md:w-max md:overflow-x-visible md:animate-marquee-reverse"
+        >
           {row2.map((src) => (
             <GalleryImage key={`r2-a-${src}`} src={src} alt={src.replace(".webp", "")} size="sm" visible={visible} />
           ))}
@@ -189,3 +306,4 @@ export default function Portfolio() {
     </section>
   );
 }
+
