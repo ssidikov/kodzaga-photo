@@ -17,6 +17,8 @@ const DUMMY_PASSWORD_HASH =
   "$2a$12$.Fzs3ZykUHx75wH.ghRw/OMPJ0lcJ5z0qqQsjpppsL/pjQWE/biEm";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  secret: process.env.AUTH_SECRET ?? process.env.NEXTAUTH_SECRET,
+  trustHost: true,
   providers: [
     Credentials({
       async authorize(credentials) {
