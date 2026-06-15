@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-import { useTransition, useState, useEffect } from "react";
+import { useTransition } from "react";
 import { Search, X } from "lucide-react";
 
 const STATUSES = [
@@ -23,10 +23,6 @@ export default function ReservationsFilter({
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
-  const [q, setQ] = useState(initialQ);
-
-  // Sync external changes
-  useEffect(() => { setQ(initialQ); }, [initialQ]);
 
   function navigate(nextQ: string, nextStatus: string) {
     const params = new URLSearchParams();
@@ -39,7 +35,8 @@ export default function ReservationsFilter({
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
-    navigate(q, initialStatus);
+    const formData = new FormData(e.currentTarget as HTMLFormElement);
+    navigate(String(formData.get("q") ?? ""), initialStatus);
   }
 
   function handleStatus(val: string) {
@@ -47,7 +44,6 @@ export default function ReservationsFilter({
   }
 
   function clearAll() {
-    setQ("");
     startTransition(() => router.push(pathname));
   }
 
@@ -56,17 +52,17 @@ export default function ReservationsFilter({
       {/* Search */}
       <form onSubmit={handleSearch} className="relative flex-1 max-w-sm">
         <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#f0ece3]/30 pointer-events-none" />
-        <input
-          type="text"
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
+          <input
+            type="text"
+            name="q"
+            defaultValue={initialQ}
           placeholder="Rechercher nom, email, prestation..."
           className="w-full h-9 pl-9 pr-8 rounded-lg border border-white/10 bg-white/5 text-sm text-[#f0ece3] placeholder:text-[#f0ece3]/25 focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/40 transition-colors"
         />
-        {q && (
+        {initialQ && (
           <button
             type="button"
-            onClick={() => { setQ(""); navigate("", initialStatus); }}
+            onClick={() => navigate("", initialStatus)}
             className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#f0ece3]/30 hover:text-[#f0ece3]/60"
           >
             <X size={13} />

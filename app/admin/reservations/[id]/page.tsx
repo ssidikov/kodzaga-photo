@@ -2,9 +2,10 @@ import { db } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
-import { auth } from "@/auth";
+import { requireAdminPage } from "@/lib/admin-auth";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { z } from "zod";
 import {
   updateReservationStatus,
   updateReservationNotes,
@@ -28,6 +29,7 @@ const STATUS_VARIANT: Record<string, StatusVariant> = {
   completed: "completed",
   cancelled: "cancelled",
 };
+const idSchema = z.string().uuid();
 
 function formatDate(d: Date | string | null) {
   if (!d) return "-";
@@ -46,12 +48,14 @@ interface PageProps {
 
 export default async function ReservationDetailPage({ params }: PageProps) {
   const { id } = await params;
-  await auth();
+  await requireAdminPage();
+  const parsedId = idSchema.safeParse(id);
+  if (!parsedId.success) notFound();
 
   const [reservation] = await db
     .select()
     .from(reservations)
-    .where(eq(reservations.id, id))
+    .where(eq(reservations.id, parsedId.data))
     .limit(1);
 
   if (!reservation) notFound();

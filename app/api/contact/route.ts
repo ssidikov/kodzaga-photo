@@ -3,6 +3,7 @@ import { sendClientConfirmation, sendAdminNotification, type ContactFormData } f
 import { db } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { z } from "zod";
+import { rateLimit } from "@/lib/rate-limit";
 
 const OPTION_LABELS: Record<string, string> = {
   express: "Livraison Express 24h (+20€)",
@@ -23,35 +24,32 @@ const PRESTATIONS = [
 ] as const;
 
 const formSchema = z.object({
-  name: z.string().min(1).max(200),
-  email: z.string().email().max(300),
-  phone: z.string().max(50).optional(),
+  name: z.string().trim().min(1).max(200),
+  email: z.string().trim().email().max(300),
+  phone: z.string().trim().max(50).optional(),
   prestation: z.enum(PRESTATIONS),
-  date: z.string().max(20).optional(),
-  lieu: z.string().max(300).optional(),
-  message: z.string().max(5000).optional(),
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+  lieu: z.string().trim().max(300).optional(),
+  message: z.string().trim().max(5000).optional(),
   honeypot: z.string().max(0).optional(),
 });
 
-// In-memory rate limiter: IP → [timestamps]
-const rateMap = new Map<string, number[]>();
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS = 3;
 
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const times = (rateMap.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
-  if (times.length >= MAX_REQUESTS) return true;
-  times.push(now);
-  rateMap.set(ip, times);
-  return false;
+function getClientIp(request: Request) {
+  return (
+    request.headers.get("x-real-ip") ??
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    "unknown"
+  );
 }
 
 export async function POST(request: Request) {
-  const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const ip = getClientIp(request);
 
-  if (isRateLimited(ip)) {
+  const limit = rateLimit(`contact:${ip}`, MAX_REQUESTS, WINDOW_MS);
+  if (!limit.allowed) {
     return NextResponse.json(
       { error: "Trop de demandes. Réessayez dans une minute." },
       { status: 429 }

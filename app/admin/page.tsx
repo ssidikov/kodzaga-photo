@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { desc, gte, sql } from "drizzle-orm";
-import { auth } from "@/auth";
+import { requireAdminPage } from "@/lib/admin-auth";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { CalendarDays, Users, TrendingUp, Clock, ArrowRight } from "lucide-react";
@@ -32,7 +32,7 @@ function formatDate(d: Date | string | null) {
 }
 
 export default async function AdminDashboard() {
-  const session = await auth();
+  const session = await requireAdminPage();
 
   // eslint-disable-next-line react-hooks/purity
   const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);

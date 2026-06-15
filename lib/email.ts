@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import nodemailer from "nodemailer9";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -43,6 +43,7 @@ export interface ContactFormData {
 }
 
 function clientEmailHtml(data: ContactFormData): string {
+  const safe = safeContactData(data);
   return `<!DOCTYPE html>
 <html lang="fr">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><style>${STYLE}</style></head>
@@ -53,14 +54,14 @@ function clientEmailHtml(data: ContactFormData): string {
   </div>
   <div class="content">
     <h1 class="title">Votre demande a bien &eacute;t&eacute; re&ccedil;ue</h1>
-    <p class="subtitle">Merci ${data.name}. Je vous r&eacute;pondrai dans un d&eacute;lai de 48 heures maximum.</p>
+    <p class="subtitle">Merci ${safe.name}. Je vous r&eacute;pondrai dans un d&eacute;lai de 48 heures maximum.</p>
     <div class="card">
       <p class="card-title">R&eacute;capitulatif de votre demande</p>
-      <div class="field"><p class="field-label">Prestation</p><p class="field-value">${data.prestation}</p></div>
+      <div class="field"><p class="field-label">Prestation</p><p class="field-value">${safe.prestation}</p></div>
       ${data.date ? `<div class="field"><p class="field-label">Date souhait&eacute;e</p><p class="field-value">${formatDate(data.date)}</p></div>` : ""}
-      ${data.lieu ? `<div class="field"><p class="field-label">Lieu</p><p class="field-value">${data.lieu}</p></div>` : ""}
-      ${data.options.length ? `<div class="field"><p class="field-label">Options</p><p class="field-value">${data.options.join(" &middot; ")}</p></div>` : ""}
-      ${data.message ? `<div class="field"><p class="field-label">Message</p><p class="field-value">${data.message}</p></div>` : ""}
+      ${safe.lieu ? `<div class="field"><p class="field-label">Lieu</p><p class="field-value">${safe.lieu}</p></div>` : ""}
+      ${safe.options.length ? `<div class="field"><p class="field-label">Options</p><p class="field-value">${safe.options.join(" &middot; ")}</p></div>` : ""}
+      ${safe.message ? `<div class="field"><p class="field-label">Message</p><p class="field-value">${safe.message}</p></div>` : ""}
     </div>
     <a href="https://al3x-photos.fr" class="btn">Visiter le site</a>
   </div>
@@ -78,6 +79,8 @@ function clientEmailHtml(data: ContactFormData): string {
 }
 
 function adminEmailHtml(data: ContactFormData): string {
+  const safe = safeContactData(data);
+  const replyHref = mailtoHref(data.email);
   const now = new Date().toLocaleDateString("fr-FR", {
     day: "numeric",
     month: "long",
@@ -99,19 +102,19 @@ function adminEmailHtml(data: ContactFormData): string {
     <p class="subtitle">Re&ccedil;ue le ${now}</p>
     <div class="card">
       <p class="card-title">Coordonn&eacute;es</p>
-      <div class="field"><p class="field-label">Nom</p><p class="field-value">${data.name}</p></div>
-      <div class="field"><p class="field-label">Email</p><p class="field-value"><a href="mailto:${data.email}">${data.email}</a></p></div>
-      ${data.phone ? `<div class="field"><p class="field-label">T&eacute;l&eacute;phone</p><p class="field-value">${data.phone}</p></div>` : ""}
+      <div class="field"><p class="field-label">Nom</p><p class="field-value">${safe.name}</p></div>
+      <div class="field"><p class="field-label">Email</p><p class="field-value"><a href="${replyHref}">${safe.email}</a></p></div>
+      ${safe.phone ? `<div class="field"><p class="field-label">T&eacute;l&eacute;phone</p><p class="field-value">${safe.phone}</p></div>` : ""}
     </div>
     <div class="card">
       <p class="card-title">D&eacute;tails de la prestation</p>
-      <div class="field"><p class="field-label">Prestation</p><p class="field-value">${data.prestation}</p></div>
+      <div class="field"><p class="field-label">Prestation</p><p class="field-value">${safe.prestation}</p></div>
       ${data.date ? `<div class="field"><p class="field-label">Date souhait&eacute;e</p><p class="field-value">${formatDate(data.date)}</p></div>` : ""}
-      ${data.lieu ? `<div class="field"><p class="field-label">Lieu</p><p class="field-value">${data.lieu}</p></div>` : ""}
-      ${data.options.length ? `<div class="field"><p class="field-label">Options</p><p class="field-value">${data.options.join(" &middot; ")}</p></div>` : ""}
-      ${data.message ? `<div class="field"><p class="field-label">Message</p><p class="field-value">${data.message}</p></div>` : ""}
+      ${safe.lieu ? `<div class="field"><p class="field-label">Lieu</p><p class="field-value">${safe.lieu}</p></div>` : ""}
+      ${safe.options.length ? `<div class="field"><p class="field-label">Options</p><p class="field-value">${safe.options.join(" &middot; ")}</p></div>` : ""}
+      ${safe.message ? `<div class="field"><p class="field-label">Message</p><p class="field-value">${safe.message}</p></div>` : ""}
     </div>
-    <a href="mailto:${data.email}" class="btn">R&eacute;pondre au client</a>
+    <a href="${replyHref}" class="btn">R&eacute;pondre au client</a>
   </div>
   <div class="footer">
     <p class="footer-text">
@@ -139,7 +142,37 @@ function formatDate(dateStr: string): string {
     "novembre",
     "d&eacute;cembre",
   ];
+  if (!y || !m || !d || !months[parseInt(m) - 1]) return escapeHtml(dateStr);
   return `${parseInt(d)} ${months[parseInt(m) - 1]} ${y}`;
+}
+
+function safeContactData(data: ContactFormData) {
+  return {
+    name: escapeHtml(data.name),
+    email: escapeHtml(data.email),
+    phone: escapeHtml(data.phone),
+    prestation: escapeHtml(data.prestation),
+    lieu: escapeHtml(data.lieu),
+    options: data.options.map(escapeHtml),
+    message: escapeHtml(data.message),
+  };
+}
+
+function mailtoHref(email: string) {
+  return `mailto:${encodeURIComponent(email)}`;
+}
+
+function cleanHeader(value: string) {
+  return value.replace(/[\r\n]+/g, " ").slice(0, 180);
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 export async function sendClientConfirmation(data: ContactFormData) {
@@ -156,7 +189,7 @@ export async function sendAdminNotification(data: ContactFormData) {
     from: `"Formulaire AL3X" <${process.env.SMTP_USER}>`,
     to: process.env.ADMIN_EMAIL!,
     replyTo: data.email,
-    subject: `Nouvelle demande · ${data.name} (${data.prestation})`,
+    subject: `Nouvelle demande · ${cleanHeader(data.name)} (${cleanHeader(data.prestation)})`,
     html: adminEmailHtml(data),
   });
 }

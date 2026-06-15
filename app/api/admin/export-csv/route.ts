@@ -1,16 +1,27 @@
-import { auth } from "@/auth";
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { desc } from "drizzle-orm";
+import { getAdminSession } from "@/lib/admin-auth";
+import { buildReservationWhere, parseReservationFilters } from "@/lib/reservation-filters";
 
-export async function GET() {
-  const session = await auth();
+const CSV_FORMULA_PREFIX = /^[=+\-@\t\r]/;
+
+export async function GET(request: Request) {
+  const session = await getAdminSession();
   if (!session) return new NextResponse("Non autorisé", { status: 401 });
+
+  const { searchParams } = new URL(request.url);
+  const filters = parseReservationFilters({
+    q: searchParams.get("q"),
+    status: searchParams.get("status"),
+  });
+  const where = buildReservationWhere(filters);
 
   const rows = await db
     .select()
     .from(reservations)
+    .where(where)
     .orderBy(desc(reservations.createdAt));
 
   const header = [
@@ -28,9 +39,10 @@ export async function GET() {
     "Reçu le",
   ].join(",");
 
-  function esc(v: string | null | undefined) {
-    if (!v) return "";
-    return `"${v.replace(/"/g, '""')}"`;
+  function esc(value: string | null | undefined) {
+    if (!value) return "";
+    const safeValue = CSV_FORMULA_PREFIX.test(value) ? `'${value}` : value;
+    return `"${safeValue.replace(/"/g, '""')}"`;
   }
 
   const lines = rows.map((r) =>
@@ -56,6 +68,7 @@ export async function GET() {
     headers: {
       "Content-Type": "text/csv; charset=utf-8",
       "Content-Disposition": `attachment; filename="reservations-${Date.now()}.csv"`,
+      "Cache-Control": "private, no-store",
     },
   });
 }

@@ -3,15 +3,10 @@
 import { db } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
-import { auth } from "@/auth";
+import { requireAdminSession } from "@/lib/admin-auth";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
-
-async function requireAdmin() {
-  const session = await auth();
-  if (!session) throw new Error("Unauthorized");
-}
 
 const updateStatusSchema = z.object({
   id: z.string().uuid(),
@@ -19,7 +14,7 @@ const updateStatusSchema = z.object({
 });
 
 export async function updateReservationStatus(formData: FormData) {
-  await requireAdmin();
+  await requireAdminSession();
 
   const parsed = updateStatusSchema.safeParse({
     id: formData.get("id"),
@@ -43,7 +38,7 @@ const updateNotesSchema = z.object({
 });
 
 export async function updateReservationNotes(formData: FormData) {
-  await requireAdmin();
+  await requireAdminSession();
 
   const parsed = updateNotesSchema.safeParse({
     id: formData.get("id"),
@@ -64,7 +59,7 @@ const deleteSchema = z.object({
 });
 
 export async function deleteReservation(formData: FormData) {
-  await requireAdmin();
+  await requireAdminSession();
 
   const parsed = deleteSchema.safeParse({ id: formData.get("id") });
   if (!parsed.success) throw new Error("Invalid data");

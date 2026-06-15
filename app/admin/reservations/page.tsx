@@ -1,9 +1,15 @@
 import { db } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
-import { desc, like, eq, and, or } from "drizzle-orm";
+import { desc, sql } from "drizzle-orm";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Download } from "lucide-react";
+import {
+  buildReservationWhere,
+  parseReservationFilters,
+  RESERVATION_STATUSES,
+} from "@/lib/reservation-filters";
+import { requireAdminPage } from "@/lib/admin-auth";
 
 const STATUS_LABELS: Record<string, string> = {
   new: "Nouveau",
@@ -23,8 +29,6 @@ const STATUS_VARIANT: Record<string, StatusVariant> = {
   cancelled: "cancelled",
 };
 
-const STATUSES = ["new", "contacted", "confirmed", "completed", "cancelled"];
-
 function formatDate(d: Date | string | null) {
   if (!d) return "-";
   return new Date(d).toLocaleDateString("fr-FR", {
@@ -39,28 +43,22 @@ interface PageProps {
 }
 
 export default async function ReservationsPage({ searchParams }: PageProps) {
+  await requireAdminPage();
   const params = await searchParams;
-  const q = params.q?.trim() ?? "";
-  const statusFilter = params.status ?? "";
-  const page = Math.max(1, parseInt(params.page ?? "1", 10));
+  const { q, status: statusFilter } = parseReservationFilters(params);
+  const requestedPage = parsePage(params.page);
   const pageSize = 20;
-  const offset = (page - 1) * pageSize;
+  const where = buildReservationWhere({ q, status: statusFilter });
 
-  const conditions = [];
-  if (q) {
-    conditions.push(
-      or(
-        like(reservations.name, `%${q}%`),
-        like(reservations.email, `%${q}%`),
-        like(reservations.prestation, `%${q}%`)
-      )
-    );
-  }
-  if (statusFilter && STATUSES.includes(statusFilter)) {
-    conditions.push(eq(reservations.status, statusFilter));
-  }
+  const [totalRow] = await db
+    .select({ count: sql<number>`count(*)` })
+    .from(reservations)
+    .where(where);
 
-  const where = conditions.length > 0 ? and(...conditions) : undefined;
+  const total = Number(totalRow?.count ?? 0);
+  const totalPages = Math.ceil(total / pageSize);
+  const currentPage = Math.min(requestedPage, Math.max(totalPages, 1));
+  const offset = (currentPage - 1) * pageSize;
 
   const rows = await db
     .select()
@@ -70,25 +68,25 @@ export default async function ReservationsPage({ searchParams }: PageProps) {
     .limit(pageSize)
     .offset(offset);
 
-  const totalRows = await db
-    .select({ count: reservations.id })
-    .from(reservations)
-    .where(where);
-
-  const total = totalRows.length;
-  const totalPages = Math.ceil(total / pageSize);
-
   function buildUrl(overrides: Record<string, string>) {
     const p = new URLSearchParams();
     if (q) p.set("q", q);
     if (statusFilter) p.set("status", statusFilter);
-    if (page > 1) p.set("page", String(page));
+    if (currentPage > 1) p.set("page", String(currentPage));
     for (const [k, v] of Object.entries(overrides)) {
       if (v) p.set(k, v);
       else p.delete(k);
     }
     const s = p.toString();
     return `/admin/reservations${s ? `?${s}` : ""}`;
+  }
+
+  function buildExportUrl() {
+    const p = new URLSearchParams();
+    if (q) p.set("q", q);
+    if (statusFilter) p.set("status", statusFilter);
+    const s = p.toString();
+    return `/api/admin/export-csv${s ? `?${s}` : ""}`;
   }
 
   return (
@@ -107,7 +105,7 @@ export default async function ReservationsPage({ searchParams }: PageProps) {
           </p>
         </div>
         <a
-          href="/api/admin/export-csv"
+          href={buildExportUrl()}
           className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 md:px-4 py-2 text-xs font-medium text-[#f0ece3]/60 hover:text-[#f0ece3] hover:bg-white/[0.07] transition-all shrink-0"
         >
           <Download size={14} />
@@ -131,7 +129,7 @@ export default async function ReservationsPage({ searchParams }: PageProps) {
             className="flex-1 sm:flex-none h-9 rounded-lg border border-white/10 bg-[#0d1117] px-3 text-sm text-[#f0ece3]/70 focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/40 transition-colors"
           >
             <option value="">Tous statuts</option>
-            {STATUSES.map((s) => (
+            {RESERVATION_STATUSES.map((s) => (
               <option key={s} value={s}>
                 {STATUS_LABELS[s]}
               </option>
@@ -259,20 +257,20 @@ export default async function ReservationsPage({ searchParams }: PageProps) {
       {totalPages > 1 && (
         <div className="mt-4 px-1 flex items-center justify-between">
           <p className="text-xs text-[#f0ece3]/30">
-            Page {page} / {totalPages}
+            Page {currentPage} / {totalPages}
           </p>
           <div className="flex gap-2">
-            {page > 1 && (
+            {currentPage > 1 && (
               <Link
-                href={buildUrl({ page: String(page - 1) })}
+                href={buildUrl({ page: String(currentPage - 1) })}
                 className="h-9 px-4 rounded-lg border border-white/10 text-xs text-[#f0ece3]/60 hover:text-[#f0ece3] hover:bg-white/[0.04] flex items-center transition-all"
               >
                 Précédent
               </Link>
             )}
-            {page < totalPages && (
+            {currentPage < totalPages && (
               <Link
-                href={buildUrl({ page: String(page + 1) })}
+                href={buildUrl({ page: String(currentPage + 1) })}
                 className="h-9 px-4 rounded-lg bg-[#C9A84C] text-[#06080f] text-xs font-semibold hover:bg-[#e8d48b] flex items-center transition-all"
               >
                 Suivant
@@ -283,4 +281,9 @@ export default async function ReservationsPage({ searchParams }: PageProps) {
       )}
     </div>
   );
+}
+
+function parsePage(value: string | undefined) {
+  const parsed = Number.parseInt(value ?? "1", 10);
+  return Number.isFinite(parsed) ? Math.max(1, parsed) : 1;
 }

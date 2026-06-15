@@ -4,14 +4,15 @@ interface RateLimitEntry {
 }
 
 const store = new Map<string, RateLimitEntry>();
+let nextCleanupAt = 0;
 
-// Clean stale entries every 5 minutes
-setInterval(() => {
-  const now = Date.now();
+function cleanup(now: number) {
+  if (now < nextCleanupAt) return;
+  nextCleanupAt = now + 5 * 60 * 1000;
   for (const [key, entry] of store) {
     if (entry.resetAt < now) store.delete(key);
   }
-}, 5 * 60 * 1000);
+}
 
 export function rateLimit(
   identifier: string,
@@ -19,6 +20,7 @@ export function rateLimit(
   windowMs: number
 ): { allowed: boolean; remaining: number } {
   const now = Date.now();
+  cleanup(now);
   const entry = store.get(identifier);
 
   if (!entry || entry.resetAt < now) {

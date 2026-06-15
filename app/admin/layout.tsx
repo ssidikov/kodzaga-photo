@@ -1,4 +1,4 @@
-import { auth } from "@/auth";
+import { getAdminSession } from "@/lib/admin-auth";
 import AdminSidebar from "@/components/admin/Sidebar";
 import MobileHeader from "@/components/admin/MobileHeader";
 import SessionProvider from "@/components/admin/SessionProvider";
@@ -13,7 +13,7 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await auth();
+  const session = await getAdminSession();
 
   // Login page lives inside /admin route group but must render without sidebar
   // Proxy handles redirect for unauthenticated non-login routes
