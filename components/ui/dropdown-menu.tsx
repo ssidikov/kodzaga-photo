@@ -7,16 +7,10 @@ const DropdownMenu = ({ children }: { children: React.ReactNode }) => {
 
 const DropdownMenuTrigger = React.forwardRef<
   HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement> & { asChild?: boolean }
->(({ children, asChild, ...props }, ref) => {
-  if (asChild && React.isValidElement(children)) {
-    return React.cloneElement(children as React.ReactElement<React.HTMLAttributes<HTMLElement>>, {
-      ref: ref as React.Ref<HTMLElement>,
-      ...props,
-    })
-  }
-  return <button ref={ref} {...props}>{children}</button>
-})
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+>(({ children, ...props }, ref) => (
+  <button ref={ref} {...props}>{children}</button>
+))
 DropdownMenuTrigger.displayName = "DropdownMenuTrigger"
 
 const DropdownMenuContent = React.forwardRef<

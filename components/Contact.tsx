@@ -294,11 +294,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* Honeypot — hidden from real users, bots fill it */}
-            <div aria-hidden="true" style={{ display: "none" }}>
-              <input type="text" name="website" tabIndex={-1} autoComplete="off" />
-            </div>
-
             {/* Submit button */}
             <button
               type="submit"
