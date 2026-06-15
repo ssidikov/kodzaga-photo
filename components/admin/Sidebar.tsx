@@ -6,6 +6,7 @@ import { signOut } from "next-auth/react";
 import {
   LayoutDashboard,
   CalendarDays,
+  BadgeEuro,
   LogOut,
   ExternalLink,
   ChevronRight,
@@ -15,6 +16,7 @@ import { cn } from "@/lib/utils";
 const NAV = [
   { href: "/admin", label: "Vue d'ensemble", icon: LayoutDashboard, exact: true },
   { href: "/admin/reservations", label: "Réservations", icon: CalendarDays, exact: false },
+  { href: "/admin/tarifs", label: "Tarifs", icon: BadgeEuro, exact: false },
 ];
 
 export default function AdminSidebar({ onNavigate }: { onNavigate?: () => void }) {

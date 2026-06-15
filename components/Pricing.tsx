@@ -13,131 +13,19 @@ import {
   Palette,
 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import type { TariffCatalog, TariffIconKey, TariffPackView } from "@/lib/tariffs";
 
-const SOLO_PACKS = [
-  {
-    icon: Camera,
-    title: "Pack Essentiel",
-    price: "175 €",
-    features: ["1h de shooting", "15 photos retouchées"],
-    notes: ["Idéal pour les réseaux"],
-    highlighted: false,
-  },
-  {
-    icon: Camera,
-    title: "Pack Premium",
-    price: "215 €",
-    features: ["2h de shooting", "30 photos retouchées", "Plusieurs tenues", "Plusieurs lieux"],
-    notes: ["GO pour un city tour !"],
-    highlighted: true,
-    badge: "Le plus demandé",
-  },
-  {
-    icon: Star,
-    title: "Pack Signature",
-    price: "275 €",
-    features: ["3h de shooting", "50 photos retouchées", "Vidéos", "MUA"],
-    notes: ["Comme une Star !"],
-    highlighted: false,
-  },
-];
-
-const GROUPE_PACKS = [
-  {
-    icon: Users,
-    title: "Pack DUO",
-    price: "255 €",
-    features: ["2h de shooting", "Photos individuelles et en duo"],
-    notes: ["Idéal couple / amis"],
-    highlighted: false,
-  },
-  {
-    icon: Users,
-    title: "Pack TRIO",
-    price: "295 €",
-    features: ["3h de shooting", "Photos / Vidéos"],
-    notes: ["Boys Band & Spice Girls !"],
-    highlighted: true,
-    badge: "Le plus demandé",
-  },
-  {
-    icon: Users,
-    title: "Pack Famille",
-    price: "315 €",
-    features: ["Photos / Vidéos", "Animaux de compagnie bienvenus"],
-    notes: ["En mode Avengers !"],
-    highlighted: false,
-  },
-];
-
-const AUTRES_PACKS = [
-  {
-    icon: PawPrint,
-    title: "Pack Animaux",
-    price: "155 €",
-    features: [
-      "1h de shooting",
-      "Plusieurs animaux possibles (3 max)",
-      "Photos avec le propriétaire possibles",
-    ],
-    notes: ["Chiens / Chats / Chevaux sous les lumières !"],
-    highlighted: false,
-  },
-  {
-    icon: Sparkles,
-    title: "Pack Personnalisable",
-    price: "Sur devis",
-    features: [
-      "Projet artistique spécifique / Collaboration",
-      "Durée et contenu adaptés",
-      "Studio équipé",
-    ],
-    notes: ["Un travail d'équipe !"],
-    highlighted: false,
-  },
-  {
-    icon: Gift,
-    title: "Bon Cadeau",
-    price: "Pack choisi",
-    features: [
-      "Amis / Famille",
-      "Choisis le Pack de ton choix à offrir à tes proches !",
-    ],
-    notes: ["Idéal pour les fêtes !"],
-    highlighted: false,
-  },
-];
-
-const OPTIONS = [
-  {
-    icon: Clock,
-    label: "Livraison Express en 24h",
-    detail: "au lieu de 3 jours ouvrés",
-    price: "20 €",
-  },
-  {
-    icon: Video,
-    label: "Vidéo",
-    detail: "pour les packs sans vidéo incluse",
-    price: "75 €",
-  },
-  {
-    icon: Palette,
-    label: "MUA ou Coiffeuse",
-    detail: "2h de prestation beauté",
-    price: "75 €",
-  },
-];
-
-interface Pack {
-  icon: typeof Camera;
-  title: string;
-  price: string;
-  features: string[];
-  notes: string[];
-  highlighted: boolean;
-  badge?: string;
-}
+const ICONS: Record<TariffIconKey, typeof Camera> = {
+  camera: Camera,
+  users: Users,
+  sparkles: Sparkles,
+  star: Star,
+  paw: PawPrint,
+  gift: Gift,
+  clock: Clock,
+  video: Video,
+  palette: Palette,
+};
 
 const handleChoosePack = (
   e: React.MouseEvent<HTMLAnchorElement>,
@@ -166,9 +54,11 @@ function PackGroup({
   delayOffset,
 }: {
   title: string;
-  packs: Pack[];
+  packs: TariffPackView[];
   delayOffset: number;
 }) {
+  if (packs.length === 0) return null;
+
   return (
     <div className="mb-20">
       <ScrollReveal>
@@ -178,7 +68,7 @@ function PackGroup({
       </ScrollReveal>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {packs.map((pack, i) => {
-          const Icon = pack.icon;
+          const Icon = ICONS[pack.icon] ?? Camera;
           return (
             <ScrollReveal key={pack.title} delay={delayOffset + i * 70}>
               <div
@@ -266,7 +156,7 @@ function PackGroup({
   );
 }
 
-export default function Pricing() {
+export default function Pricing({ catalog }: { catalog: TariffCatalog }) {
   return (
     <section id="tarifs" className="section-bg scroll-mt-[68px] py-32">
       <div className="relative z-10 px-6 md:px-14 max-w-7xl mx-auto">
@@ -285,31 +175,25 @@ export default function Pricing() {
           </ScrollReveal>
         </div>
 
-        {/* Solo section */}
-        <PackGroup title="Solo" packs={SOLO_PACKS} delayOffset={0} />
+        {catalog.groups.map((group, index) => (
+          <div key={group.id}>
+            <PackGroup title={group.name} packs={group.packs} delayOffset={index * 100} />
+            {index < catalog.groups.length - 1 && <div className="gold-divider my-16 opacity-15" />}
+          </div>
+        ))}
 
-        <div className="gold-divider my-16 opacity-15" />
-
-        {/* Groupe section */}
-        <PackGroup title="Groupe" packs={GROUPE_PACKS} delayOffset={100} />
-
-        <div className="gold-divider my-16 opacity-15" />
-
-        {/* Autres packs section */}
-        <PackGroup title="Autres packs" packs={AUTRES_PACKS} delayOffset={200} />
-
-        <div className="gold-divider my-16 opacity-15" />
+        {catalog.options.length > 0 && <div className="gold-divider my-16 opacity-15" />}
 
         {/* Options extras */}
-        <ScrollReveal>
+        {catalog.options.length > 0 && <ScrollReveal>
           <div className="max-w-3xl mx-auto">
             <h3 className="font-heading text-xl font-light text-center mb-8">
               Options <em className="gold-text">à la carte</em>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-              {OPTIONS.map((opt) => {
-                const Icon = opt.icon;
+              {catalog.options.map((opt) => {
+                const Icon = ICONS[opt.icon] ?? Clock;
                 return (
                   <div
                     key={opt.label}
@@ -348,7 +232,7 @@ export default function Pricing() {
               </p>
             </div>
           </div>
-        </ScrollReveal>
+        </ScrollReveal>}
       </div>
     </section>
   );

@@ -1,37 +1,28 @@
 "use client";
 
-import { useState, useEffect, useRef, type FormEvent } from "react";
+import { useState, useEffect, useMemo, useRef, type FormEvent } from "react";
 import { User, Mail, Phone, MapPin, Calendar, MessageSquare, Send } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import type { TariffCatalog } from "@/lib/tariffs";
 
-const PRESTATIONS = [
-  "Pack Essentiel",
-  "Pack Premium",
-  "Pack Signature",
-  "Pack DUO",
-  "Pack TRIO",
-  "Pack Famille",
-  "Pack Animaux",
-  "Pack Personnalisable",
-  "Bon Cadeau",
-];
+function formatOptionPrice(price: string) {
+  return price.trim().startsWith("+") ? price : `+${price}`;
+}
 
-const OPTIONS = [
-  { id: "express", label: "Livraison Express 24h", price: "+20€" },
-  { id: "video", label: "Vidéo", price: "+75€" },
-  { id: "mua", label: "MUA ou Coiffeuse (2h)", price: "+75€" },
-];
-
-export default function Contact() {
+export default function Contact({ tariffCatalog }: { tariffCatalog: TariffCatalog }) {
   const dateRef = useRef<HTMLInputElement>(null);
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [prestation, setPrestation] = useState("");
+  const prestations = useMemo(
+    () => tariffCatalog.groups.flatMap((group) => group.packs.map((pack) => pack.title)),
+    [tariffCatalog.groups]
+  );
 
   useEffect(() => {
     const handlePrestationChange = (e: Event) => {
       const customEvent = e as CustomEvent<string>;
-      if (customEvent.detail && PRESTATIONS.includes(customEvent.detail)) {
+      if (customEvent.detail && prestations.includes(customEvent.detail)) {
         setPrestation(customEvent.detail);
       }
     };
@@ -39,7 +30,7 @@ export default function Contact() {
     const handleInitialLoadAndChange = () => {
       const queryParams = new URLSearchParams(window.location.search);
       const prest = queryParams.get("prestation");
-      if (prest && PRESTATIONS.includes(prest)) {
+      if (prest && prestations.includes(prest)) {
         setPrestation(prest);
       } else {
         const hash = window.location.hash;
@@ -48,7 +39,7 @@ export default function Contact() {
           const hashPrest = params.get("prestation");
           if (hashPrest) {
             const decoded = decodeURIComponent(hashPrest);
-            if (PRESTATIONS.includes(decoded)) {
+            if (prestations.includes(decoded)) {
               setPrestation(decoded);
             }
           }
@@ -63,7 +54,7 @@ export default function Contact() {
       window.removeEventListener("hashchange", handleInitialLoadAndChange);
       window.removeEventListener("prestation-change", handlePrestationChange);
     };
-  }, []);
+  }, [prestations]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -203,7 +194,7 @@ export default function Contact() {
                   <option value="" disabled>
                     Sélectionner une prestation
                   </option>
-                  {PRESTATIONS.map((p) => (
+                  {prestations.map((p) => (
                     <option key={p} value={p}>
                       {p}
                     </option>
@@ -250,12 +241,12 @@ export default function Contact() {
             </div>
 
             {/* Options checkboxes */}
-            <div>
+            {tariffCatalog.options.length > 0 && <div>
               <p className="font-body text-[11px] tracking-[0.15em] uppercase text-cream/40 mb-4">
                 Options à la réservation
               </p>
               <div className="flex flex-wrap gap-4">
-                {OPTIONS.map((opt) => (
+                {tariffCatalog.options.map((opt) => (
                   <label
                     key={opt.id}
                     htmlFor={`option-${opt.id}`}
@@ -269,12 +260,12 @@ export default function Contact() {
                     />
                     <span className="font-body text-[12px] text-cream/50 font-light">
                       {opt.label}{" "}
-                      <span className="text-gold/60">({opt.price})</span>
+                      <span className="text-gold/60">({formatOptionPrice(opt.price)})</span>
                     </span>
                   </label>
                 ))}
               </div>
-            </div>
+            </div>}
 
             {/* Message */}
             <div>

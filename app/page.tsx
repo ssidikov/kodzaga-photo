@@ -5,8 +5,11 @@ import Portfolio from "@/components/Portfolio";
 import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { getTariffCatalog } from "@/lib/tariffs";
 
-export default function Home() {
+export default async function Home() {
+  const tariffCatalog = await getTariffCatalog();
+
   return (
     <>
       <Navbar />
@@ -15,9 +18,9 @@ export default function Home() {
       <div className="gold-divider mx-12 opacity-15" />
       <Portfolio />
       <div className="gold-divider mx-12 opacity-15" />
-      <Pricing />
+      <Pricing catalog={tariffCatalog} />
       <div className="gold-divider mx-12 opacity-15" />
-      <Contact />
+      <Contact tariffCatalog={tariffCatalog} />
       <Footer />
     </>
   );

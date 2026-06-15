@@ -4,30 +4,13 @@ import { db } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { z } from "zod";
 import { rateLimit } from "@/lib/rate-limit";
-
-const OPTION_LABELS: Record<string, string> = {
-  express: "Livraison Express 24h (+20€)",
-  video: "Vidéo (+75€)",
-  mua: "MUA ou Coiffeuse 2h (+75€)",
-};
-
-const PRESTATIONS = [
-  "Pack Essentiel",
-  "Pack Premium",
-  "Pack Signature",
-  "Pack DUO",
-  "Pack TRIO",
-  "Pack Famille",
-  "Pack Animaux",
-  "Pack Personnalisable",
-  "Bon Cadeau",
-] as const;
+import { getOptionLabelsFromForm, validatePrestationName } from "@/lib/tariffs";
 
 const formSchema = z.object({
   name: z.string().trim().min(1).max(200),
   email: z.string().trim().email().max(300),
   phone: z.string().trim().max(50).optional(),
-  prestation: z.enum(PRESTATIONS),
+  prestation: z.string().trim().min(1).max(200),
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   lieu: z.string().trim().max(300).optional(),
   message: z.string().trim().max(5000).optional(),
@@ -64,13 +47,6 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true });
     }
 
-    const options: string[] = [];
-    for (const key of Object.keys(OPTION_LABELS)) {
-      if (body.get(`option-${key}`) === "on") {
-        options.push(OPTION_LABELS[key]);
-      }
-    }
-
     const raw = {
       name: (body.get("name") as string) || "",
       email: (body.get("email") as string) || "",
@@ -91,8 +67,17 @@ export async function POST(request: Request) {
     }
 
     const { name, email, phone, prestation, date, lieu, message } = parsed.data;
+    const validPrestation = await validatePrestationName(prestation);
+    if (!validPrestation) {
+      return NextResponse.json(
+        { error: "Prestation invalide" },
+        { status: 400 }
+      );
+    }
 
-    // Save to DB first — email failure won't lose the reservation
+    const options = await getOptionLabelsFromForm(body);
+
+    // Save to DB first. Email failure must not lose reservation.
     await db.insert(reservations).values({
       name,
       email,
