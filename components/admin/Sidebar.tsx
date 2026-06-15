@@ -17,11 +17,11 @@ const NAV = [
   { href: "/admin/reservations", label: "Réservations", icon: CalendarDays, exact: false },
 ];
 
-export default function AdminSidebar() {
+export default function AdminSidebar({ onNavigate }: { onNavigate?: () => void }) {
   const pathname = usePathname();
 
   return (
-    <aside className="flex flex-col h-full w-64 bg-[#0a0d13] border-r border-white/[0.06]">
+    <aside className="flex flex-col h-full w-full md:w-64 bg-[#0a0d13] border-r border-white/[0.06]">
       {/* Brand */}
       <div className="px-6 py-7 border-b border-white/[0.06]">
         <p className="font-heading text-lg font-light tracking-widest text-[#f0ece3]">
@@ -40,6 +40,7 @@ export default function AdminSidebar() {
             <Link
               key={href}
               href={href}
+              onClick={onNavigate}
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all duration-150 group",
                 active
@@ -66,13 +67,14 @@ export default function AdminSidebar() {
         <Link
           href="/"
           target="_blank"
+          onClick={onNavigate}
           className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-[#f0ece3]/40 hover:bg-white/[0.04] hover:text-[#f0ece3]/70 transition-all duration-150 group"
         >
           <ExternalLink size={15} className="shrink-0" />
           <span>Voir le site</span>
         </Link>
         <button
-          onClick={() => signOut({ callbackUrl: "/admin/login" })}
+          onClick={() => { onNavigate?.(); signOut({ callbackUrl: "/admin/login" }); }}
           className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-[#f0ece3]/40 hover:bg-red-500/10 hover:text-red-400 transition-all duration-150 group"
         >
           <LogOut size={15} className="shrink-0" />

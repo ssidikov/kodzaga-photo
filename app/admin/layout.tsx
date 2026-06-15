@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import AdminSidebar from "@/components/admin/Sidebar";
+import MobileHeader from "@/components/admin/MobileHeader";
 import SessionProvider from "@/components/admin/SessionProvider";
 
 export const metadata = {
@@ -22,9 +23,17 @@ export default async function AdminLayout({
 
   return (
     <SessionProvider session={session}>
-      <div className="flex h-[100dvh] bg-[#06080f] text-[#f0ece3]">
-        <AdminSidebar />
-        <main className="flex-1 overflow-y-auto">{children}</main>
+      <div className="flex h-dvh bg-[#06080f] text-[#f0ece3]">
+        {/* Desktop sidebar */}
+        <div className="hidden md:flex">
+          <AdminSidebar />
+        </div>
+
+        {/* Mobile: column layout with top bar */}
+        <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
+          <MobileHeader />
+          <main className="flex-1 overflow-y-auto">{children}</main>
+        </div>
       </div>
     </SessionProvider>
   );

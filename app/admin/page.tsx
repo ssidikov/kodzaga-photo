@@ -67,7 +67,7 @@ export default async function AdminDashboard() {
   const confirmedCount = Number(statusCounts.find((s) => s.status === "confirmed")?.count ?? 0);
 
   return (
-    <div className="p-8 max-w-6xl mx-auto">
+    <div className="p-4 md:p-8 max-w-6xl mx-auto">
       {/* Header */}
       <div className="mb-8">
         <p className="text-[10px] uppercase tracking-[0.35em] text-[#C9A84C]/60 mb-1">

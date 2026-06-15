@@ -68,7 +68,7 @@ export default async function ReservationDetailPage({ params }: PageProps) {
   ];
 
   return (
-    <div className="p-8 max-w-4xl mx-auto">
+    <div className="p-4 md:p-8 max-w-4xl mx-auto">
       {/* Back */}
       <Link
         href="/admin/reservations"
@@ -78,7 +78,7 @@ export default async function ReservationDetailPage({ params }: PageProps) {
       </Link>
 
       {/* Header */}
-      <div className="flex items-start justify-between mb-8 gap-4">
+      <div className="flex items-start justify-between mb-6 md:mb-8 gap-4 flex-wrap">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/20 flex items-center justify-center shrink-0">
             <span className="text-lg font-semibold text-[#C9A84C]">
