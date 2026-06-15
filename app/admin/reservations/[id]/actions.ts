@@ -1,6 +1,6 @@
 "use server";
 
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { requireAdminSession } from "@/lib/admin-auth";
@@ -19,6 +19,7 @@ export async function updateReservationStatus(id: string, status: string) {
   if (!parsedId.success) throw new Error("Réservation invalide");
   if (!parsed.success) throw new Error("Statut invalide");
 
+  const db = getDb();
   await db
     .update(reservations)
     .set({ status: parsed.data, updatedAt: new Date() })
@@ -36,6 +37,7 @@ export async function updateReservationNotes(id: string, notes: string) {
   if (!parsedId.success) throw new Error("Réservation invalide");
   if (!parsedNotes.success) throw new Error("Notes trop longues");
 
+  const db = getDb();
   await db
     .update(reservations)
     .set({ notes: parsedNotes.data, updatedAt: new Date() })
@@ -49,6 +51,7 @@ export async function deleteReservation(id: string) {
   const parsedId = idSchema.safeParse(id);
   if (!parsedId.success) throw new Error("Réservation invalide");
 
+  const db = getDb();
   await db.delete(reservations).where(eq(reservations.id, parsedId.data));
 
   redirect("/admin/reservations");

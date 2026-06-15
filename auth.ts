@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { users } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import bcrypt from "bcryptjs";
@@ -27,6 +27,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         const loginLimit = rateLimit(`admin-login:${email}`, 5, 5 * 60 * 1000);
         if (!loginLimit.allowed) return null;
 
+        const db = getDb();
         const [user] = await db
           .select()
           .from(users)

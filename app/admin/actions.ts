@@ -1,6 +1,6 @@
 "use server";
 
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { requireAdminSession } from "@/lib/admin-auth";
@@ -22,6 +22,7 @@ export async function updateReservationStatus(formData: FormData) {
   });
   if (!parsed.success) throw new Error("Invalid data");
 
+  const db = getDb();
   await db
     .update(reservations)
     .set({ status: parsed.data.status, updatedAt: new Date() })
@@ -46,6 +47,7 @@ export async function updateReservationNotes(formData: FormData) {
   });
   if (!parsed.success) throw new Error("Invalid data");
 
+  const db = getDb();
   await db
     .update(reservations)
     .set({ notes: parsed.data.notes, updatedAt: new Date() })
@@ -64,6 +66,7 @@ export async function deleteReservation(formData: FormData) {
   const parsed = deleteSchema.safeParse({ id: formData.get("id") });
   if (!parsed.success) throw new Error("Invalid data");
 
+  const db = getDb();
   await db.delete(reservations).where(eq(reservations.id, parsed.data.id));
 
   revalidatePath("/admin/reservations");

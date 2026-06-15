@@ -1,4 +1,4 @@
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { tariffGroups, tariffOptions, tariffPacks } from "@/lib/db/schema";
 import {
   TARIFF_ICON_KEYS,
@@ -195,6 +195,7 @@ function toIconKey(value: string | null | undefined): TariffIconKey {
 
 export async function getTariffCatalog({ includeInactive = false } = {}): Promise<TariffCatalog> {
   try {
+    const db = getDb();
     const groups = await db
       .select()
       .from(tariffGroups)
@@ -275,6 +276,7 @@ export async function getOptionLabelsFromForm(formData: FormData) {
 }
 
 export async function seedDefaultTariffs() {
+  const db = getDb();
   const existingGroups = await db.select({ id: tariffGroups.id }).from(tariffGroups).limit(1);
   if (existingGroups.length > 0) return false;
 
@@ -315,6 +317,7 @@ export async function seedDefaultTariffs() {
 }
 
 export async function groupExists(groupId: string) {
+  const db = getDb();
   const [group] = await db.select({ id: tariffGroups.id }).from(tariffGroups).where(eq(tariffGroups.id, groupId));
   return Boolean(group);
 }

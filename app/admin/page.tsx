@@ -1,4 +1,4 @@
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { desc, gte, sql } from "drizzle-orm";
 import { requireAdminPage } from "@/lib/admin-auth";
@@ -33,6 +33,7 @@ function formatDate(d: Date | string | null) {
 
 export default async function AdminDashboard() {
   const session = await requireAdminPage();
+  const db = getDb();
 
   // eslint-disable-next-line react-hooks/purity
   const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);

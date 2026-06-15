@@ -1,6 +1,6 @@
 "use server";
 
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { tariffGroups, tariffOptions, tariffPacks } from "@/lib/db/schema";
 import { requireAdminSession } from "@/lib/admin-auth";
 import { revalidatePath } from "next/cache";
@@ -50,6 +50,7 @@ export async function createTariffGroup(formData: FormData) {
   });
   if (!parsed.success) throw new Error("Données invalides");
 
+  const db = getDb();
   await db.insert(tariffGroups).values(parsed.data);
   refreshTariffs();
 }
@@ -65,6 +66,7 @@ export async function updateTariffGroup(formData: FormData) {
   });
   if (!parsed.success || !parsed.data.id) throw new Error("Données invalides");
 
+  const db = getDb();
   await db
     .update(tariffGroups)
     .set({
@@ -108,6 +110,7 @@ export async function createTariffPack(formData: FormData) {
   });
   if (!parsed.success) throw new Error("Données invalides");
 
+  const db = getDb();
   await db.insert(tariffPacks).values({
     ...parsed.data,
     badge: parsed.data.badge || null,
@@ -133,6 +136,7 @@ export async function updateTariffPack(formData: FormData) {
   });
   if (!parsed.success || !parsed.data.id) throw new Error("Données invalides");
 
+  const db = getDb();
   await db
     .update(tariffPacks)
     .set({
@@ -175,6 +179,7 @@ export async function createTariffOption(formData: FormData) {
   });
   if (!parsed.success) throw new Error("Données invalides");
 
+  const db = getDb();
   await db.insert(tariffOptions).values(parsed.data);
   refreshTariffs();
 }
@@ -193,6 +198,7 @@ export async function updateTariffOption(formData: FormData) {
   });
   if (!parsed.success || !parsed.data.id) throw new Error("Données invalides");
 
+  const db = getDb();
   await db
     .update(tariffOptions)
     .set({

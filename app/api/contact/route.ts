@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { sendClientConfirmation, sendAdminNotification, type ContactFormData } from "@/lib/email";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { z } from "zod";
 import { rateLimit } from "@/lib/rate-limit";
@@ -78,6 +78,7 @@ export async function POST(request: Request) {
     const options = await getOptionLabelsFromForm(body);
 
     // Save to DB first. Email failure must not lose reservation.
+    const db = getDb();
     await db.insert(reservations).values({
       name,
       email,

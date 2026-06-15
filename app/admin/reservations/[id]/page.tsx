@@ -1,4 +1,4 @@
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
@@ -51,6 +51,7 @@ export default async function ReservationDetailPage({ params }: PageProps) {
   await requireAdminPage();
   const parsedId = idSchema.safeParse(id);
   if (!parsedId.success) notFound();
+  const db = getDb();
 
   const [reservation] = await db
     .select()

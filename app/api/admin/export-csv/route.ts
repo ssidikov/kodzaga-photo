@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { desc } from "drizzle-orm";
 import { getAdminSession } from "@/lib/admin-auth";
@@ -17,6 +17,7 @@ export async function GET(request: Request) {
     status: searchParams.get("status"),
   });
   const where = buildReservationWhere(filters);
+  const db = getDb();
 
   const rows = await db
     .select()

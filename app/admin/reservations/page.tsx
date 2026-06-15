@@ -1,4 +1,4 @@
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { reservations } from "@/lib/db/schema";
 import { desc, sql } from "drizzle-orm";
 import Link from "next/link";
@@ -49,6 +49,7 @@ export default async function ReservationsPage({ searchParams }: PageProps) {
   const requestedPage = parsePage(params.page);
   const pageSize = 20;
   const where = buildReservationWhere({ q, status: statusFilter });
+  const db = getDb();
 
   const [totalRow] = await db
     .select({ count: sql<number>`count(*)` })
