@@ -119,6 +119,15 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="bg-surface border border-gold/[0.06] p-8 md:p-12 space-y-6"
           >
+            {/* Honeypot — hidden from real users, bots fill it */}
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }}
+            />
             {/* Name & Email row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -283,6 +292,11 @@ export default function Contact() {
                 placeholder="Décrivez votre projet, vos idées, vos attentes..."
                 className="form-input resize-none"
               />
+            </div>
+
+            {/* Honeypot — hidden from real users, bots fill it */}
+            <div aria-hidden="true" style={{ display: "none" }}>
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" />
             </div>
 
             {/* Submit button */}
