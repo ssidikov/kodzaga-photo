@@ -16,57 +16,9 @@ const loginSchema = z.object({
 const DUMMY_PASSWORD_HASH =
   "$2a$12$.Fzs3ZykUHx75wH.ghRw/OMPJ0lcJ5z0qqQsjpppsL/pjQWE/biEm";
 
-export function formatAuthError(error: unknown, includeStack = false) {
-  if (!(error instanceof Error)) {
-    return {
-      name: "NonError",
-      message: String(error),
-    };
-  }
-
-  const authType =
-    "type" in error && typeof error.type === "string" ? error.type : undefined;
-  const cause =
-    error.cause && typeof error.cause === "object"
-      ? Object.fromEntries(
-          Object.entries(error.cause).map(([key, value]) => [
-            key,
-            value instanceof Error
-              ? {
-                  name: value.name,
-                  message: value.message,
-                  stack: includeStack ? value.stack : undefined,
-                }
-              : value,
-          ])
-        )
-      : error.cause;
-
-  return {
-    name: error.name,
-    type: authType,
-    message: error.message,
-    cause,
-    stack: includeStack ? error.stack : undefined,
-  };
-}
-
-export const authConfig: NextAuthConfig = {
+const authConfig: NextAuthConfig = {
   secret: process.env.AUTH_SECRET ?? process.env.NEXTAUTH_SECRET,
   trustHost: true,
-  logger: {
-    error(error) {
-      console.error("[auth][error]", JSON.stringify(formatAuthError(error, true)));
-    },
-    warn(code) {
-      console.warn("[auth][warn]", code);
-    },
-    debug(message, metadata) {
-      if (process.env.AUTH_DEBUG === "1") {
-        console.log("[auth][debug]", message, JSON.stringify(metadata));
-      }
-    },
-  },
   providers: [
     Credentials({
       async authorize(credentials) {
