@@ -15,6 +15,7 @@ const formSchema = z.object({
   lieu: z.string().trim().max(300).optional(),
   message: z.string().trim().max(5000).optional(),
   honeypot: z.string().max(0).optional(),
+  privacyConsent: z.literal(true),
 });
 
 const WINDOW_MS = 60_000;
@@ -56,6 +57,7 @@ export async function POST(request: Request) {
       lieu: (body.get("lieu") as string) || undefined,
       message: (body.get("message") as string) || undefined,
       honeypot: (body.get("website") as string) || undefined,
+      privacyConsent: body.get("privacyConsent") === "on" || body.get("privacyConsent") === "true",
     };
 
     const parsed = formSchema.safeParse(raw);

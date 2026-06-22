@@ -139,8 +139,8 @@ export default function PolitiqueDeConfidentialite() {
                   <p>
                     La base légale de ce traitement est{' '}
                     <strong className='text-cream font-medium'>votre consentement</strong> (lorsque
-                    vous soumettez le formulaire) et l&apos;exécution de{' '}
-                    <strong className='text-cream font-medium'>mesures précontractuelles</strong>{' '}
+                    vous cochez la case obligatoire et soumettez le formulaire) et l&apos;exécution
+                    de <strong className='text-cream font-medium'>mesures précontractuelles</strong>{' '}
                     nécessaires à l&apos;établissement d&apos;une prestation de service.
                   </p>
                 </div>
@@ -270,7 +270,7 @@ export default function PolitiqueDeConfidentialite() {
                     utilisé ni installé sur votre navigateur pour suivre votre navigation.
                   </p>
                   <p>
-                    <strong className='text-cream font-medium'>Cookies techniques :</strong> Seuls
+                    <strong className='text-cream font-medium'>Cookies techniques : </strong> Seuls
                     des cookies techniques fonctionnels ou de sécurité, directement liés à la
                     plateforme d&apos;hébergement (Vercel), peuvent être déposés pour assurer la
                     sécurité et le bon chargement des pages. Ils ne collectent aucune donnée
@@ -284,7 +284,7 @@ export default function PolitiqueDeConfidentialite() {
 
         {/* Footer info */}
         <div className='mt-16 text-center text-cream/20 text-[11px] font-light'>
-          Dernière mise à jour : Mai 2026
+          Dernière mise à jour : 22 Juin 2026
         </div>
       </div>
     </div>

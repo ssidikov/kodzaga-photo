@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo, useRef, type FormEvent } from "react";
+import Link from "next/link";
 import { User, Mail, Phone, MapPin, Calendar, MessageSquare, Send } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import type { TariffCatalog } from "@/lib/tariffs";
@@ -283,6 +284,27 @@ export default function Contact({ tariffCatalog }: { tariffCatalog: TariffCatalo
                 placeholder="Décrivez votre projet, vos idées, vos attentes..."
                 className="form-input resize-none"
               />
+            </div>
+
+            {/* Privacy Consent Checkbox */}
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="contact-privacyConsent"
+                name="privacyConsent"
+                required
+                className="w-4 h-4 rounded-sm accent-gold bg-surface border-gold/20 cursor-pointer mt-1 shrink-0"
+              />
+              <label
+                htmlFor="contact-privacyConsent"
+                className="font-body text-[12px] text-cream/50 font-light leading-relaxed cursor-pointer select-none"
+              >
+                J&apos;accepte que mes données soient traitées dans le cadre de ma demande de réservation conformément à la{" "}
+                <Link href="/politique-de-confidentialite" target="_blank" className="gold-text hover:underline">
+                  politique de confidentialité
+                </Link>
+                .
+              </label>
             </div>
 
             {/* Submit button */}

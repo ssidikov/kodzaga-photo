@@ -223,7 +223,7 @@ export default function MentionsLegales() {
 
         {/* Footer info */}
         <div className='mt-16 text-center text-cream/20 text-[11px] font-light'>
-          Dernière mise à jour : Mai 2026
+          Dernière mise à jour : 22 Juin 2026
         </div>
       </div>
     </div>
