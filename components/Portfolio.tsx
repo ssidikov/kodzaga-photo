@@ -127,7 +127,7 @@ function useMobileMarquee(
       const halfWidth = container.scrollWidth / 2;
       if (halfWidth <= 0) return;
 
-      if (container.scrollLeft >= halfWidth) {
+      if (container.scrollLeft >= halfWidth + 1) {
         container.scrollLeft -= halfWidth;
       } else if (container.scrollLeft <= 0) {
         container.scrollLeft += halfWidth;
@@ -168,7 +168,7 @@ function useMobileMarquee(
         // Double check wrap inside animation frame
         const currentHalfWidth = container.scrollWidth / 2;
         if (currentHalfWidth > 0) {
-          if (container.scrollLeft >= currentHalfWidth) {
+          if (container.scrollLeft >= currentHalfWidth + 1) {
             container.scrollLeft -= currentHalfWidth;
           } else if (container.scrollLeft <= 0) {
             container.scrollLeft += currentHalfWidth;
