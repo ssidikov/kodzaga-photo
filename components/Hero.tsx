@@ -53,7 +53,7 @@ export default function Hero() {
 
       {/* Eyebrow */}
       <p
-        className='font-body max-w-[min(100%,28rem)] text-[9px] sm:text-[10px] leading-[2.2] tracking-[0.34em] sm:tracking-[0.48em] md:tracking-[0.6em] uppercase text-gold/55 mb-8 animate-slide-up [text-wrap:balance]'
+        className='font-body max-w-[min(100%,28rem)] text-[9px] sm:text-[10px] leading-[2.2] tracking-[0.34em] sm:tracking-[0.48em] md:tracking-[0.6em] uppercase text-gold font-medium mb-8 animate-slide-up [text-wrap:balance]'
         style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}>
         Directeur Artistique · Photographe · Vidéaste
       </p>
@@ -66,7 +66,7 @@ export default function Hero() {
           Alex
         </span>
         <span
-          className='block text-[clamp(1.6rem,4.5vw,3.5rem)] italic text-cream/20 font-light tracking-[0.35em] -mt-2 animate-fade-in'
+          className='block text-[clamp(1.6rem,4.5vw,3.5rem)] italic text-cream/40 font-light tracking-[0.35em] -mt-2 animate-fade-in'
           style={{ animationDelay: '0.5s', animationFillMode: 'backwards' }}>
           Photos
         </span>
@@ -80,7 +80,7 @@ export default function Hero() {
 
       {/* Subtitle */}
       <p
-        className='font-body text-cream/45 font-light text-sm md:text-base leading-[1.9] w-full max-w-[20rem] md:max-w-lg mb-12 animate-slide-up'
+        className='font-body text-cream/90 font-normal text-sm md:text-base leading-[1.9] w-full max-w-[20rem] md:max-w-lg mb-12 animate-slide-up'
         style={{ animationDelay: '0.7s', animationFillMode: 'backwards' }}>
         Portrait Lifestyle et contrasté cinématographique.
         <br />
@@ -97,7 +97,7 @@ export default function Hero() {
         </a>
         <a
           href='#portfolio'
-          className='font-body text-[11px] tracking-[0.3em] uppercase text-cream/30 hover:text-gold/70 transition-colors flex items-center gap-2 cursor-pointer'>
+          className='font-body text-[11px] tracking-[0.3em] uppercase text-cream/80 hover:text-gold transition-colors flex items-center gap-2 cursor-pointer font-medium'>
           Voir le portfolio
           <svg
             width='11'
