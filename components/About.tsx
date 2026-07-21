@@ -106,7 +106,7 @@ export default function About() {
                 Suivre sur Instagram
               </a>
               <a
-                href='https://tiktok.com/@al3xis.kdz'
+                href='https://www.tiktok.com/@al3x.photos'
                 target='_blank'
                 rel='noreferrer'
                 className='inline-flex items-center gap-2 py-2.5 px-5 text-[10px] tracking-[0.15em] uppercase font-body font-medium border border-gold/15 text-cream/40 hover:border-gold/40 hover:text-gold/70 transition-all duration-300 cursor-pointer'>

@@ -75,7 +75,7 @@ export default function Footer() {
                 <InstagramIcon className='w-4 h-4' />
               </a>
               <a
-                href='https://tiktok.com/@al3xis.kdz'
+                href='https://www.tiktok.com/@al3x.photos'
                 target='_blank'
                 rel='noreferrer'
                 className='w-10 h-10 border border-gold/10 flex items-center justify-center text-cream/30 hover:text-gold hover:border-gold/30 transition-all duration-300 cursor-pointer'

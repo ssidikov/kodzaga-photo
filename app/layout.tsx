@@ -78,7 +78,7 @@ export default function RootLayout({
                 '@type': 'PostalAddress',
                 addressCountry: 'FR',
               },
-              sameAs: ['https://instagram.com/al3xis.kdz', 'https://tiktok.com/@al3xis.kdz'],
+              sameAs: ['https://instagram.com/al3xis.kdz', 'https://www.tiktok.com/@al3x.photos'],
             }),
           }}
         />
