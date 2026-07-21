@@ -233,6 +233,44 @@ export default function Pricing({ catalog }: { catalog: TariffCatalog }) {
             </div>
           </div>
         </ScrollReveal>}
+
+        {/* Encart Vidéos Publicitaires (Pour les entreprises) */}
+        <ScrollReveal>
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div
+              id="videos-publicitaires"
+              className="price-card p-8 md:p-10 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 scroll-mt-[100px]"
+            >
+              <div className="corner-tl" />
+              <div className="corner-br" />
+
+              <div className="flex-1 text-center md:text-left">
+                <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
+                  <Video className="w-5 h-5 text-gold" strokeWidth={1.5} />
+                  <span className="font-body text-[10px] tracking-[0.25em] uppercase font-bold text-gold/70">
+                    Entreprises &amp; Partenaires
+                  </span>
+                </div>
+                <h3 className="font-heading text-2xl md:text-3xl font-semibold text-cream mb-3">
+                  Vidéos Publicitaires
+                </h3>
+                <p className="font-body text-cream/70 text-sm md:text-base font-light leading-relaxed">
+                  Pour les entreprises et partenaires : vidéo publicitaire pour 3 à 11 mois à partir de 275 €
+                </p>
+              </div>
+
+              <div className="shrink-0 flex flex-col items-center md:items-end gap-3 w-full md:w-auto">
+                <a
+                  href="#contact"
+                  onClick={(e) => handleChoosePack(e, "Vidéos Publicitaires")}
+                  className="btn-gold w-full md:w-auto justify-center px-8 py-3.5 text-[11px] tracking-[0.2em] uppercase font-body font-medium transition-all duration-300 cursor-pointer"
+                >
+                  Réserver
+                </a>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

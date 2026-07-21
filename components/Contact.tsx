@@ -15,10 +15,13 @@ export default function Contact({ tariffCatalog }: { tariffCatalog: TariffCatalo
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [prestation, setPrestation] = useState("");
-  const prestations = useMemo(
-    () => tariffCatalog.groups.flatMap((group) => group.packs.map((pack) => pack.title)),
-    [tariffCatalog.groups]
-  );
+  const prestations = useMemo(() => {
+    const list = tariffCatalog.groups.flatMap((group) => group.packs.map((pack) => pack.title));
+    if (!list.includes("Vidéos Publicitaires")) {
+      list.push("Vidéos Publicitaires");
+    }
+    return list;
+  }, [tariffCatalog.groups]);
 
   useEffect(() => {
     const handlePrestationChange = (e: Event) => {

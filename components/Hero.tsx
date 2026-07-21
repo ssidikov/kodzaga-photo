@@ -95,6 +95,10 @@ export default function Hero() {
           Réserver un shooting
           <ArrowRight className='w-3.5 h-3.5' />
         </a>
+        <a href='#videos-publicitaires' className='btn-gold'>
+          Pour les entreprises
+          <ArrowRight className='w-3.5 h-3.5' />
+        </a>
         <a
           href='#portfolio'
           className='font-body text-[11px] tracking-[0.3em] uppercase text-cream/80 hover:text-gold transition-colors flex items-center gap-2 cursor-pointer font-medium'>

@@ -264,6 +264,7 @@ export async function getTariffCatalog({ includeInactive = false } = {}): Promis
 }
 
 export async function validatePrestationName(name: string) {
+  if (name === "Vidéos Publicitaires") return true;
   const catalog = await getTariffCatalog();
   return catalog.groups.some((group) => group.packs.some((pack) => pack.title === name));
 }
