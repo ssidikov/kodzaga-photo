@@ -43,6 +43,12 @@
       "skillPath": "skills/caveman-stats/SKILL.md",
       "computedHash": "47ce2de3d6cb39a75047b5c962e4eb3da15594e7397c94103e9a104d42626553"
     },
+    "rgpd": {
+      "source": "senasdev/rgpd-skill",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "861d1697e4e7f23fa760b617e0ad2cf2ebb650957599fc72f5765ba0e9eb6e45"
+    },
     "seo-audit": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",

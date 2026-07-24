@@ -1,0 +1,25 @@
+name: Validate skill
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate required files
+        run: |
+          test -f SKILL.md
+          test -f README.md
+          test -f LICENSE
+          grep -q '^---$' SKILL.md
+          grep -q '^name: rgpd$' SKILL.md
+          grep -q '^description:' SKILL.md
+          grep -q '^license: Apache-2.0$' SKILL.md
+          grep -q 'references/rgpd-checklists.md' SKILL.md
+      - name: Check no real-data placeholders were accidentally committed
+        run: |
+          ! grep -RInE 'dni real|nif real|password|secret|api[_-]?key' -- SKILL.md references README.md || exit 1
