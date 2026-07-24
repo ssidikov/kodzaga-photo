@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Scale, Shield, Building, Globe, Mail } from 'lucide-react'
+import { ArrowLeft, Scale, Shield, Building, Globe, Mail, Phone } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Mentions Légales | Alex Photos',
@@ -76,6 +76,16 @@ export default function MentionsLegales() {
                     59.11B — Production de films institutionnels et publicitaires
                   </p>
                   <p className='flex items-center gap-2 mt-4'>
+                    <strong className='text-cream font-medium flex items-center gap-1.5'>
+                      <Phone className='w-3.5 h-3.5 text-gold/45' /> Téléphone :
+                    </strong>{' '}
+                    <a
+                      href='tel:+33752038854'
+                      className='gold-text hover:underline transition-all'>
+                      07 52 03 88 54
+                    </a>
+                  </p>
+                  <p className='flex items-center gap-2 mt-2'>
                     <strong className='text-cream font-medium flex items-center gap-1.5'>
                       <Mail className='w-3.5 h-3.5 text-gold/45' /> Contact e-mail :
                     </strong>{' '}

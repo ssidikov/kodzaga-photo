@@ -172,6 +172,22 @@ export default function PolitiqueDeConfidentialite() {
                     commerciales.
                   </p>
                   <p>
+                    <strong className='text-cream font-medium'>Sous-traitants et hébergement :</strong>{' '}
+                    Pour assurer le fonctionnement technique du site, les données sont traitées par nos sous-traitants techniques de confiance :
+                  </p>
+                  <ul className='list-disc pl-5 space-y-1.5 text-cream/50'>
+                    <li>
+                      <strong className='text-cream/70 font-medium'>Vercel Inc.</strong> (États-Unis) — Hébergement du site internet et infrastructure cloud.
+                    </li>
+                    <li>
+                      <strong className='text-cream/70 font-medium'>Neon Inc.</strong> (États-Unis) — Base de données sécurisée pour la gestion des demandes de réservation.
+                    </li>
+                  </ul>
+                  <p>
+                    <strong className='text-cream font-medium'>Transferts de données hors UE :</strong>{' '}
+                    Certains de nos prestataires techniques (Vercel, Neon) sont situés aux États-Unis. Ces transferts sont encadrés conformément aux exigences du RGPD, notamment via le Cadre de protection des données UE-États-Unis (<em>EU-US Data Privacy Framework - DPF</em>) ou la signature de clauses contractuelles types (CCT) de la Commission européenne.
+                  </p>
+                  <p>
                     <strong className='text-cream font-medium'>Conservation :</strong>
                   </p>
                   <ul className='list-disc pl-5 space-y-1.5 text-cream/50'>
