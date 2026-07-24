@@ -100,7 +100,7 @@ export default function About() {
               <a
                 href='https://instagram.com/al3xis.kdz'
                 target='_blank'
-                rel='noreferrer'
+                rel='noopener noreferrer'
                 className='btn-gold py-2.5 px-5 text-[10px]'>
                 <InstagramIcon className='w-3.5 h-3.5' />
                 Suivre sur Instagram
@@ -108,7 +108,7 @@ export default function About() {
               <a
                 href='https://www.tiktok.com/@al3x.photos'
                 target='_blank'
-                rel='noreferrer'
+                rel='noopener noreferrer'
                 className='inline-flex items-center gap-2 py-2.5 px-5 text-[10px] tracking-[0.15em] uppercase font-body font-medium border border-gold/15 text-cream/40 hover:border-gold/40 hover:text-gold/70 transition-all duration-300 cursor-pointer'>
                 <TikTokIcon className='w-3.5 h-3.5' />
                 TikTok

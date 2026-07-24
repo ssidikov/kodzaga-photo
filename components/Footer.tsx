@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const NAV_LINKS = [
   { label: 'À propos', href: '/#about' },
   { label: 'Portfolio', href: '/#portfolio' },
@@ -69,7 +71,7 @@ export default function Footer() {
               <a
                 href='https://instagram.com/al3xis.kdz'
                 target='_blank'
-                rel='noreferrer'
+                rel='noopener noreferrer'
                 className='w-10 h-10 border border-gold/10 flex items-center justify-center text-cream/30 hover:text-gold hover:border-gold/30 transition-all duration-300 cursor-pointer'
                 aria-label='Instagram'>
                 <InstagramIcon className='w-4 h-4' />
@@ -77,7 +79,7 @@ export default function Footer() {
               <a
                 href='https://www.tiktok.com/@al3x.photos'
                 target='_blank'
-                rel='noreferrer'
+                rel='noopener noreferrer'
                 className='w-10 h-10 border border-gold/10 flex items-center justify-center text-cream/30 hover:text-gold hover:border-gold/30 transition-all duration-300 cursor-pointer'
                 aria-label='TikTok'>
                 <TikTokIcon className='w-4 h-4' />
@@ -94,13 +96,13 @@ export default function Footer() {
               © {new Date().getFullYear()} Alex Photos — Tous droits réservés
             </p>
             <div className='flex gap-3 text-cream/35 text-[10px] font-light'>
-              <a href='/mentions-legales' className='hover:text-gold transition-colors duration-300'>
+              <Link href='/mentions-legales' className='hover:text-gold transition-colors duration-300'>
                 Mentions légales
-              </a>
+              </Link>
               <span className='text-cream/15'>·</span>
-              <a href='/politique-de-confidentialite' className='hover:text-gold transition-colors duration-300'>
+              <Link href='/politique-de-confidentialite' className='hover:text-gold transition-colors duration-300'>
                 Politique de confidentialité
-              </a>
+              </Link>
             </div>
           </div>
           <div className='flex flex-col items-center sm:items-end gap-1'>

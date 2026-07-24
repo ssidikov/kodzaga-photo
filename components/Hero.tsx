@@ -9,7 +9,9 @@ export default function Hero() {
         <source media='(max-width: 767px)' srcSet={HERO_MOBILE_BACKGROUND_IMAGE} />
         <img
           src={HERO_BACKGROUND_IMAGE}
-          alt=''
+          alt='Alexis Kodzaga - Directeur Artistique & Photographe'
+          fetchPriority='high'
+          loading='eager'
           className='block h-full w-full object-cover object-left md:object-center'
         />
       </picture>
@@ -45,6 +47,7 @@ export default function Hero() {
             src={imageUrl('alexis-kodzaga.jpg')}
             alt='Alexis Kodzaga'
             fill
+            priority
             sizes='112px'
             className='object-cover object-bottom'
           />

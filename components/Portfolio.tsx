@@ -262,11 +262,11 @@ export default function Portfolio() {
           ref={row1Ref}
           className="flex w-full overflow-x-auto scrollbar-none md:w-max md:overflow-x-visible md:animate-marquee"
         >
-          {row1.map((src) => (
-            <GalleryImage key={`r1-a-${src}`} src={src} alt={src.replace(".webp", "")} size="lg" visible={visible} />
+          {row1.map((src, i) => (
+            <GalleryImage key={`r1-a-${src}`} src={src} alt={`Alexis Kodzaga - Photo Portfolio ${i + 1}`} size="lg" visible={visible} />
           ))}
-          {row1.map((src) => (
-            <GalleryImage key={`r1-b-${src}`} src={src} alt={src.replace(".webp", "")} size="lg" visible={visible} />
+          {row1.map((src, i) => (
+            <GalleryImage key={`r1-b-${src}`} src={src} alt={`Alexis Kodzaga - Photo Portfolio ${i + 1}`} size="lg" visible={visible} />
           ))}
         </div>
         <div className="edge-fade-l" />
@@ -279,11 +279,11 @@ export default function Portfolio() {
           ref={row2Ref}
           className="flex w-full overflow-x-auto scrollbar-none md:w-max md:overflow-x-visible md:animate-marquee-reverse"
         >
-          {row2.map((src) => (
-            <GalleryImage key={`r2-a-${src}`} src={src} alt={src.replace(".webp", "")} size="sm" visible={visible} />
+          {row2.map((src, i) => (
+            <GalleryImage key={`r2-a-${src}`} src={src} alt={`Alexis Kodzaga - Réalisation ${i + 1}`} size="sm" visible={visible} />
           ))}
-          {row2.map((src) => (
-            <GalleryImage key={`r2-b-${src}`} src={src} alt={src.replace(".webp", "")} size="sm" visible={visible} />
+          {row2.map((src, i) => (
+            <GalleryImage key={`r2-b-${src}`} src={src} alt={`Alexis Kodzaga - Réalisation ${i + 1}`} size="sm" visible={visible} />
           ))}
         </div>
         <div className="edge-fade-l" />

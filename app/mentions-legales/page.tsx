@@ -1,10 +1,14 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Scale, Shield, Building, Globe, Mail } from 'lucide-react'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Mentions Légales | Alex Photos',
   description:
     "Mentions légales obligatoires concernant le site internet al3x-photos.fr de l'entreprise Alexis Kodzaga.",
+  alternates: {
+    canonical: '/mentions-legales',
+  },
 }
 
 export default function MentionsLegales() {

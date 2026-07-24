@@ -1,10 +1,14 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Shield, Eye, Database, FileText, UserCheck, Cookie } from 'lucide-react'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Politique de Confidentialité | Alex Photos',
   description:
     'Politique de confidentialité concernant la protection des données personnelles sur le site al3x-photos.fr.',
+  alternates: {
+    canonical: '/politique-de-confidentialite',
+  },
 }
 
 export default function PolitiqueDeConfidentialite() {
