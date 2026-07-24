@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Bodoni_Moda, Jost } from 'next/font/google'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/next'
 
 const bodoniModa = Bodoni_Moda({
   subsets: ['latin'],
@@ -90,8 +91,7 @@ export default function RootLayout({
     '@type': 'LocalBusiness',
     name: 'Alex Photos',
     image: 'https://pub-b0039a11c59a45d1846d6ff5e26b11d0.r2.dev/images/alexis-kodzaga.jpg',
-    description:
-      'Directeur Artistique, Photographe et Vidéaste — Shootings professionnels',
+    description: 'Directeur Artistique, Photographe et Vidéaste — Shootings professionnels',
     url: 'https://al3x-photos.fr',
     priceRange: '€€',
     founder: {
@@ -103,7 +103,12 @@ export default function RootLayout({
       '@type': 'PostalAddress',
       addressCountry: 'FR',
     },
-    knowsAbout: ['Photographie', 'Direction Artistique', 'Vidéos Publicitaires', 'Portrait Lifestyle'],
+    knowsAbout: [
+      'Photographie',
+      'Direction Artistique',
+      'Vidéos Publicitaires',
+      'Portrait Lifestyle',
+    ],
     sameAs: ['https://instagram.com/al3xis.kdz', 'https://www.tiktok.com/@al3x.photos'],
   }
 
@@ -119,8 +124,8 @@ export default function RootLayout({
       </head>
       <body className='bg-bg text-cream font-body antialiased'>
         <main className='relative overflow-x-hidden'>{children}</main>
+        <Analytics />
       </body>
     </html>
   )
 }
-
