@@ -168,7 +168,11 @@ export default function Pricing({ catalog }: { catalog: TariffCatalog }) {
               title={group.name}
               packs={group.packs}
               delayOffset={index * 100}
-              sectionId={group.id === 'solo' ? 'solo' : undefined}
+              sectionId={
+                group.name.toLowerCase() === 'solo' || group.sortOrder === 10 || index === 0
+                  ? 'solo'
+                  : undefined
+              }
             />
             {index < catalog.groups.length - 1 && <div className='gold-divider my-16 opacity-15' />}
           </div>
