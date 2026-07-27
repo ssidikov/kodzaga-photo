@@ -47,15 +47,17 @@ function PackGroup({
   title,
   packs,
   delayOffset,
+  sectionId,
 }: {
   title: string
   packs: TariffPackView[]
   delayOffset: number
+  sectionId?: string
 }) {
   if (packs.length === 0) return null
 
   return (
-    <div className='mb-20'>
+    <div id={sectionId} className={`mb-20${sectionId ? ' scroll-mt-[100px]' : ''}`}>
       <ScrollReveal>
         <h3 className='font-body text-xl font-semibold tracking-[0.25em] uppercase text-gold/45 mb-10'>
           {title}
@@ -162,7 +164,12 @@ export default function Pricing({ catalog }: { catalog: TariffCatalog }) {
 
         {catalog.groups.map((group, index) => (
           <div key={group.id}>
-            <PackGroup title={group.name} packs={group.packs} delayOffset={index * 100} />
+            <PackGroup
+              title={group.name}
+              packs={group.packs}
+              delayOffset={index * 100}
+              sectionId={group.id === 'solo' ? 'solo' : undefined}
+            />
             {index < catalog.groups.length - 1 && <div className='gold-divider my-16 opacity-15' />}
           </div>
         ))}

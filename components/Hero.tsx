@@ -94,7 +94,7 @@ export default function Hero() {
       <div
         className='flex flex-col sm:flex-row gap-4 items-center animate-slide-up'
         style={{ animationDelay: '0.9s', animationFillMode: 'backwards' }}>
-        <a href='#contact' className='btn-gold'>
+        <a href='#solo' className='btn-gold'>
           Réserver un shooting
           <ArrowRight className='w-3.5 h-3.5' />
         </a>

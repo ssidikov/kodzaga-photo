@@ -62,9 +62,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <HashLink
-          href='/#contact'
-          className='hidden md:inline-flex btn-gold py-2.5 px-5 text-[10px]'>
+        <HashLink href='/#solo' className='hidden md:inline-flex btn-gold py-2.5 px-5 text-[10px]'>
           Réserver
           <ArrowRight className='w-3 h-3' />
         </HashLink>
@@ -106,7 +104,7 @@ export default function Navbar() {
             isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
           style={{ transitionDelay: isOpen ? `${NAV_LINKS.length * 75}ms` : '0ms' }}>
-          <HashLink href='/#contact' onClick={closeMobileMenu} className='btn-gold mt-4'>
+          <HashLink href='/#solo' onClick={closeMobileMenu} className='btn-gold mt-4'>
             Réserver un shooting
             <ArrowRight className='w-3.5 h-3.5' />
           </HashLink>
