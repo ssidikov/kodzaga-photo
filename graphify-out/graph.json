@@ -9,7 +9,31 @@
       "source_file": "next-env.d.ts",
       "source_location": "L1",
       "id": "next_env_d_ts",
-      "community": 7
+      "community": 40
+    },
+    {
+      "label": "proxy.ts",
+      "file_type": "code",
+      "source_file": "proxy.ts",
+      "source_location": "L1",
+      "id": "proxy_ts",
+      "community": 41
+    },
+    {
+      "label": "drizzle.config.ts",
+      "file_type": "code",
+      "source_file": "drizzle.config.ts",
+      "source_location": "L1",
+      "id": "drizzle_config_ts",
+      "community": 42
+    },
+    {
+      "label": "auth.ts",
+      "file_type": "code",
+      "source_file": "auth.ts",
+      "source_location": "L1",
+      "id": "auth_ts",
+      "community": 43
     },
     {
       "label": "next.config.ts",
@@ -17,7 +41,55 @@
       "source_file": "next.config.ts",
       "source_location": "L1",
       "id": "next_config_ts",
-      "community": 8
+      "community": 44
+    },
+    {
+      "label": "next-auth.d.ts",
+      "file_type": "code",
+      "source_file": "types/next-auth.d.ts",
+      "source_location": "L1",
+      "id": "types_next_auth_d_ts",
+      "community": 45
+    },
+    {
+      "label": "nodemailer9.d.ts",
+      "file_type": "code",
+      "source_file": "types/nodemailer9.d.ts",
+      "source_location": "L1",
+      "id": "types_nodemailer9_d_ts",
+      "community": 46
+    },
+    {
+      "label": "robots.ts",
+      "file_type": "code",
+      "source_file": "app/robots.ts",
+      "source_location": "L1",
+      "id": "app_robots_ts",
+      "community": 20
+    },
+    {
+      "label": "robots()",
+      "file_type": "code",
+      "source_file": "app/robots.ts",
+      "source_location": "L3",
+      "id": "robots_robots",
+      "community": 20
+    },
+    {
+      "label": "sitemap.ts",
+      "file_type": "code",
+      "source_file": "app/sitemap.ts",
+      "source_location": "L1",
+      "id": "app_sitemap_ts",
+      "community": 21
+    },
+    {
+      "label": "sitemap()",
+      "file_type": "code",
+      "source_file": "app/sitemap.ts",
+      "source_location": "L3",
+      "id": "sitemap_sitemap",
+      "community": 21
     },
     {
       "label": "layout.tsx",
@@ -25,7 +97,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L1",
       "id": "app_layout_tsx",
-      "community": 9
+      "community": 47
     },
     {
       "label": "page.tsx",
@@ -33,15 +105,463 @@
       "source_file": "app/page.tsx",
       "source_location": "L1",
       "id": "app_page_tsx",
-      "community": 3
+      "community": 22
     },
     {
       "label": "Home()",
       "file_type": "code",
       "source_file": "app/page.tsx",
-      "source_location": "L9",
+      "source_location": "L11",
       "id": "page_home",
+      "community": 22
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/politique-de-confidentialite/page.tsx",
+      "source_location": "L1",
+      "id": "app_politique_de_confidentialite_page_tsx",
+      "community": 23
+    },
+    {
+      "label": "PolitiqueDeConfidentialite()",
+      "file_type": "code",
+      "source_file": "app/politique-de-confidentialite/page.tsx",
+      "source_location": "L14",
+      "id": "page_politiquedeconfidentialite",
+      "community": 23
+    },
+    {
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/admin/actions.ts",
+      "source_location": "L1",
+      "id": "app_admin_actions_ts",
+      "community": 7
+    },
+    {
+      "label": "updateReservationStatus()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/[id]/actions.ts",
+      "source_location": "L15",
+      "id": "actions_updatereservationstatus",
+      "community": 7
+    },
+    {
+      "label": "updateReservationNotes()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/[id]/actions.ts",
+      "source_location": "L33",
+      "id": "actions_updatereservationnotes",
+      "community": 7
+    },
+    {
+      "label": "deleteReservation()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/[id]/actions.ts",
+      "source_location": "L49",
+      "id": "actions_deletereservation",
+      "community": 7
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/admin/layout.tsx",
+      "source_location": "L1",
+      "id": "app_admin_layout_tsx",
+      "community": 24
+    },
+    {
+      "label": "AdminLayout()",
+      "file_type": "code",
+      "source_file": "app/admin/layout.tsx",
+      "source_location": "L11",
+      "id": "layout_adminlayout",
+      "community": 24
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/admin/page.tsx",
+      "source_location": "L1",
+      "id": "app_admin_page_tsx",
       "community": 3
+    },
+    {
+      "label": "formatDate()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/[id]/page.tsx",
+      "source_location": "L34",
+      "id": "page_formatdate",
+      "community": 3
+    },
+    {
+      "label": "TariffManager.tsx",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/TariffManager.tsx",
+      "source_location": "L1",
+      "id": "app_admin_tarifs_tariffmanager_tsx",
+      "community": 4
+    },
+    {
+      "label": "linesToText()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/TariffManager.tsx",
+      "source_location": "L80",
+      "id": "tariffmanager_linestotext",
+      "community": 4
+    },
+    {
+      "label": "textToLines()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/TariffManager.tsx",
+      "source_location": "L84",
+      "id": "tariffmanager_texttolines",
+      "community": 4
+    },
+    {
+      "label": "Field()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/TariffManager.tsx",
+      "source_location": "L91",
+      "id": "tariffmanager_field",
+      "community": 4
+    },
+    {
+      "label": "CheckField()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/TariffManager.tsx",
+      "source_location": "L108",
+      "id": "tariffmanager_checkfield",
+      "community": 4
+    },
+    {
+      "label": "onSaved()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/TariffManager.tsx",
+      "source_location": "L424",
+      "id": "tariffmanager_onsaved",
+      "community": 4
+    },
+    {
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L1",
+      "id": "app_admin_tarifs_actions_ts",
+      "community": 0
+    },
+    {
+      "label": "asBool()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L13",
+      "id": "actions_asbool",
+      "community": 0
+    },
+    {
+      "label": "asNumber()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L17",
+      "id": "actions_asnumber",
+      "community": 0
+    },
+    {
+      "label": "asLines()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L22",
+      "id": "actions_aslines",
+      "community": 0
+    },
+    {
+      "label": "refreshTariffs()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L30",
+      "id": "actions_refreshtariffs",
+      "community": 0
+    },
+    {
+      "label": "createTariffGroup()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L43",
+      "id": "actions_createtariffgroup",
+      "community": 0
+    },
+    {
+      "label": "updateTariffGroup()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L58",
+      "id": "actions_updatetariffgroup",
+      "community": 0
+    },
+    {
+      "label": "createTariffPack()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L96",
+      "id": "actions_createtariffpack",
+      "community": 0
+    },
+    {
+      "label": "updateTariffPack()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L121",
+      "id": "actions_updatetariffpack",
+      "community": 0
+    },
+    {
+      "label": "createTariffOption()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L169",
+      "id": "actions_createtariffoption",
+      "community": 0
+    },
+    {
+      "label": "updateTariffOption()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L187",
+      "id": "actions_updatetariffoption",
+      "community": 0
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/page.tsx",
+      "source_location": "L1",
+      "id": "app_admin_tarifs_page_tsx",
+      "community": 13
+    },
+    {
+      "label": "loadCatalog()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/page.tsx",
+      "source_location": "L14",
+      "id": "page_loadcatalog",
+      "community": 13
+    },
+    {
+      "label": "TariffsPage()",
+      "file_type": "code",
+      "source_file": "app/admin/tarifs/page.tsx",
+      "source_location": "L26",
+      "id": "page_tariffspage",
+      "community": 13
+    },
+    {
+      "label": "ExportButton.tsx",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/ExportButton.tsx",
+      "source_location": "L1",
+      "id": "app_admin_reservations_exportbutton_tsx",
+      "community": 25
+    },
+    {
+      "label": "ExportButton()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/ExportButton.tsx",
+      "source_location": "L5",
+      "id": "exportbutton_exportbutton",
+      "community": 25
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/page.tsx",
+      "source_location": "L1",
+      "id": "app_admin_reservations_page_tsx",
+      "community": 3
+    },
+    {
+      "label": "buildUrl()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/page.tsx",
+      "source_location": "L72",
+      "id": "page_buildurl",
+      "community": 3
+    },
+    {
+      "label": "buildExportUrl()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/page.tsx",
+      "source_location": "L85",
+      "id": "page_buildexporturl",
+      "community": 3
+    },
+    {
+      "label": "ReservationsFilter.tsx",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/ReservationsFilter.tsx",
+      "source_location": "L1",
+      "id": "app_admin_reservations_reservationsfilter_tsx",
+      "community": 8
+    },
+    {
+      "label": "navigate()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/ReservationsFilter.tsx",
+      "source_location": "L27",
+      "id": "reservationsfilter_navigate",
+      "community": 8
+    },
+    {
+      "label": "handleSearch()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/ReservationsFilter.tsx",
+      "source_location": "L36",
+      "id": "reservationsfilter_handlesearch",
+      "community": 8
+    },
+    {
+      "label": "handleStatus()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/ReservationsFilter.tsx",
+      "source_location": "L42",
+      "id": "reservationsfilter_handlestatus",
+      "community": 8
+    },
+    {
+      "label": "clearAll()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/ReservationsFilter.tsx",
+      "source_location": "L46",
+      "id": "reservationsfilter_clearall",
+      "community": 8
+    },
+    {
+      "label": "ReservationDetailClient.tsx",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/[id]/ReservationDetailClient.tsx",
+      "source_location": "L1",
+      "id": "app_admin_reservations_id_reservationdetailclient_tsx",
+      "community": 10
+    },
+    {
+      "label": "handleStatusChange()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/[id]/ReservationDetailClient.tsx",
+      "source_location": "L38",
+      "id": "reservationdetailclient_handlestatuschange",
+      "community": 10
+    },
+    {
+      "label": "handleSaveNotes()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/[id]/ReservationDetailClient.tsx",
+      "source_location": "L45",
+      "id": "reservationdetailclient_handlesavenotes",
+      "community": 10
+    },
+    {
+      "label": "handleDelete()",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/[id]/ReservationDetailClient.tsx",
+      "source_location": "L53",
+      "id": "reservationdetailclient_handledelete",
+      "community": 10
+    },
+    {
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/[id]/actions.ts",
+      "source_location": "L1",
+      "id": "app_admin_reservations_id_actions_ts",
+      "community": 7
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/admin/reservations/[id]/page.tsx",
+      "source_location": "L1",
+      "id": "app_admin_reservations_id_page_tsx",
+      "community": 3
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/admin/login/page.tsx",
+      "source_location": "L1",
+      "id": "app_admin_login_page_tsx",
+      "community": 26
+    },
+    {
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "app/admin/login/page.tsx",
+      "source_location": "L14",
+      "id": "page_handlesubmit",
+      "community": 26
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/mentions-legales/page.tsx",
+      "source_location": "L1",
+      "id": "app_mentions_legales_page_tsx",
+      "community": 27
+    },
+    {
+      "label": "MentionsLegales()",
+      "file_type": "code",
+      "source_file": "app/mentions-legales/page.tsx",
+      "source_location": "L14",
+      "id": "page_mentionslegales",
+      "community": 27
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/contact/route.ts",
+      "source_location": "L1",
+      "id": "app_api_contact_route_ts",
+      "community": 14
+    },
+    {
+      "label": "getClientIp()",
+      "file_type": "code",
+      "source_file": "app/api/contact/route.ts",
+      "source_location": "L24",
+      "id": "route_getclientip",
+      "community": 14
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "app/api/contact/route.ts",
+      "source_location": "L32",
+      "id": "route_post",
+      "community": 14
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/auth/[...nextauth]/route.ts",
+      "source_location": "L1",
+      "id": "app_api_auth_nextauth_route_ts",
+      "community": 48
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/export-csv/route.ts",
+      "source_location": "L1",
+      "id": "app_api_admin_export_csv_route_ts",
+      "community": 28
+    },
+    {
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "app/api/admin/export-csv/route.ts",
+      "source_location": "L10",
+      "id": "route_get",
+      "community": 28
     },
     {
       "label": "Hero.tsx",
@@ -49,7 +569,7 @@
       "source_file": "components/Hero.tsx",
       "source_location": "L1",
       "id": "components_hero_tsx",
-      "community": 10
+      "community": 49
     },
     {
       "label": "Navbar.tsx",
@@ -57,15 +577,23 @@
       "source_file": "components/Navbar.tsx",
       "source_location": "L1",
       "id": "components_navbar_tsx",
-      "community": 4
+      "community": 15
     },
     {
       "label": "handleScroll()",
       "file_type": "code",
       "source_file": "components/Navbar.tsx",
-      "source_location": "L18",
+      "source_location": "L20",
       "id": "navbar_handlescroll",
-      "community": 4
+      "community": 15
+    },
+    {
+      "label": "closeMobileMenu()",
+      "file_type": "code",
+      "source_file": "components/Navbar.tsx",
+      "source_location": "L33",
+      "id": "navbar_closemobilemenu",
+      "community": 15
     },
     {
       "label": "Pricing.tsx",
@@ -73,7 +601,31 @@
       "source_file": "components/Pricing.tsx",
       "source_location": "L1",
       "id": "components_pricing_tsx",
-      "community": 11
+      "community": 29
+    },
+    {
+      "label": "handleChoosePack()",
+      "file_type": "code",
+      "source_file": "components/Pricing.tsx",
+      "source_location": "L30",
+      "id": "pricing_handlechoosepack",
+      "community": 29
+    },
+    {
+      "label": "HashLink.tsx",
+      "file_type": "code",
+      "source_file": "components/HashLink.tsx",
+      "source_location": "L1",
+      "id": "components_hashlink_tsx",
+      "community": 30
+    },
+    {
+      "label": "HashLink()",
+      "file_type": "code",
+      "source_file": "components/HashLink.tsx",
+      "source_location": "L10",
+      "id": "hashlink_hashlink",
+      "community": 30
     },
     {
       "label": "Contact.tsx",
@@ -81,15 +633,39 @@
       "source_file": "components/Contact.tsx",
       "source_location": "L1",
       "id": "components_contact_tsx",
-      "community": 5
+      "community": 9
+    },
+    {
+      "label": "formatOptionPrice()",
+      "file_type": "code",
+      "source_file": "components/Contact.tsx",
+      "source_location": "L9",
+      "id": "contact_formatoptionprice",
+      "community": 9
+    },
+    {
+      "label": "handlePrestationChange()",
+      "file_type": "code",
+      "source_file": "components/Contact.tsx",
+      "source_location": "L27",
+      "id": "contact_handleprestationchange",
+      "community": 9
+    },
+    {
+      "label": "handleInitialLoadAndChange()",
+      "file_type": "code",
+      "source_file": "components/Contact.tsx",
+      "source_location": "L34",
+      "id": "contact_handleinitialloadandchange",
+      "community": 9
     },
     {
       "label": "handleSubmit()",
       "file_type": "code",
       "source_file": "components/Contact.tsx",
-      "source_location": "L27",
+      "source_location": "L63",
       "id": "contact_handlesubmit",
-      "community": 5
+      "community": 9
     },
     {
       "label": "ScrollReveal.tsx",
@@ -97,7 +673,7 @@
       "source_file": "components/ScrollReveal.tsx",
       "source_location": "L1",
       "id": "components_scrollreveal_tsx",
-      "community": 6
+      "community": 31
     },
     {
       "label": "ScrollReveal()",
@@ -105,7 +681,23 @@
       "source_file": "components/ScrollReveal.tsx",
       "source_location": "L11",
       "id": "scrollreveal_scrollreveal",
-      "community": 6
+      "community": 31
+    },
+    {
+      "label": "image-url.ts",
+      "file_type": "code",
+      "source_file": "components/image-url.ts",
+      "source_location": "L1",
+      "id": "components_image_url_ts",
+      "community": 32
+    },
+    {
+      "label": "imageUrl()",
+      "file_type": "code",
+      "source_file": "components/image-url.ts",
+      "source_location": "L4",
+      "id": "image_url_imageurl",
+      "community": 32
     },
     {
       "label": "Footer.tsx",
@@ -113,23 +705,23 @@
       "source_file": "components/Footer.tsx",
       "source_location": "L1",
       "id": "components_footer_tsx",
-      "community": 2
+      "community": 16
     },
     {
       "label": "InstagramIcon()",
       "file_type": "code",
       "source_file": "components/Footer.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "id": "footer_instagramicon",
-      "community": 2
+      "community": 16
     },
     {
       "label": "TikTokIcon()",
       "file_type": "code",
       "source_file": "components/Footer.tsx",
-      "source_location": "L18",
+      "source_location": "L25",
       "id": "footer_tiktokicon",
-      "community": 2
+      "community": 16
     },
     {
       "label": "Portfolio.tsx",
@@ -137,7 +729,63 @@
       "source_file": "components/Portfolio.tsx",
       "source_location": "L1",
       "id": "components_portfolio_tsx",
-      "community": 12
+      "community": 5
+    },
+    {
+      "label": "handleScroll()",
+      "file_type": "code",
+      "source_file": "components/Portfolio.tsx",
+      "source_location": "L126",
+      "id": "portfolio_handlescroll",
+      "community": 5
+    },
+    {
+      "label": "handleTouchStart()",
+      "file_type": "code",
+      "source_file": "components/Portfolio.tsx",
+      "source_location": "L137",
+      "id": "portfolio_handletouchstart",
+      "community": 5
+    },
+    {
+      "label": "handleTouchEnd()",
+      "file_type": "code",
+      "source_file": "components/Portfolio.tsx",
+      "source_location": "L142",
+      "id": "portfolio_handletouchend",
+      "community": 5
+    },
+    {
+      "label": "step()",
+      "file_type": "code",
+      "source_file": "components/Portfolio.tsx",
+      "source_location": "L162",
+      "id": "portfolio_step",
+      "community": 5
+    },
+    {
+      "label": "handleResize()",
+      "file_type": "code",
+      "source_file": "components/Portfolio.tsx",
+      "source_location": "L213",
+      "id": "portfolio_handleresize",
+      "community": 5
+    },
+    {
+      "label": "HashScrollOnLoad.tsx",
+      "file_type": "code",
+      "source_file": "components/HashScrollOnLoad.tsx",
+      "source_location": "L1",
+      "id": "components_hashscrollonload_tsx",
+      "community": 33
+    },
+    {
+      "label": "HashScrollOnLoad()",
+      "file_type": "code",
+      "source_file": "components/HashScrollOnLoad.tsx",
+      "source_location": "L6",
+      "id": "hashscrollonload_hashscrollonload",
+      "community": 33
     },
     {
       "label": "About.tsx",
@@ -145,31 +793,519 @@
       "source_file": "components/About.tsx",
       "source_location": "L1",
       "id": "components_about_tsx",
-      "community": 1
+      "community": 11
     },
     {
       "label": "InstagramIcon()",
       "file_type": "code",
       "source_file": "components/About.tsx",
-      "source_location": "L4",
+      "source_location": "L6",
       "id": "about_instagramicon",
-      "community": 1
+      "community": 11
     },
     {
       "label": "TikTokIcon()",
       "file_type": "code",
       "source_file": "components/About.tsx",
-      "source_location": "L14",
+      "source_location": "L21",
       "id": "about_tiktokicon",
-      "community": 1
+      "community": 11
     },
     {
       "label": "About()",
       "file_type": "code",
       "source_file": "components/About.tsx",
-      "source_location": "L22",
+      "source_location": "L29",
       "id": "about_about",
+      "community": 11
+    },
+    {
+      "label": "card.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/card.tsx",
+      "source_location": "L1",
+      "id": "components_ui_card_tsx",
+      "community": 50
+    },
+    {
+      "label": "label.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/label.tsx",
+      "source_location": "L1",
+      "id": "components_ui_label_tsx",
+      "community": 51
+    },
+    {
+      "label": "badge.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/badge.tsx",
+      "source_location": "L1",
+      "id": "components_ui_badge_tsx",
+      "community": 34
+    },
+    {
+      "label": "Badge()",
+      "file_type": "code",
+      "source_file": "components/ui/badge.tsx",
+      "source_location": "L30",
+      "id": "badge_badge",
+      "community": 34
+    },
+    {
+      "label": "table.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/table.tsx",
+      "source_location": "L1",
+      "id": "components_ui_table_tsx",
+      "community": 52
+    },
+    {
+      "label": "separator.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/separator.tsx",
+      "source_location": "L1",
+      "id": "components_ui_separator_tsx",
+      "community": 53
+    },
+    {
+      "label": "button.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/button.tsx",
+      "source_location": "L1",
+      "id": "components_ui_button_tsx",
+      "community": 54
+    },
+    {
+      "label": "dropdown-menu.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/dropdown-menu.tsx",
+      "source_location": "L1",
+      "id": "components_ui_dropdown_menu_tsx",
+      "community": 35
+    },
+    {
+      "label": "DropdownMenu()",
+      "file_type": "code",
+      "source_file": "components/ui/dropdown-menu.tsx",
+      "source_location": "L4",
+      "id": "dropdown_menu_dropdownmenu",
+      "community": 35
+    },
+    {
+      "label": "select.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/select.tsx",
+      "source_location": "L1",
+      "id": "components_ui_select_tsx",
+      "community": 55
+    },
+    {
+      "label": "textarea.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/textarea.tsx",
+      "source_location": "L1",
+      "id": "components_ui_textarea_tsx",
+      "community": 56
+    },
+    {
+      "label": "input.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/input.tsx",
+      "source_location": "L1",
+      "id": "components_ui_input_tsx",
+      "community": 57
+    },
+    {
+      "label": "MobileHeader.tsx",
+      "file_type": "code",
+      "source_file": "components/admin/MobileHeader.tsx",
+      "source_location": "L1",
+      "id": "components_admin_mobileheader_tsx",
+      "community": 58
+    },
+    {
+      "label": "SessionProvider.tsx",
+      "file_type": "code",
+      "source_file": "components/admin/SessionProvider.tsx",
+      "source_location": "L1",
+      "id": "components_admin_sessionprovider_tsx",
+      "community": 36
+    },
+    {
+      "label": "SessionProvider()",
+      "file_type": "code",
+      "source_file": "components/admin/SessionProvider.tsx",
+      "source_location": "L6",
+      "id": "sessionprovider_sessionprovider",
+      "community": 36
+    },
+    {
+      "label": "Sidebar.tsx",
+      "file_type": "code",
+      "source_file": "components/admin/Sidebar.tsx",
+      "source_location": "L1",
+      "id": "components_admin_sidebar_tsx",
+      "community": 59
+    },
+    {
+      "label": "seed.ts",
+      "file_type": "code",
+      "source_file": "scripts/seed.ts",
+      "source_location": "L1",
+      "id": "scripts_seed_ts",
+      "community": 37
+    },
+    {
+      "label": "seed()",
+      "file_type": "code",
+      "source_file": "scripts/seed.ts",
+      "source_location": "L16",
+      "id": "seed_seed",
+      "community": 37
+    },
+    {
+      "label": "admin-session.ts",
+      "file_type": "code",
+      "source_file": "lib/admin-session.ts",
+      "source_location": "L1",
+      "id": "lib_admin_session_ts",
+      "community": 38
+    },
+    {
+      "label": "isAdminSession()",
+      "file_type": "code",
+      "source_file": "lib/admin-session.ts",
+      "source_location": "L5",
+      "id": "admin_session_isadminsession",
+      "community": 38
+    },
+    {
+      "label": "scroll-to-hash.ts",
+      "file_type": "code",
+      "source_file": "lib/scroll-to-hash.ts",
+      "source_location": "L1",
+      "id": "lib_scroll_to_hash_ts",
+      "community": 17
+    },
+    {
+      "label": "scrollToHash()",
+      "file_type": "code",
+      "source_file": "lib/scroll-to-hash.ts",
+      "source_location": "L1",
+      "id": "scroll_to_hash_scrolltohash",
+      "community": 17
+    },
+    {
+      "label": "isSamePageHashLink()",
+      "file_type": "code",
+      "source_file": "lib/scroll-to-hash.ts",
+      "source_location": "L13",
+      "id": "scroll_to_hash_issamepagehashlink",
+      "community": 17
+    },
+    {
+      "label": "email.ts",
+      "file_type": "code",
+      "source_file": "lib/email.ts",
+      "source_location": "L1",
+      "id": "lib_email_ts",
       "community": 1
+    },
+    {
+      "label": "clientEmailHtml()",
+      "file_type": "code",
+      "source_file": "lib/email.ts",
+      "source_location": "L45",
+      "id": "email_clientemailhtml",
+      "community": 1
+    },
+    {
+      "label": "adminEmailHtml()",
+      "file_type": "code",
+      "source_file": "lib/email.ts",
+      "source_location": "L81",
+      "id": "email_adminemailhtml",
+      "community": 1
+    },
+    {
+      "label": "formatDate()",
+      "file_type": "code",
+      "source_file": "lib/email.ts",
+      "source_location": "L129",
+      "id": "email_formatdate",
+      "community": 1
+    },
+    {
+      "label": "safeContactData()",
+      "file_type": "code",
+      "source_file": "lib/email.ts",
+      "source_location": "L149",
+      "id": "email_safecontactdata",
+      "community": 1
+    },
+    {
+      "label": "mailtoHref()",
+      "file_type": "code",
+      "source_file": "lib/email.ts",
+      "source_location": "L161",
+      "id": "email_mailtohref",
+      "community": 1
+    },
+    {
+      "label": "cleanHeader()",
+      "file_type": "code",
+      "source_file": "lib/email.ts",
+      "source_location": "L165",
+      "id": "email_cleanheader",
+      "community": 1
+    },
+    {
+      "label": "escapeHtml()",
+      "file_type": "code",
+      "source_file": "lib/email.ts",
+      "source_location": "L169",
+      "id": "email_escapehtml",
+      "community": 1
+    },
+    {
+      "label": "sendClientConfirmation()",
+      "file_type": "code",
+      "source_file": "lib/email.ts",
+      "source_location": "L178",
+      "id": "email_sendclientconfirmation",
+      "community": 1
+    },
+    {
+      "label": "sendAdminNotification()",
+      "file_type": "code",
+      "source_file": "lib/email.ts",
+      "source_location": "L187",
+      "id": "email_sendadminnotification",
+      "community": 1
+    },
+    {
+      "label": "utils.ts",
+      "file_type": "code",
+      "source_file": "lib/utils.ts",
+      "source_location": "L1",
+      "id": "lib_utils_ts",
+      "community": 39
+    },
+    {
+      "label": "cn()",
+      "file_type": "code",
+      "source_file": "lib/utils.ts",
+      "source_location": "L4",
+      "id": "utils_cn",
+      "community": 39
+    },
+    {
+      "label": "tariff-types.ts",
+      "file_type": "code",
+      "source_file": "lib/tariff-types.ts",
+      "source_location": "L1",
+      "id": "lib_tariff_types_ts",
+      "community": 60
+    },
+    {
+      "label": "admin-auth.ts",
+      "file_type": "code",
+      "source_file": "lib/admin-auth.ts",
+      "source_location": "L1",
+      "id": "lib_admin_auth_ts",
+      "community": 12
+    },
+    {
+      "label": "getAdminSession()",
+      "file_type": "code",
+      "source_file": "lib/admin-auth.ts",
+      "source_location": "L5",
+      "id": "admin_auth_getadminsession",
+      "community": 12
+    },
+    {
+      "label": "requireAdminSession()",
+      "file_type": "code",
+      "source_file": "lib/admin-auth.ts",
+      "source_location": "L10",
+      "id": "admin_auth_requireadminsession",
+      "community": 12
+    },
+    {
+      "label": "requireAdminPage()",
+      "file_type": "code",
+      "source_file": "lib/admin-auth.ts",
+      "source_location": "L16",
+      "id": "admin_auth_requireadminpage",
+      "community": 12
+    },
+    {
+      "label": "rate-limit.ts",
+      "file_type": "code",
+      "source_file": "lib/rate-limit.ts",
+      "source_location": "L1",
+      "id": "lib_rate_limit_ts",
+      "community": 18
+    },
+    {
+      "label": "cleanup()",
+      "file_type": "code",
+      "source_file": "lib/rate-limit.ts",
+      "source_location": "L9",
+      "id": "rate_limit_cleanup",
+      "community": 18
+    },
+    {
+      "label": "rateLimit()",
+      "file_type": "code",
+      "source_file": "lib/rate-limit.ts",
+      "source_location": "L17",
+      "id": "rate_limit_ratelimit",
+      "community": 18
+    },
+    {
+      "label": "reservation-filters.ts",
+      "file_type": "code",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L1",
+      "id": "lib_reservation_filters_ts",
+      "community": 6
+    },
+    {
+      "label": "parseReservationFilters()",
+      "file_type": "code",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L19",
+      "id": "reservation_filters_parsereservationfilters",
+      "community": 6
+    },
+    {
+      "label": "buildReservationWhere()",
+      "file_type": "code",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L32",
+      "id": "reservation_filters_buildreservationwhere",
+      "community": 6
+    },
+    {
+      "label": "firstValue()",
+      "file_type": "code",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L52",
+      "id": "reservation_filters_firstvalue",
+      "community": 6
+    },
+    {
+      "label": "isReservationStatus()",
+      "file_type": "code",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L57",
+      "id": "reservation_filters_isreservationstatus",
+      "community": 6
+    },
+    {
+      "label": "escapeLike()",
+      "file_type": "code",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L61",
+      "id": "reservation_filters_escapelike",
+      "community": 6
+    },
+    {
+      "label": "tariffs.ts",
+      "file_type": "code",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L1",
+      "id": "lib_tariffs_ts",
+      "community": 2
+    },
+    {
+      "label": "getDefaultTariffCatalog()",
+      "file_type": "code",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L182",
+      "id": "tariffs_getdefaulttariffcatalog",
+      "community": 2
+    },
+    {
+      "label": "toIconKey()",
+      "file_type": "code",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L192",
+      "id": "tariffs_toiconkey",
+      "community": 2
+    },
+    {
+      "label": "getTariffCatalog()",
+      "file_type": "code",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L196",
+      "id": "tariffs_gettariffcatalog",
+      "community": 2
+    },
+    {
+      "label": "validatePrestationName()",
+      "file_type": "code",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L266",
+      "id": "tariffs_validateprestationname",
+      "community": 2
+    },
+    {
+      "label": "getOptionLabelsFromForm()",
+      "file_type": "code",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L272",
+      "id": "tariffs_getoptionlabelsfromform",
+      "community": 2
+    },
+    {
+      "label": "seedDefaultTariffs()",
+      "file_type": "code",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L279",
+      "id": "tariffs_seeddefaulttariffs",
+      "community": 2
+    },
+    {
+      "label": "groupExists()",
+      "file_type": "code",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L320",
+      "id": "tariffs_groupexists",
+      "community": 2
+    },
+    {
+      "label": "schema.ts",
+      "file_type": "code",
+      "source_file": "lib/db/schema.ts",
+      "source_location": "L1",
+      "id": "lib_db_schema_ts",
+      "community": 61
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "lib/db/index.ts",
+      "source_location": "L1",
+      "id": "lib_db_index_ts",
+      "community": 19
+    },
+    {
+      "label": "createDb()",
+      "file_type": "code",
+      "source_file": "lib/db/index.ts",
+      "source_location": "L5",
+      "id": "index_createdb",
+      "community": 19
+    },
+    {
+      "label": "getDb()",
+      "file_type": "code",
+      "source_file": "lib/db/index.ts",
+      "source_location": "L16",
+      "id": "index_getdb",
+      "community": 19
     },
     {
       "label": "Showcase Website Project",
@@ -180,8 +1316,8 @@
       "captured_at": null,
       "author": "Alexis Kodzaga",
       "contributor": null,
-      "id": "concept_site_vitrine_alexis",
-      "community": 0
+      "community": 62,
+      "id": "concept_site_vitrine_alexis"
     },
     {
       "label": "NovaBridge Studios (NBS)",
@@ -192,8 +1328,8 @@
       "captured_at": null,
       "author": "Alexis Kodzaga",
       "contributor": null,
-      "id": "concept_novabridge_studios",
-      "community": 0
+      "community": 63,
+      "id": "concept_novabridge_studios"
     },
     {
       "label": "Photography Pricing Packages",
@@ -204,8 +1340,8 @@
       "captured_at": null,
       "author": "Alexis Kodzaga",
       "contributor": null,
-      "id": "concept_pricing_packages",
-      "community": 0
+      "community": 64,
+      "id": "concept_pricing_packages"
     },
     {
       "label": "Reservation & Contact Form",
@@ -216,8 +1352,8 @@
       "captured_at": null,
       "author": "Alexis Kodzaga",
       "contributor": null,
-      "id": "concept_reservation_form",
-      "community": 0
+      "community": 65,
+      "id": "concept_reservation_form"
     },
     {
       "label": "Terse Caveman Rules",
@@ -228,8 +1364,8 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_rules_caveman",
-      "community": 13
+      "community": 66,
+      "id": "agents_rules_caveman"
     },
     {
       "label": "Alexis Kodzaga Portrait",
@@ -240,16 +1376,40 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "public_alexis_kodzaga",
-      "community": 0
+      "community": 67,
+      "id": "public_alexis_kodzaga"
     }
   ],
   "links": [
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/robots.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "app_robots_ts",
+      "_tgt": "robots_robots",
+      "source": "app_robots_ts",
+      "target": "robots_robots",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/sitemap.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "app_sitemap_ts",
+      "_tgt": "sitemap_sitemap",
+      "source": "app_sitemap_ts",
+      "target": "sitemap_sitemap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "app/page.tsx",
-      "source_location": "L9",
+      "source_location": "L11",
       "weight": 1.0,
       "_src": "app_page_tsx",
       "_tgt": "page_home",
@@ -260,8 +1420,812 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/politique-de-confidentialite/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "app_politique_de_confidentialite_page_tsx",
+      "_tgt": "page_politiquedeconfidentialite",
+      "source": "app_politique_de_confidentialite_page_tsx",
+      "target": "page_politiquedeconfidentialite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/actions.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "app_admin_actions_ts",
+      "_tgt": "actions_updatereservationstatus",
+      "source": "app_admin_actions_ts",
+      "target": "actions_updatereservationstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/actions.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_src": "app_admin_actions_ts",
+      "_tgt": "actions_updatereservationnotes",
+      "source": "app_admin_actions_ts",
+      "target": "actions_updatereservationnotes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/actions.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_src": "app_admin_actions_ts",
+      "_tgt": "actions_deletereservation",
+      "source": "app_admin_actions_ts",
+      "target": "actions_deletereservation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/[id]/actions.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_id_actions_ts",
+      "_tgt": "actions_updatereservationstatus",
+      "source": "actions_updatereservationstatus",
+      "target": "app_admin_reservations_id_actions_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/[id]/actions.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_id_actions_ts",
+      "_tgt": "actions_updatereservationnotes",
+      "source": "actions_updatereservationnotes",
+      "target": "app_admin_reservations_id_actions_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/[id]/actions.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_id_actions_ts",
+      "_tgt": "actions_deletereservation",
+      "source": "actions_deletereservation",
+      "target": "app_admin_reservations_id_actions_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/layout.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "app_admin_layout_tsx",
+      "_tgt": "layout_adminlayout",
+      "source": "app_admin_layout_tsx",
+      "target": "layout_adminlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/page.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "app_admin_page_tsx",
+      "_tgt": "page_formatdate",
+      "source": "app_admin_page_tsx",
+      "target": "page_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/page.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_page_tsx",
+      "_tgt": "page_formatdate",
+      "source": "page_formatdate",
+      "target": "app_admin_reservations_page_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/[id]/page.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_id_page_tsx",
+      "_tgt": "page_formatdate",
+      "source": "page_formatdate",
+      "target": "app_admin_reservations_id_page_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/TariffManager.tsx",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_tariffmanager_tsx",
+      "_tgt": "tariffmanager_linestotext",
+      "source": "app_admin_tarifs_tariffmanager_tsx",
+      "target": "tariffmanager_linestotext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/TariffManager.tsx",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_tariffmanager_tsx",
+      "_tgt": "tariffmanager_texttolines",
+      "source": "app_admin_tarifs_tariffmanager_tsx",
+      "target": "tariffmanager_texttolines",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/TariffManager.tsx",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_tariffmanager_tsx",
+      "_tgt": "tariffmanager_field",
+      "source": "app_admin_tarifs_tariffmanager_tsx",
+      "target": "tariffmanager_field",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/TariffManager.tsx",
+      "source_location": "L108",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_tariffmanager_tsx",
+      "_tgt": "tariffmanager_checkfield",
+      "source": "app_admin_tarifs_tariffmanager_tsx",
+      "target": "tariffmanager_checkfield",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/TariffManager.tsx",
+      "source_location": "L424",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_tariffmanager_tsx",
+      "_tgt": "tariffmanager_onsaved",
+      "source": "app_admin_tarifs_tariffmanager_tsx",
+      "target": "tariffmanager_onsaved",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_actions_ts",
+      "_tgt": "actions_asbool",
+      "source": "app_admin_tarifs_actions_ts",
+      "target": "actions_asbool",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_actions_ts",
+      "_tgt": "actions_asnumber",
+      "source": "app_admin_tarifs_actions_ts",
+      "target": "actions_asnumber",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_actions_ts",
+      "_tgt": "actions_aslines",
+      "source": "app_admin_tarifs_actions_ts",
+      "target": "actions_aslines",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_actions_ts",
+      "_tgt": "actions_refreshtariffs",
+      "source": "app_admin_tarifs_actions_ts",
+      "target": "actions_refreshtariffs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_actions_ts",
+      "_tgt": "actions_createtariffgroup",
+      "source": "app_admin_tarifs_actions_ts",
+      "target": "actions_createtariffgroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_actions_ts",
+      "_tgt": "actions_updatetariffgroup",
+      "source": "app_admin_tarifs_actions_ts",
+      "target": "actions_updatetariffgroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L96",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_actions_ts",
+      "_tgt": "actions_createtariffpack",
+      "source": "app_admin_tarifs_actions_ts",
+      "target": "actions_createtariffpack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L121",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_actions_ts",
+      "_tgt": "actions_updatetariffpack",
+      "source": "app_admin_tarifs_actions_ts",
+      "target": "actions_updatetariffpack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L169",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_actions_ts",
+      "_tgt": "actions_createtariffoption",
+      "source": "app_admin_tarifs_actions_ts",
+      "target": "actions_createtariffoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L187",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_actions_ts",
+      "_tgt": "actions_updatetariffoption",
+      "source": "app_admin_tarifs_actions_ts",
+      "target": "actions_updatetariffoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_src": "actions_createtariffgroup",
+      "_tgt": "actions_asbool",
+      "source": "actions_asbool",
+      "target": "actions_createtariffgroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_src": "actions_updatetariffgroup",
+      "_tgt": "actions_asbool",
+      "source": "actions_asbool",
+      "target": "actions_updatetariffgroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_src": "actions_createtariffpack",
+      "_tgt": "actions_asbool",
+      "source": "actions_asbool",
+      "target": "actions_createtariffpack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L133",
+      "weight": 1.0,
+      "_src": "actions_updatetariffpack",
+      "_tgt": "actions_asbool",
+      "source": "actions_asbool",
+      "target": "actions_updatetariffpack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L177",
+      "weight": 1.0,
+      "_src": "actions_createtariffoption",
+      "_tgt": "actions_asbool",
+      "source": "actions_asbool",
+      "target": "actions_createtariffoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L196",
+      "weight": 1.0,
+      "_src": "actions_updatetariffoption",
+      "_tgt": "actions_asbool",
+      "source": "actions_asbool",
+      "target": "actions_updatetariffoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_src": "actions_createtariffgroup",
+      "_tgt": "actions_asnumber",
+      "source": "actions_asnumber",
+      "target": "actions_createtariffgroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_src": "actions_updatetariffgroup",
+      "_tgt": "actions_asnumber",
+      "source": "actions_asnumber",
+      "target": "actions_updatetariffgroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_src": "actions_createtariffpack",
+      "_tgt": "actions_asnumber",
+      "source": "actions_asnumber",
+      "target": "actions_createtariffpack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_src": "actions_updatetariffpack",
+      "_tgt": "actions_asnumber",
+      "source": "actions_asnumber",
+      "target": "actions_updatetariffpack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L178",
+      "weight": 1.0,
+      "_src": "actions_createtariffoption",
+      "_tgt": "actions_asnumber",
+      "source": "actions_asnumber",
+      "target": "actions_createtariffoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L197",
+      "weight": 1.0,
+      "_src": "actions_updatetariffoption",
+      "_tgt": "actions_asnumber",
+      "source": "actions_asnumber",
+      "target": "actions_updatetariffoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_src": "actions_createtariffpack",
+      "_tgt": "actions_aslines",
+      "source": "actions_aslines",
+      "target": "actions_createtariffpack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_src": "actions_updatetariffpack",
+      "_tgt": "actions_aslines",
+      "source": "actions_aslines",
+      "target": "actions_updatetariffpack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "actions_createtariffgroup",
+      "_tgt": "actions_refreshtariffs",
+      "source": "actions_refreshtariffs",
+      "target": "actions_createtariffgroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_src": "actions_updatetariffgroup",
+      "_tgt": "actions_refreshtariffs",
+      "source": "actions_refreshtariffs",
+      "target": "actions_updatetariffgroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_src": "actions_createtariffpack",
+      "_tgt": "actions_refreshtariffs",
+      "source": "actions_refreshtariffs",
+      "target": "actions_createtariffpack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L156",
+      "weight": 1.0,
+      "_src": "actions_updatetariffpack",
+      "_tgt": "actions_refreshtariffs",
+      "source": "actions_refreshtariffs",
+      "target": "actions_updatetariffpack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L184",
+      "weight": 1.0,
+      "_src": "actions_createtariffoption",
+      "_tgt": "actions_refreshtariffs",
+      "source": "actions_refreshtariffs",
+      "target": "actions_createtariffoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/actions.ts",
+      "source_location": "L214",
+      "weight": 1.0,
+      "_src": "actions_updatetariffoption",
+      "_tgt": "actions_refreshtariffs",
+      "source": "actions_refreshtariffs",
+      "target": "actions_updatetariffoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_page_tsx",
+      "_tgt": "page_loadcatalog",
+      "source": "app_admin_tarifs_page_tsx",
+      "target": "page_loadcatalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "app_admin_tarifs_page_tsx",
+      "_tgt": "page_tariffspage",
+      "source": "app_admin_tarifs_page_tsx",
+      "target": "page_tariffspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/tarifs/page.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "page_tariffspage",
+      "_tgt": "page_loadcatalog",
+      "source": "page_loadcatalog",
+      "target": "page_tariffspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/ExportButton.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_exportbutton_tsx",
+      "_tgt": "exportbutton_exportbutton",
+      "source": "app_admin_reservations_exportbutton_tsx",
+      "target": "exportbutton_exportbutton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/page.tsx",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_page_tsx",
+      "_tgt": "page_buildurl",
+      "source": "app_admin_reservations_page_tsx",
+      "target": "page_buildurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/page.tsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_page_tsx",
+      "_tgt": "page_buildexporturl",
+      "source": "app_admin_reservations_page_tsx",
+      "target": "page_buildexporturl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/ReservationsFilter.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_reservationsfilter_tsx",
+      "_tgt": "reservationsfilter_navigate",
+      "source": "app_admin_reservations_reservationsfilter_tsx",
+      "target": "reservationsfilter_navigate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/ReservationsFilter.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_reservationsfilter_tsx",
+      "_tgt": "reservationsfilter_handlesearch",
+      "source": "app_admin_reservations_reservationsfilter_tsx",
+      "target": "reservationsfilter_handlesearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/ReservationsFilter.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_reservationsfilter_tsx",
+      "_tgt": "reservationsfilter_handlestatus",
+      "source": "app_admin_reservations_reservationsfilter_tsx",
+      "target": "reservationsfilter_handlestatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/ReservationsFilter.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_reservationsfilter_tsx",
+      "_tgt": "reservationsfilter_clearall",
+      "source": "app_admin_reservations_reservationsfilter_tsx",
+      "target": "reservationsfilter_clearall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/ReservationsFilter.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "reservationsfilter_handlesearch",
+      "_tgt": "reservationsfilter_navigate",
+      "source": "reservationsfilter_navigate",
+      "target": "reservationsfilter_handlesearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/ReservationsFilter.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_src": "reservationsfilter_handlestatus",
+      "_tgt": "reservationsfilter_navigate",
+      "source": "reservationsfilter_navigate",
+      "target": "reservationsfilter_handlestatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/[id]/ReservationDetailClient.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_id_reservationdetailclient_tsx",
+      "_tgt": "reservationdetailclient_handlestatuschange",
+      "source": "app_admin_reservations_id_reservationdetailclient_tsx",
+      "target": "reservationdetailclient_handlestatuschange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/[id]/ReservationDetailClient.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_id_reservationdetailclient_tsx",
+      "_tgt": "reservationdetailclient_handlesavenotes",
+      "source": "app_admin_reservations_id_reservationdetailclient_tsx",
+      "target": "reservationdetailclient_handlesavenotes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/reservations/[id]/ReservationDetailClient.tsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_src": "app_admin_reservations_id_reservationdetailclient_tsx",
+      "_tgt": "reservationdetailclient_handledelete",
+      "source": "app_admin_reservations_id_reservationdetailclient_tsx",
+      "target": "reservationdetailclient_handledelete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/admin/login/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "app_admin_login_page_tsx",
+      "_tgt": "page_handlesubmit",
+      "source": "app_admin_login_page_tsx",
+      "target": "page_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/mentions-legales/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "app_mentions_legales_page_tsx",
+      "_tgt": "page_mentionslegales",
+      "source": "app_mentions_legales_page_tsx",
+      "target": "page_mentionslegales",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/contact/route.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "app_api_contact_route_ts",
+      "_tgt": "route_getclientip",
+      "source": "app_api_contact_route_ts",
+      "target": "route_getclientip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/contact/route.ts",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "app_api_contact_route_ts",
+      "_tgt": "route_post",
+      "source": "app_api_contact_route_ts",
+      "target": "route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/contact/route.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "route_post",
+      "_tgt": "route_getclientip",
+      "source": "route_getclientip",
+      "target": "route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/export-csv/route.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "app_api_admin_export_csv_route_ts",
+      "_tgt": "route_get",
+      "source": "app_api_admin_export_csv_route_ts",
+      "target": "route_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "components/Navbar.tsx",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0,
       "_src": "components_navbar_tsx",
       "_tgt": "navbar_handlescroll",
@@ -272,8 +2236,80 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "components/Navbar.tsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "components_navbar_tsx",
+      "_tgt": "navbar_closemobilemenu",
+      "source": "components_navbar_tsx",
+      "target": "navbar_closemobilemenu",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Pricing.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "components_pricing_tsx",
+      "_tgt": "pricing_handlechoosepack",
+      "source": "components_pricing_tsx",
+      "target": "pricing_handlechoosepack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/HashLink.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "components_hashlink_tsx",
+      "_tgt": "hashlink_hashlink",
+      "source": "components_hashlink_tsx",
+      "target": "hashlink_hashlink",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Contact.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "components_contact_tsx",
+      "_tgt": "contact_formatoptionprice",
+      "source": "components_contact_tsx",
+      "target": "contact_formatoptionprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "components/Contact.tsx",
       "source_location": "L27",
+      "weight": 1.0,
+      "_src": "components_contact_tsx",
+      "_tgt": "contact_handleprestationchange",
+      "source": "components_contact_tsx",
+      "target": "contact_handleprestationchange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Contact.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "components_contact_tsx",
+      "_tgt": "contact_handleinitialloadandchange",
+      "source": "components_contact_tsx",
+      "target": "contact_handleinitialloadandchange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Contact.tsx",
+      "source_location": "L63",
       "weight": 1.0,
       "_src": "components_contact_tsx",
       "_tgt": "contact_handlesubmit",
@@ -296,8 +2332,20 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "components/image-url.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "components_image_url_ts",
+      "_tgt": "image_url_imageurl",
+      "source": "components_image_url_ts",
+      "target": "image_url_imageurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "components/Footer.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0,
       "_src": "components_footer_tsx",
       "_tgt": "footer_instagramicon",
@@ -309,7 +2357,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/Footer.tsx",
-      "source_location": "L18",
+      "source_location": "L25",
       "weight": 1.0,
       "_src": "components_footer_tsx",
       "_tgt": "footer_tiktokicon",
@@ -320,8 +2368,80 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "components/Portfolio.tsx",
+      "source_location": "L126",
+      "weight": 1.0,
+      "_src": "components_portfolio_tsx",
+      "_tgt": "portfolio_handlescroll",
+      "source": "components_portfolio_tsx",
+      "target": "portfolio_handlescroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Portfolio.tsx",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_src": "components_portfolio_tsx",
+      "_tgt": "portfolio_handletouchstart",
+      "source": "components_portfolio_tsx",
+      "target": "portfolio_handletouchstart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Portfolio.tsx",
+      "source_location": "L142",
+      "weight": 1.0,
+      "_src": "components_portfolio_tsx",
+      "_tgt": "portfolio_handletouchend",
+      "source": "components_portfolio_tsx",
+      "target": "portfolio_handletouchend",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Portfolio.tsx",
+      "source_location": "L162",
+      "weight": 1.0,
+      "_src": "components_portfolio_tsx",
+      "_tgt": "portfolio_step",
+      "source": "components_portfolio_tsx",
+      "target": "portfolio_step",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Portfolio.tsx",
+      "source_location": "L213",
+      "weight": 1.0,
+      "_src": "components_portfolio_tsx",
+      "_tgt": "portfolio_handleresize",
+      "source": "components_portfolio_tsx",
+      "target": "portfolio_handleresize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/HashScrollOnLoad.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "components_hashscrollonload_tsx",
+      "_tgt": "hashscrollonload_hashscrollonload",
+      "source": "components_hashscrollonload_tsx",
+      "target": "hashscrollonload_hashscrollonload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "components/About.tsx",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_src": "components_about_tsx",
       "_tgt": "about_instagramicon",
@@ -333,7 +2453,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/About.tsx",
-      "source_location": "L14",
+      "source_location": "L21",
       "weight": 1.0,
       "_src": "components_about_tsx",
       "_tgt": "about_tiktokicon",
@@ -345,7 +2465,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/About.tsx",
-      "source_location": "L22",
+      "source_location": "L29",
       "weight": 1.0,
       "_src": "components_about_tsx",
       "_tgt": "about_about",
@@ -354,52 +2474,676 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
-      "source_location": null,
+      "source_file": "components/ui/badge.tsx",
+      "source_location": "L30",
       "weight": 1.0,
-      "_src": "concept_site_vitrine_alexis",
-      "_tgt": "concept_novabridge_studios",
-      "source": "concept_site_vitrine_alexis",
-      "target": "concept_novabridge_studios"
+      "_src": "components_ui_badge_tsx",
+      "_tgt": "badge_badge",
+      "source": "components_ui_badge_tsx",
+      "target": "badge_badge",
+      "confidence_score": 1.0
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
-      "source_location": null,
+      "source_file": "components/ui/dropdown-menu.tsx",
+      "source_location": "L4",
       "weight": 1.0,
-      "_src": "concept_site_vitrine_alexis",
-      "_tgt": "concept_pricing_packages",
-      "source": "concept_site_vitrine_alexis",
-      "target": "concept_pricing_packages"
+      "_src": "components_ui_dropdown_menu_tsx",
+      "_tgt": "dropdown_menu_dropdownmenu",
+      "source": "components_ui_dropdown_menu_tsx",
+      "target": "dropdown_menu_dropdownmenu",
+      "confidence_score": 1.0
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
-      "source_location": null,
+      "source_file": "components/admin/SessionProvider.tsx",
+      "source_location": "L6",
       "weight": 1.0,
-      "_src": "concept_site_vitrine_alexis",
-      "_tgt": "concept_reservation_form",
-      "source": "concept_site_vitrine_alexis",
-      "target": "concept_reservation_form"
+      "_src": "components_admin_sessionprovider_tsx",
+      "_tgt": "sessionprovider_sessionprovider",
+      "source": "components_admin_sessionprovider_tsx",
+      "target": "sessionprovider_sessionprovider",
+      "confidence_score": 1.0
     },
     {
-      "relation": "references",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Approfondissement_et_Questions_pour_Site-Internet_Doc1.docx.pdf",
-      "source_location": null,
+      "source_file": "scripts/seed.ts",
+      "source_location": "L16",
       "weight": 1.0,
-      "_src": "concept_site_vitrine_alexis",
-      "_tgt": "public_alexis_kodzaga",
-      "source": "concept_site_vitrine_alexis",
-      "target": "public_alexis_kodzaga"
+      "_src": "scripts_seed_ts",
+      "_tgt": "seed_seed",
+      "source": "scripts_seed_ts",
+      "target": "seed_seed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/admin-session.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "lib_admin_session_ts",
+      "_tgt": "admin_session_isadminsession",
+      "source": "lib_admin_session_ts",
+      "target": "admin_session_isadminsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/scroll-to-hash.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "lib_scroll_to_hash_ts",
+      "_tgt": "scroll_to_hash_scrolltohash",
+      "source": "lib_scroll_to_hash_ts",
+      "target": "scroll_to_hash_scrolltohash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/scroll-to-hash.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "lib_scroll_to_hash_ts",
+      "_tgt": "scroll_to_hash_issamepagehashlink",
+      "source": "lib_scroll_to_hash_ts",
+      "target": "scroll_to_hash_issamepagehashlink",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_src": "lib_email_ts",
+      "_tgt": "email_clientemailhtml",
+      "source": "lib_email_ts",
+      "target": "email_clientemailhtml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_src": "lib_email_ts",
+      "_tgt": "email_adminemailhtml",
+      "source": "lib_email_ts",
+      "target": "email_adminemailhtml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_src": "lib_email_ts",
+      "_tgt": "email_formatdate",
+      "source": "lib_email_ts",
+      "target": "email_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_src": "lib_email_ts",
+      "_tgt": "email_safecontactdata",
+      "source": "lib_email_ts",
+      "target": "email_safecontactdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L161",
+      "weight": 1.0,
+      "_src": "lib_email_ts",
+      "_tgt": "email_mailtohref",
+      "source": "lib_email_ts",
+      "target": "email_mailtohref",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L165",
+      "weight": 1.0,
+      "_src": "lib_email_ts",
+      "_tgt": "email_cleanheader",
+      "source": "lib_email_ts",
+      "target": "email_cleanheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L169",
+      "weight": 1.0,
+      "_src": "lib_email_ts",
+      "_tgt": "email_escapehtml",
+      "source": "lib_email_ts",
+      "target": "email_escapehtml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L178",
+      "weight": 1.0,
+      "_src": "lib_email_ts",
+      "_tgt": "email_sendclientconfirmation",
+      "source": "lib_email_ts",
+      "target": "email_sendclientconfirmation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L187",
+      "weight": 1.0,
+      "_src": "lib_email_ts",
+      "_tgt": "email_sendadminnotification",
+      "source": "lib_email_ts",
+      "target": "email_sendadminnotification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "email_clientemailhtml",
+      "_tgt": "email_safecontactdata",
+      "source": "email_clientemailhtml",
+      "target": "email_safecontactdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "email_clientemailhtml",
+      "_tgt": "email_formatdate",
+      "source": "email_clientemailhtml",
+      "target": "email_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L183",
+      "weight": 1.0,
+      "_src": "email_sendclientconfirmation",
+      "_tgt": "email_clientemailhtml",
+      "source": "email_clientemailhtml",
+      "target": "email_sendclientconfirmation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_src": "email_adminemailhtml",
+      "_tgt": "email_safecontactdata",
+      "source": "email_adminemailhtml",
+      "target": "email_safecontactdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_src": "email_adminemailhtml",
+      "_tgt": "email_mailtohref",
+      "source": "email_adminemailhtml",
+      "target": "email_mailtohref",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L112",
+      "weight": 1.0,
+      "_src": "email_adminemailhtml",
+      "_tgt": "email_formatdate",
+      "source": "email_adminemailhtml",
+      "target": "email_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L193",
+      "weight": 1.0,
+      "_src": "email_sendadminnotification",
+      "_tgt": "email_adminemailhtml",
+      "source": "email_adminemailhtml",
+      "target": "email_sendadminnotification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L145",
+      "weight": 1.0,
+      "_src": "email_formatdate",
+      "_tgt": "email_escapehtml",
+      "source": "email_formatdate",
+      "target": "email_escapehtml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L151",
+      "weight": 1.0,
+      "_src": "email_safecontactdata",
+      "_tgt": "email_escapehtml",
+      "source": "email_safecontactdata",
+      "target": "email_escapehtml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/email.ts",
+      "source_location": "L192",
+      "weight": 1.0,
+      "_src": "email_sendadminnotification",
+      "_tgt": "email_cleanheader",
+      "source": "email_cleanheader",
+      "target": "email_sendadminnotification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/utils.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "lib_utils_ts",
+      "_tgt": "utils_cn",
+      "source": "lib_utils_ts",
+      "target": "utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/admin-auth.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "lib_admin_auth_ts",
+      "_tgt": "admin_auth_getadminsession",
+      "source": "lib_admin_auth_ts",
+      "target": "admin_auth_getadminsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/admin-auth.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_admin_auth_ts",
+      "_tgt": "admin_auth_requireadminsession",
+      "source": "lib_admin_auth_ts",
+      "target": "admin_auth_requireadminsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/admin-auth.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_admin_auth_ts",
+      "_tgt": "admin_auth_requireadminpage",
+      "source": "lib_admin_auth_ts",
+      "target": "admin_auth_requireadminpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/admin-auth.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "admin_auth_requireadminsession",
+      "_tgt": "admin_auth_getadminsession",
+      "source": "admin_auth_getadminsession",
+      "target": "admin_auth_requireadminsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/admin-auth.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "admin_auth_requireadminpage",
+      "_tgt": "admin_auth_getadminsession",
+      "source": "admin_auth_getadminsession",
+      "target": "admin_auth_requireadminpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limit.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "lib_rate_limit_ts",
+      "_tgt": "rate_limit_cleanup",
+      "source": "lib_rate_limit_ts",
+      "target": "rate_limit_cleanup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limit.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "lib_rate_limit_ts",
+      "_tgt": "rate_limit_ratelimit",
+      "source": "lib_rate_limit_ts",
+      "target": "rate_limit_ratelimit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limit.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "rate_limit_ratelimit",
+      "_tgt": "rate_limit_cleanup",
+      "source": "rate_limit_cleanup",
+      "target": "rate_limit_ratelimit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "lib_reservation_filters_ts",
+      "_tgt": "reservation_filters_parsereservationfilters",
+      "source": "lib_reservation_filters_ts",
+      "target": "reservation_filters_parsereservationfilters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "lib_reservation_filters_ts",
+      "_tgt": "reservation_filters_buildreservationwhere",
+      "source": "lib_reservation_filters_ts",
+      "target": "reservation_filters_buildreservationwhere",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_src": "lib_reservation_filters_ts",
+      "_tgt": "reservation_filters_firstvalue",
+      "source": "lib_reservation_filters_ts",
+      "target": "reservation_filters_firstvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_src": "lib_reservation_filters_ts",
+      "_tgt": "reservation_filters_isreservationstatus",
+      "source": "lib_reservation_filters_ts",
+      "target": "reservation_filters_isreservationstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "lib_reservation_filters_ts",
+      "_tgt": "reservation_filters_escapelike",
+      "source": "lib_reservation_filters_ts",
+      "target": "reservation_filters_escapelike",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "reservation_filters_parsereservationfilters",
+      "_tgt": "reservation_filters_firstvalue",
+      "source": "reservation_filters_parsereservationfilters",
+      "target": "reservation_filters_firstvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "reservation_filters_parsereservationfilters",
+      "_tgt": "reservation_filters_isreservationstatus",
+      "source": "reservation_filters_parsereservationfilters",
+      "target": "reservation_filters_isreservationstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/reservation-filters.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "reservation_filters_buildreservationwhere",
+      "_tgt": "reservation_filters_escapelike",
+      "source": "reservation_filters_buildreservationwhere",
+      "target": "reservation_filters_escapelike",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L182",
+      "weight": 1.0,
+      "_src": "lib_tariffs_ts",
+      "_tgt": "tariffs_getdefaulttariffcatalog",
+      "source": "lib_tariffs_ts",
+      "target": "tariffs_getdefaulttariffcatalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L192",
+      "weight": 1.0,
+      "_src": "lib_tariffs_ts",
+      "_tgt": "tariffs_toiconkey",
+      "source": "lib_tariffs_ts",
+      "target": "tariffs_toiconkey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L196",
+      "weight": 1.0,
+      "_src": "lib_tariffs_ts",
+      "_tgt": "tariffs_gettariffcatalog",
+      "source": "lib_tariffs_ts",
+      "target": "tariffs_gettariffcatalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L266",
+      "weight": 1.0,
+      "_src": "lib_tariffs_ts",
+      "_tgt": "tariffs_validateprestationname",
+      "source": "lib_tariffs_ts",
+      "target": "tariffs_validateprestationname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L272",
+      "weight": 1.0,
+      "_src": "lib_tariffs_ts",
+      "_tgt": "tariffs_getoptionlabelsfromform",
+      "source": "lib_tariffs_ts",
+      "target": "tariffs_getoptionlabelsfromform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L279",
+      "weight": 1.0,
+      "_src": "lib_tariffs_ts",
+      "_tgt": "tariffs_seeddefaulttariffs",
+      "source": "lib_tariffs_ts",
+      "target": "tariffs_seeddefaulttariffs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L320",
+      "weight": 1.0,
+      "_src": "lib_tariffs_ts",
+      "_tgt": "tariffs_groupexists",
+      "source": "lib_tariffs_ts",
+      "target": "tariffs_groupexists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L205",
+      "weight": 1.0,
+      "_src": "tariffs_gettariffcatalog",
+      "_tgt": "tariffs_getdefaulttariffcatalog",
+      "source": "tariffs_getdefaulttariffcatalog",
+      "target": "tariffs_gettariffcatalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L268",
+      "weight": 1.0,
+      "_src": "tariffs_validateprestationname",
+      "_tgt": "tariffs_gettariffcatalog",
+      "source": "tariffs_gettariffcatalog",
+      "target": "tariffs_validateprestationname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/tariffs.ts",
+      "source_location": "L273",
+      "weight": 1.0,
+      "_src": "tariffs_getoptionlabelsfromform",
+      "_tgt": "tariffs_gettariffcatalog",
+      "source": "tariffs_gettariffcatalog",
+      "target": "tariffs_getoptionlabelsfromform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/db/index.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "lib_db_index_ts",
+      "_tgt": "index_createdb",
+      "source": "lib_db_index_ts",
+      "target": "index_createdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/db/index.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_db_index_ts",
+      "_tgt": "index_getdb",
+      "source": "lib_db_index_ts",
+      "target": "index_getdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/db/index.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "index_getdb",
+      "_tgt": "index_createdb",
+      "source": "index_createdb",
+      "target": "index_getdb",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": []

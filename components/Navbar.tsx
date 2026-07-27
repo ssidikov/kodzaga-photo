@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import HashLink from '@/components/HashLink'
 
 const NAV_LINKS = [
   { label: 'À propos', href: '/#about' },
@@ -29,6 +30,11 @@ export default function Navbar() {
     }
   }, [isOpen])
 
+  const closeMobileMenu = () => {
+    setIsOpen(false)
+    document.body.style.overflow = ''
+  }
+
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
@@ -46,20 +52,22 @@ export default function Navbar() {
         {/* Desktop nav links */}
         <div className='hidden md:flex gap-8 font-body text-[11px] tracking-[0.22em] uppercase text-cream/40'>
           {NAV_LINKS.map((link) => (
-            <Link
+            <HashLink
               key={link.href}
               href={link.href}
               className='hover:text-gold transition-colors duration-300 cursor-pointer'>
               {link.label}
-            </Link>
+            </HashLink>
           ))}
         </div>
 
         {/* Desktop CTA */}
-        <Link href='/#contact' className='hidden md:inline-flex btn-gold py-2.5 px-5 text-[10px]'>
+        <HashLink
+          href='/#contact'
+          className='hidden md:inline-flex btn-gold py-2.5 px-5 text-[10px]'>
           Réserver
           <ArrowRight className='w-3 h-3' />
-        </Link>
+        </HashLink>
 
         {/* Mobile hamburger */}
         <button
@@ -84,13 +92,13 @@ export default function Navbar() {
               isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
             style={{ transitionDelay: isOpen ? `${i * 75}ms` : '0ms' }}>
-            <Link
+            <HashLink
               key={link.href}
               href={link.href}
-              onClick={() => setIsOpen(false)}
+              onClick={closeMobileMenu}
               className='font-heading text-2xl text-cream/60 hover:text-gold transition-colors duration-300 cursor-pointer'>
               {link.label}
-            </Link>
+            </HashLink>
           </div>
         ))}
         <div
@@ -98,10 +106,10 @@ export default function Navbar() {
             isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
           style={{ transitionDelay: isOpen ? `${NAV_LINKS.length * 75}ms` : '0ms' }}>
-          <Link href='/#contact' onClick={() => setIsOpen(false)} className='btn-gold mt-4'>
+          <HashLink href='/#contact' onClick={closeMobileMenu} className='btn-gold mt-4'>
             Réserver un shooting
             <ArrowRight className='w-3.5 h-3.5' />
-          </Link>
+          </HashLink>
         </div>
       </div>
     </nav>
